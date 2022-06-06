@@ -4,6 +4,7 @@ class Token < ApplicationRecord
   belongs_to :user
 
   validates :status, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0 }
   # validates :NFT_id, presence: true
   # validates :unlockable, presence: true
   # validates: unlocked, presence: true
