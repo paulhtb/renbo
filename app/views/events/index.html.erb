@@ -20,7 +20,7 @@
 
 <% @events.each do |event| %>
 <div class="grid-item card event-search-results" id="event-<%= event.id %>">
-        <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
+       <% event.image_url %>
     
         <h4> <%= link_to event.name, event_path(event) %> </h4>
         <h3> <%event.start_time%> </h3>
