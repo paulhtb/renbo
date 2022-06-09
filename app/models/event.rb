@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   validates :music_genre, presence: true
   validates :country, presence: true
   validates :start_time, presence: true
-  validates :end_times, presence: true
+  validates :end_time, presence: true
   validates :description, presence: true
   # validates :event_url, presence: true
   # validates :address, presence: true

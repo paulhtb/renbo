@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Cleaning up database..."
+User.destroy_all
+Event.destroy_all
+puts "Database cleaned"
+
+
 user1 = User.create!(
   first_name: "Rick",
   last_name: "Sanchez",
@@ -14,7 +20,7 @@ user1 = User.create!(
 
 )
 
-event1 = Event.new!(
+event1 = Event.create!(
   name: "Burning Man 2022",
   category: "Festival",
   music_genre: "Electronic",
@@ -27,7 +33,7 @@ event1 = Event.new!(
   event_url: "https://burningman.org/"
 )
 
-event2 = Event.new!(
+event2 = Event.create!(
   name: "Elton John Farewell Tour",
   category: "Performance",
   music_genre: "Rock",
@@ -40,7 +46,7 @@ event2 = Event.new!(
   event_url: "https://www.eltonjohn.com/"
 )
 
-event3 = Event.new!(
+event3 = Event.create!(
   name: "Montreux Jazz Festival",
   category: "Festival",
   music_genre: "Jazz",
