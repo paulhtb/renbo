@@ -1,0 +1,8 @@
+input {
+  border-radius: #{$border-radius};
+  border: 1px solid rgba(0,0,0,0.3);
+
+    &:focus {
+      outline: none;
+    }
+}
