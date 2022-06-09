@@ -18,9 +18,14 @@
 </div>
 <hr> 
 <% @events.each do |event| %>
-<div class="event-search-results" id="event-<%= event.id %>">
+<div class=" card event-search-results" id="event-<%= event.id %>">
     <div class="event-result-image">
-     <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
+        <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
      </div>
      <div class="event-result-info">
+        <h4> <%= link_to event.title, event_path(event) %> </h4>
+        
+
+    </div>
+</div>
     
