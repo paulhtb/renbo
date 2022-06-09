@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.genres {
+  display: flex;
+  justify-content: space-between;
+}
+.genre-img {
+  height: 130px;
+  width: 150px;
+  margin-bottom: 20px;
+}

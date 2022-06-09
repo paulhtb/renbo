@@ -7,10 +7,14 @@
   height: 330px;
   width: 350px;
   border-radius: $border-radius;
+  position: relative;
   box-shadow: rgba(236, 230, 255, 1) 0px 2px 5px -1px, rgba(236, 230, 255, 0.9) 0px 1px 3px -1px;
   * {
     margin: 0;
   }
+   &:hover {
+    box-shadow: rgba(86, 40, 245, 0.25) 0px 2px 5px -1px, rgba(86, 40, 245, 0.3) 0px 1px 3px -1px;
+   }
 }
 
 .event-card-img {
@@ -19,6 +23,26 @@
   width: inherit;
   border-radius: inherit;
   margin-bottom: 5px;
+}
+
+.event-location-tag {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.event-location-tag-text {
+  height: 20px;
+  width: 100px;
+  font-weight:bold;
+  display: flex;
+  border-radius: $border-radius;
+  border: 1px solid $indigo;
+  background-color: $renbo-lilac;
+  color: $indigo;
+  opacity: 0.9;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .event-card-content {
@@ -30,15 +54,21 @@
 
 // Bookmark Icon
 .heart-icon {
-  height: 20px;
-  width: 20px;
   position: absolute;
   bottom: 4px;
   right: 10px;
+
+    &:hover {
+      color:rgb(86, 40, 245)
+    }
 }
 
 // Ticket Icon for Cards
 .ticket-icon {
   height: 10px;
   width: 10px;
+}
+
+.location-icon {
+  font-size: 15px;
 }
