@@ -1,11 +1,21 @@
+a {
+  text-decoration: none;
+  color:  black;
+}
+
 button {
   background-color: transparent;
   border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cooper";
+  text-transform: uppercase;
 }
 
 h1 {
@@ -35,7 +45,14 @@ p {
 }
 
 i {
+  font-size: 20px;
   &:hover {
     color: #{$indigo};
   }
+}
+
+
+h5 {
+  font-size: 20px;
+  color: #{$indigo};
 }
