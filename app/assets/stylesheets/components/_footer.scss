@@ -1,4 +1,5 @@
 footer {
+  margin: 0 auto;
   padding: 20px 100px;
   width: 1440px;
   height: 450px;
@@ -39,6 +40,7 @@ footer {
 
   .socials > * {
     margin-right: 20px;
+    margin-bottom: 0;
   }
 }
 
