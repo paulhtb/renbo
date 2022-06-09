@@ -11,36 +11,57 @@
 
 <% else %>
 
-<%# what happens if there are results %>
+
 <div class="search-result">
-    <div>
+<div>
     <h3> Find upcoming events </h3>
     </div>
 </div>
 
+
 <% @events.each do |event| %>
-<div class="grid-item card event-search-results" id="event-<%= event.id %>">
-        <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
-    
-        <h4> <%= link_to event.name, event_path(event) %> </h4>
-        <h3> <%event.start_time%> </h3>
- <% if current_user %>
+<div class="grid-container">
+<div class="grid-item"> 
+  <div class="event-card">
+
+   <%= image_tag event.image_url, class: "event-card-img"%>
+
+  <div class="event-card-content">
+    <h4> <%= link_to event.name, event_path(event) %></h4>
+    <div style="color: #7B7B7B">
+      <p><%= event.start_time %> </p>
+      <div>
+        <div class="d-flex justify-content-center">
+          <div class="d-flex align-items-center">
+            <%= image_tag "card/ticket.png", class: "ticket-icon" %>
+            <p>100</p>
+          </div>
+        </div>
+      </div>
+
+      <%# logic for bookmark functionality %>
+       <% if current_user %>
                 <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
                   <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
                   <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
-                    <i class="fas fa-heart" style="font-size: 20px;"></i>
+                   <%= image_tag "card/heart.png", class: "heart-icon" %>
                   <% end %>
+
                 <% else %>
                   <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
-                    <i class="far fa-heart" style="font-size: 20px;"></i>
+                   <%= image_tag "card/heart.png", class: "heart-icon" %>
                   <% end %>
                 <% end %>
+
               <% else %>
                 <%= link_to new_user_session_path do %>
-                    <i class="far fa-heart" style="font-size: 20px;"></i>
+                    <%= image_tag "card/heart.png", class: "heart-icon" %>i>
                 <% end %>
-              <%end%></h2>
+              <% end %>
+    </div>
+    </div>
     <% end %>
-</div>
-
-<% end %>
+  </div>
+  <% end %>
+  </div>
+  </div>
