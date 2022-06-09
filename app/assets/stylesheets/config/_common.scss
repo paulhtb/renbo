@@ -49,12 +49,12 @@ p {
 i {
   font-size: 20px;
   &:hover {
-    color: #{$indigo};
+    color: $indigo;
   }
 }
 
 
 h5 {
   font-size: 20px;
-  color: #{$indigo};
+  color: $indigo;
 }

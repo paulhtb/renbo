@@ -19,21 +19,19 @@
 </div>
 
 <% @events.each do |event| %>
-<div class=" card event-search-results" id="event-<%= event.id %>">
-    <div class="event-result-image">
+<div class="grid-item card event-search-results" id="event-<%= event.id %>">
         <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
-     </div>
-     <div class="event-result-info">
+    
         <h4> <%= link_to event.name, event_path(event) %> </h4>
-        <h3> <%event.date%> </h3>
+        <h3> <%event.start_time%> </h3>
  <% if current_user %>
-                <% if bike.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
-                  <% bookmark = bike.bookmarks.find_by(user_id:current_user.id) %>
+                <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
+                  <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
                   <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
                     <i class="fas fa-heart" style="font-size: 20px;"></i>
                   <% end %>
                 <% else %>
-                  <%= link_to bike_bookmarks_path(bike), method: :post, remote: true do %>
+                  <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
                     <i class="far fa-heart" style="font-size: 20px;"></i>
                   <% end %>
                 <% end %>
@@ -42,7 +40,6 @@
                     <i class="far fa-heart" style="font-size: 20px;"></i>
                 <% end %>
               <%end%></h2>
-    </div>
     <% end %>
 </div>
 

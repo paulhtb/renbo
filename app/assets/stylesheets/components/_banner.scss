@@ -20,7 +20,7 @@
   width: 25vw;
   display: flex;
   align-items: center;
-  border-radius: #{$border-radius};
+  border-radius: $border-radius;
 
   #query {
     flex-grow: 1;
