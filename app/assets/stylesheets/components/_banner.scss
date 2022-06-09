@@ -1,0 +1,14 @@
+.banner {
+  height: 800px;
+  width: auto;
+  margin-bottom: 60px;
+  background-image: asset-url('banner.jpg'),
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
