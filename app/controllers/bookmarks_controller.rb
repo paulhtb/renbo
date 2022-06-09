@@ -1,6 +1,10 @@
 class BookmarksController < ApplicationController
   before_action :set_event, only: %i[create]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+
+  def index
+    @bookmarks = Bookmark.all
+  end
 
   def create
     @bookmark = Bookmark.new
