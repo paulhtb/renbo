@@ -9,6 +9,33 @@
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#searchbar-banner {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 10px;
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  border-radius: #{$border-radius};
+
+  #query {
+    flex-grow: 1;
+  }
+
+  #genre, #query {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .mglass {
+    margin: 0 5px;
+  }
 }
