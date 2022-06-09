@@ -10,6 +10,13 @@ class BookmarksController < ApplicationController
     redirect_to "#{request.referer}#event-#{@event.id}"
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    @event = @bookmark.event
+    redirect_to "#{request.referer}#event-#{@event.id}"
+  end
+  
   private
 
   def set_event
