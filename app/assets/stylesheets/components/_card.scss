@@ -1,7 +1,7 @@
 .event-card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  text-align: webkit-center;
+  text-align: -webkit-center;
 }
 
 .event-card {
@@ -87,7 +87,7 @@
   position: relative;
   left: 318px;
   right: 0;
-  bottom: 21px;
+  bottom: -40px;
 }
 
 .error {
