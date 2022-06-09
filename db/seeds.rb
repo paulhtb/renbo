@@ -20,6 +20,7 @@ user1 = User.create!(
 
 )
 
+# EVENT 1 = Burning Man 2022
 event1 = Event.create!(
   name: "Burning Man 2022",
   category: "Festival",
@@ -34,6 +35,7 @@ event1 = Event.create!(
   image_url: "https://www.wallpaperflare.com/static/66/576/958/burning-man-love-desert-gay-wallpaper-preview.jpg"
 )
 
+# EVENT 2 = Elton John Final Tour
 event2 = Event.create!(
   name: "Elton John Farewell Tour",
   category: "Performance",
@@ -48,6 +50,7 @@ event2 = Event.create!(
   image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
 )
 
+# EVENT 3 = Montreux Jazz Festival
 event3 = Event.create!(
   name: "Montreux Jazz Festival",
   category: "Festival",
@@ -62,23 +65,115 @@ event3 = Event.create!(
   image_url: "https://www.montreuxjazzfestival.com/wp-content/uploads/2020/01/MITP-1536x1536.jpg"
 )
 
-# new_ticket = Ticket.new!(
-#   tier: 1
-# )
+# NFTs for event 1 // Burning Man
+new_ticket = Ticket.new(
+  tier: "1",
+  title: "Yvonne Force Villareal",
+  description: "What is reality?",
+  original_price: "1,500$",
+  no_available: "3",
+  image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
+)
 
-# new_ticket.event = event1
-# new_ticket.save
+new_ticket.event = event1
+new_ticket.save!
 
-# new_ticket = Ticket.new!(
-#   tier: 2
-# )
+new_ticket = Ticket.new(
+  tier: "2",
+  title: "Man on Fire",
+  description: "From flames to ashes, nothing lasts forever. Time exists only in the present.",
+  original_price: "1,000$",
+  no_available: "10",
+  image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c01661ac-198f-4af1-91c8-57af093c29e0/d4mwnlj-48be98f1-5a86-47df-901b-f136779feef1.jpg/v1/fill/w_838,h_954,q_70,strp/the_burning_man_by_innerdvisions_d4mwnlj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MwMTY2MWFjLTE5OGYtNGFmMS05MWM4LTU3YWYwOTNjMjllMFwvZDRtd25sai00OGJlOThmMS01YTg2LTQ3ZGYtOTAxYi1mMTM2Nzc5ZmVlZjEuanBnIiwiaGVpZ2h0IjoiPD0xMDI0Iiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC9jMDE2NjFhYy0xOThmLTRhZjEtOTFjOC01N2FmMDkzYzI5ZTBcL2lubmVyZHZpc2lvbnMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.xl9zzEyuvlQUj2crCwED5dsQrSXSgUK2tqGGYiLFpwM"
 
-# new_ticket.event = event1
-# new_ticket.save
+)
 
-# new_ticket = Ticket.new!(
-#   tier: 3
-# )
+new_ticket.event = event1
+new_ticket.save!
 
-# new_ticket.event = event1
-# new_ticket.save
+new_ticket = Ticket.new(
+  tier: "3",
+  title: "Network of Dreamers",
+  description: "Find comfort in self-reliance, and equal comfort in solidarity.",
+  original_price: "750$",
+  no_available: "25",
+  image_url: "https://www.artmajeur.com/medias/hd/y/o/youlianarkevitch-iodko/artwork/8951191_burning-man.jpg"
+)
+
+new_ticket.event = event1
+new_ticket.save!
+
+# NFTs for event 2 // Elton John Final Tour
+new_ticket = Ticket.new(
+  tier: "1",
+  title: "Candle in The Wind",
+  description: "What would the world be without Sir Elton John",
+  original_price: "300$",
+  no_available: "5",
+  image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
+)
+
+new_ticket.event = event2
+new_ticket.save!
+
+new_ticket = Ticket.new(
+  tier: "2",
+  title: "Rocket Man",
+  description: "A memory of Elton Johns final tour",
+  original_price: "200$",
+  no_available: "20",
+  image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
+)
+
+new_ticket.event = event2
+new_ticket.save!
+
+new_ticket = Ticket.new(
+  tier: "3",
+  title: "Don't Let the Sun Go Down on Me",
+  description: "A collection of all the magazine covers with Sir Elton John",
+  original_price: "100$",
+  no_available: "50",
+  image_url: "https://images.saatchiart.com/saatchi/1862146/art/8768316/7831798-OGFWMIXX-7.jpg"
+)
+
+new_ticket.event = event2
+new_ticket.save!
+
+# # NFTs for event 3 // Montreux Jazz Festival
+
+new_ticket = Ticket.new(
+  tier: "1",
+  title: "Squish Swiss",
+  description: "A priceless moment from the the Montreux Jazz Festival",
+  original_price: "500$",
+  no_available: "10",
+  image_url: "https://media.artsper.com/artwork/1458213_1_m.jpg"
+)
+
+new_ticket.event = event3
+new_ticket.save!
+
+new_ticket = Ticket.new(
+  tier: "2",
+  title: "Nina Simone im Schweiz ",
+  description: "In memory of a legend",
+  original_price: "250$",
+  no_available: "50",
+  image_url: "https://images.theabsolutesound.com/wp-content/uploads/2021/06/nina-simon-montreux.jpeg"
+)
+
+new_ticket.event = event3
+new_ticket.save!
+
+new_ticket = Ticket.new(
+  tier: "3",
+  title: "Neon Jazz",
+  description: "A piece of time presented in an illustration",
+  original_price: "200$",
+  no_available: "100",
+  image_url: "https://creativereview.imgix.net/content/uploads/2020/06/MJF20-Silent-Shores-Affiches-FrancBord-Giovanni-Riva.jpg?auto=compress,format&q=60&w=768&h=1075"
+)
+
+new_ticket.event = event3
+new_ticket.save!
