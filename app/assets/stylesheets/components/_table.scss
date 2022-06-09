@@ -1,0 +1,63 @@
+.ticket-table {
+  border: $border;
+  border-radius: $border-radius;
+  height: 560px;
+  width: 800px;
+
+  p {
+    margin: 0;
+  }
+
+  .table-top {
+    height: 60px;
+  }
+
+  .table-title {
+    display: flex;
+    align-items: center;
+    border-bottom: $border;
+    h5 {
+      padding: 0 20px;
+      margin: 0;
+    }
+  }
+
+  .table-header {
+    display: flex;
+    align-items: center;
+    background-color: $grey;
+    border-bottom: 1px solid $gray;
+  }
+
+  .table-row {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    border-bottom: $border;
+  }
+
+  .table-tickets {
+    height: 440px;
+    overflow: scroll;
+  }
+
+  .table-col {
+    width: 134px;
+  }
+
+  .table-header-empty {
+    width: 130px;
+  }
+
+  .table-image {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
