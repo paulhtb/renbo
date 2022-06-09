@@ -2,7 +2,6 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-@import "config/common";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -14,3 +13,6 @@
 @import "components/index";
 @import "components/buttons";
 @import "pages/index";
+
+// Renbo Config
+@import "config/common";
