@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 2022_06_09_063220) do
     t.string "country"
     t.string "city"
     t.string "address"
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string "description"
     t.string "event_url"
     t.datetime "created_at", precision: 6, null: false

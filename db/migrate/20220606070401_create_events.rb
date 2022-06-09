@@ -7,8 +7,8 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.string :country
       t.string :city
       t.string :address
-      t.time :start_time
-      t.time :end_time
+      t.datetime :start_time
+      t.datetime :end_time
       t.string :description
       t.string :event_url
 
