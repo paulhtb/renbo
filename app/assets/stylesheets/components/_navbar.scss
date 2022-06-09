@@ -1,5 +1,8 @@
+// NAVBAR GENERAL
+
 .navbar-lewagon {
   justify-content: space-between;
+  overflow: hidden;
   background: white;
 }
 
@@ -9,4 +12,51 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+// SEARCHBAR
+
+#searchbar {
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 10px;
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  border-radius: #{$border-radius};
+
+  #query {
+    flex-grow: 1;
+  }
+
+  #genre, #query {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
+
+// DROPDOWN
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
