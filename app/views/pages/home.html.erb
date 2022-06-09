@@ -1,5 +1,6 @@
-<div class="banner d-flex">
-<%= image_tag "banner-logo.png", class:"banner-img" %>
+<div class="banner">
+  <%= image_tag "banner-logo.png", class:"banner-img" %>
+  <%= render "shared/searchbar", parent: "searchbar-banner" %>
 </div>
 <div class="renbo-container text-center">
   <h2 class="home-heading">HOT EVENTS</h2>

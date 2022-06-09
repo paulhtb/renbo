@@ -4,10 +4,7 @@
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
-    <form action="/events" class="form-input" id="searchbar">
-      <input type="search" id="query" name="q" placeholder="Search for an event, a city, an artist ..." value="">
-      <button type="submit"><i class="fas fa-search mglass"></i></button>
-    </form>
+    <%= render "shared/searchbar", parent: "searchbar-nav" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
