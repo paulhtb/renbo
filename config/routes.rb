@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[create]
   end
 
-  resources :tokens, only: %i[indew show update] do # index will be the 'marketplace', where the search logic happens
+  resources :tokens, only: %i[index show update] do # index will be the 'marketplace', where the search logic happens
     resources :cart_items, only: %i[create]
   end
 
