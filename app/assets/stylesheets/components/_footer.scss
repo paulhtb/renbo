@@ -10,8 +10,8 @@ footer {
 }
 
 .footer-hr {
-  margin: #{$margin-v-big};
-  border-top: 1px solid #{$renbo-gray};
+  margin: $margin-v-big;
+  border-top: 1px solid $renbo-gray;
   width: 1250px;
 }
 
@@ -60,5 +60,5 @@ footer {
 
 #copyright {
   text-align: center;
-  color: #{$renbo-gray};
+  color: $renbo-gray;
 }
