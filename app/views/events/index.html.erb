@@ -3,9 +3,10 @@
 <%# what is returned if there no results %>
 <div class="no-search-results">
     <div class="box-center">
-        <p class="oops"> Oops!! </p>
-        <p class="no-result-text"> We couldn't find any events based on your search criteria.. </p>
-        <%# image of no search results goes here %>
+        <div grid-item>
+         <%= image_tag "search/sorrymsg.png", class: "index-error" %>
+         </div>
+      
     </div>
 </div>
 
