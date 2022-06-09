@@ -2,3 +2,9 @@ button {
   background-color: transparent;
   border: none;
 }
+
+i {
+  &:hover {
+    color: #{$indigo};
+  }
+}
