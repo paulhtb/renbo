@@ -3,6 +3,7 @@ button {
   border: none;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cooper";
 }
@@ -31,4 +32,10 @@ p {
   display: inline-block;
   border-bottom: solid 3px;
   padding-bottom: 3px;
+
+i {
+  &:hover {
+    color: #{$indigo};
+  }
+
 }

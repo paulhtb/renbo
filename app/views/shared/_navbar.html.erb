@@ -1,28 +1,30 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="container">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
     <form action="/events" id="searchbar">
       <input type="search" id="query" name="q" placeholder="Search for an event, a city, an artist ..." value="">
-      <button type="submit">Search</button>
+      <button type="submit"><i class="fas fa-search mglass"></i></button>
     </form>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button>Marketplace</button>
+    <div class="nav-end">
+      <button class="renbo-btn">Marketplace</button>
 
-    <button><i class="fas fa-shopping-cart"></i></button>
+      <button><i class="fas fa-shopping-cart"></i></button>
 
-    <div class="dropdown">
-      <button class="dropbtn"><i class="fas fa-bars"></i></button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fas fa-bars"></i></button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
       </div>
     </div>
   </div>

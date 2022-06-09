@@ -1,0 +1,33 @@
+<% if @events.empty? %>
+
+<div class="no-search-results">
+    <div class="box-center">
+        <p class="oops"> Oops!! </p>
+        <p class="no-result-text"> We couldn't find any events based on your search criteria.. </p>
+        <%# image of no search results goes here %>
+    </div>
+
+</div>
+
+<% else %>
+
+<div class="search-result">
+    <div>
+    <h3> Find upcoming events </h3>
+    </div>
+</div>
+
+<% @events.each do |event| %>
+<div class=" card event-search-results" id="event-<%= event.id %>">
+    <div class="event-result-image">
+        <img src="https://www.btklsby.go.id/images/placeholder/basic.png" width="100%" height="100%" alt="" class="event-img">
+     </div>
+     <div class="event-result-info">
+        <h4> <%= link_to event.title, event_path(event) %> </h4>
+        
+
+    </div>
+    <% end %>
+</div>
+
+<% end %>
