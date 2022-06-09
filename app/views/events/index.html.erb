@@ -14,9 +14,9 @@
 <div class="search-result">
     <div>
     <h3> Find upcoming events </h3>
-
+    </div>
 </div>
-<hr> 
+
 <% @events.each do |event| %>
 <div class=" card event-search-results" id="event-<%= event.id %>">
     <div class="event-result-image">
@@ -27,5 +27,7 @@
         
 
     </div>
+    <% end %>
 </div>
-    
+
+<% end %>
