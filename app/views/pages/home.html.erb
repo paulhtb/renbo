@@ -46,6 +46,6 @@
   <h2 class="home-heading">CHANGE OF PLANS?</h2>
   <p class="home-body">Et eveniet corrupti dolorem nemo eligendi. Dolor quibusdam illo voluptas recusandae fugiat consequatur qui ducimus.</P>
   <div class="justify-content-center d-flex">
-    <%= render "shared/table" %>
+    <%= render "shared/table", tokens: Token.last(10)%>
   </div>
 </div>

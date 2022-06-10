@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!
 
   def index
     if params["q"]
@@ -18,10 +18,14 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
 
+    # Putting all the tokens of all tickets into an array
+    @tokens = @event.all_tokens
+
     @markers = [{
           lat: @event.latitude,
           lng: @event.longitude,
           # info_window: render_to_string(partial: "info_window", locals: { event: @event })
     }]
+
   end
 end

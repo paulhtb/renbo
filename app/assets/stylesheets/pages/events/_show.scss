@@ -1,6 +1,8 @@
 .event-banner {
   height: 460px;
-  width: 1440px;
+  width: 100vw;
+  max-width: 1980px;
+  margin: 0 auto;
   img {
     object-fit: cover;
   }
