@@ -1,28 +1,30 @@
 
 <div class="grid-container">
       <%# logic for bookmark functionality %>
-       <% if current_user %>
-                <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
-                  <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
-                  <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
-                   <%= image_tag "card/heart.png", class: "heart-icon" %>
-                  <% end %>
+<% if current_user %>
+        <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
+          <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
+          <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
+                    <i class="fas fa-heart heart-icon"> </i>
 
-                <% else %>
+          <% end %>
+
+          <% else %>
                   <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
-                   <%= image_tag "card/heart.png", class: "heart-icon" %>
+                             <i class="far fa-heart heart-icon"> </i>
+
                   <% end %>
                 <% end %>
 
-              <% else %>
-                <%= link_to new_user_session_path do %>
-                    <%= image_tag "card/heart.png", class: "heart-icon" %>i>
+<% else %>
+    <%= link_to new_user_session_path do %>
+              <i class="far fa-heart heart-icon"> </i>
+
                 <% end %>
               <% end %>
-    </div>
+    
     </div>
     <% end %>
   </div>
   <% end %>
-  </div>
-  </div>
+  

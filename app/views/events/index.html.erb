@@ -15,13 +15,14 @@
 <button class="search-filter"> Filters ☰ </button> 
 </div>
 
+
+
+<div class="renbo-container">
 <div class="home-heading">
   <div>
     <h3 id="index-heading"> Upcoming Events in 2022 </h3>
   </div>
 </div>
-
-<div class="renbo-container">
   <div class="event-card-grid">
     <% @events.each do |event| %>
         <div class="event-card">
@@ -42,8 +43,28 @@
               </div>  
             </div>
           </div>
+          <% if current_user %>
+        <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
+          <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
+          <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
+                    <i class="fas fa-heart heart-icon"> </i>
+
+          <% end %>
+
+          <% else %>
+                  <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
+                             <i class="far fa-heart heart-icon"> </i>
+
+                  <% end %>
+                <% end %>
+
+<% else %>
+    <%= link_to new_user_session_path do %>
+              <i class="far fa-heart heart-icon"> </i>
+
+                <% end %>
+              <% end %>
         </div>
-      
     <% end %>
   </div>
   </div>
