@@ -23,8 +23,12 @@
           <% end %>
         <% else %>
           <%= button_to event_bookmarks_path(event), method: :post, remote: true do %>
-              <i class="far fa-heart heart-icon"> </i>
+            <i class="far fa-heart heart-icon"> </i>
           <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="far fa-heart heart-icon"></i>
         <% end %>
       <% end %>
     </div>
