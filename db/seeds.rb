@@ -2,7 +2,9 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 puts "Cleaning up database..."
+Token.destroy_all
 User.destroy_all
+Ticket.destroy_all
 Event.destroy_all
 puts "Database cleaned"
 
@@ -13,6 +15,15 @@ user1 = User.create!(
   email: "rick@gmail.com",
   password: "123456"
 )
+
+admin1 = User.create!(
+  first_name: "Eric",
+  last_name: "Cartman",
+  email: "admin@renbo.com",
+  password: "123456"
+)
+
+#---------------EVENTS---------------
 
 # EVENT 1 = Burning Man 2022
 event1 = Event.create!(
@@ -89,6 +100,7 @@ event5 = Event.create!(
   image_url: "https://www.maximaltrips.com/wp-content/uploads/2018/05/fusion-fest.jpg"
 )
 
+# EVENT 6 = Boom Festival 2022
 event6 = Event.create!(
   name: "Boom Festival 2022",
   category: "Festival",
@@ -103,6 +115,7 @@ event6 = Event.create!(
   image_url: "https://cdn.boomfestival.org/assets/files/5903/007.1280x614.webp"
 )
 
+# EVENT 7 = Coachella 2023
 event7 = Event.create!(
   name: "Coachella 2023",
   category: "Festival",
@@ -116,10 +129,9 @@ event7 = Event.create!(
   event_url: "https://www.coachella.com/",
   image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
 )
-####
-####
-####
-#### NFTs for event 1 // Burning Man
+
+#---------------NFTs for event 1 // BURNING MAN 2022---------------
+
 ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Yvonne Force Villareal",
@@ -156,7 +168,49 @@ ticket_tier3 = Ticket.new(
 ticket_tier3.event = event1
 ticket_tier3.save!
 
-# NFTs for event 2 // Elton John Final Tour
+#---------------BURNING MAN TOKENS---------------
+
+# TICKET_TIER1 BURNING MAN
+3.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 1500,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+end
+
+# TICKET_TIER2 BURNING MAN
+10.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "4d5e6f",
+    unlockable: "QRcode",
+    price: 1000,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+end
+
+# TICKET_TIER3 BURNING MAN
+25.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "7g8h9i",
+    unlockable: "QRcode",
+    price: 750,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+end
+
+#---------------NFTs for event 2 // Elton John Final Tour---------------
+
 ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Candle in The Wind",
@@ -178,7 +232,7 @@ ticket_tier2 = Ticket.new(
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
-ticket_tier2 = event2
+ticket_tier2.event = event2
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -193,7 +247,48 @@ ticket_tier3 = Ticket.new(
 ticket_tier3.event = event2
 ticket_tier3.save!
 
-# # NFTs for event 3 // Montreux Jazz Festival
+#---------------ELTON JOHN TOKENS---------------
+
+# TICKET_TIER1 ELTON JOHN
+5.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 300,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+end
+
+# TICKET_TIER2 ELTON JOHN
+20.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "4d5e6f",
+    unlockable: "QRcode",
+    price: 200,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+end
+
+# TICKET_TIER3 ELTON JOHN
+50.times do
+  Token.create!(
+    status: "new",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 100,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+end
+
+#---------------NFTs for event 3 // Montreux Jazz Festival---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
