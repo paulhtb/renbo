@@ -4,7 +4,7 @@
   </div>
   <%= image_tag event.image_url, class: "event-card-img" %>
   <div class="event-card-content">
-    <h4><%= event.name %></h4>
+    <h4><%= link_to event.name, "/events/#{event.id}" %></h4>
     <div style="color: #7B7B7B">
       <p><%= event.start_time.strftime('%m/%d/%Y') %></p>
       <div>
@@ -15,7 +15,18 @@
           </div>
         </div>
       </div>
-      <i class="far fa-heart heart-icon"></i>
+      <% if current_user %>
+        <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
+          <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
+          <%=button_to bookmark_path(bookmark), method: :delete, remote: true do %>
+            <i class="fas fa-heart heart-icon"></i>
+          <% end %>
+        <% else %>
+          <%= button_to event_bookmarks_path(event), method: :post, remote: true do %>
+              <i class="far fa-heart heart-icon"> </i>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

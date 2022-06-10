@@ -6,13 +6,13 @@
       <div grid-item>
         <%= image_tag "search/sorrymsg.png", class: "index-error" %>
       </div>
-      
+
     </div>
 </div>
 
 <% else %>
 <div class="wrapper">
-<button class="search-filter"> Filters ☰ </button> 
+<button class="search-filter"> Filters ☰ </button>
 </div>
 
 
@@ -25,47 +25,8 @@
 </div>
   <div class="event-card-grid">
     <% @events.each do |event| %>
-        <div class="event-card">
-          <%= image_tag event.image_url, class: "event-card-img", width: "100%", height: "100%"%>
-              <p class="event-location-tag-text" id="tag-text-styling"><i class="fas fa-location-arrow location-icon"></i> <%= event.city%> </p>
-
-          <div class="event-card-content">
-            <h4> <%= link_to event.name, event_path(event) %></h4>
-            <div style="color: #7B7B7B">
-              <p><%= event.start_time.strftime('%d/%m/%Y') %> </p>
-              <div>
-                <div class="d-flex justify-content-center">
-                  <div class="d-flex align-items-center">
-                    <%= image_tag "card/ticket.png", class: "ticket-icon" %>
-                    <p>100</p>
-                  </div>
-                </div>
-              </div>  
-            </div>
-          </div>
-          <% if current_user %>
-        <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
-          <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
-          <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
-                    <i class="fas fa-heart heart-icon"> </i>
-
-          <% end %>
-
-          <% else %>
-                  <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
-                             <i class="far fa-heart heart-icon"> </i>
-
-                  <% end %>
-                <% end %>
-
-<% else %>
-    <%= link_to new_user_session_path do %>
-              <i class="far fa-heart heart-icon"> </i>
-
-                <% end %>
-              <% end %>
-        </div>
+      <%= render "shared/card", event: event %>
     <% end %>
   </div>
-  </div>
+</div>
 <% end %>
