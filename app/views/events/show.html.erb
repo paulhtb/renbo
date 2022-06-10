@@ -1,0 +1,74 @@
+<div class="event-banner">
+  <img width="100%" height="100%" src="https://gothammag.com/get/files/image/galleries/coachella-billy-farrell-bfa-main.jpg" alt="">
+</div>
+
+<div class="renbo-container">
+  <div class="event-title">
+    <h1>Coachella</h1>
+  </div>
+
+  <div class="event-page-divider">
+
+    <div class="event-left-container">
+
+      <div class="event-about">
+        <p><strong>About the event</strong></p>
+        <p>The Coachella Valley Music and Arts Festival (commonly called the Coachella Festival or simply Coachella) is an annual music and arts festival held at the Empire Polo Club in Indio, California, in the Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Presents.[1] The event features musical artists from many genres of music, including rock, pop, indie, hip hop and electronic dance music.</p>
+        <a href="">Access website</a>
+      </div>
+
+      <h2>Choose your ticket</h2>
+      <hr>
+
+      <div class="event-tickets">
+        <% 3.times do %>
+          <%= render "shared/ticket", vip: true %>
+        <% end %>
+        <% 2.times do %>
+          <%= render "shared/ticket", vip: false %>
+        <% end %>
+      </div>
+
+      <h2>Browse all tickets</h2>
+      <hr>
+
+      <div class="event-marketplace">
+        <%= render "shared/table" %>
+      </div>
+
+
+      <h2>Locate the event</h2>
+      <hr>
+
+      <!-- data-mapbox-markers-value="<%= @markers.to_json %>" -->
+
+      <div class="event-map">
+        <div style="width: 100%; height: 400px;"
+        data-controller="mapbox"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
+
+    <div class="event-right-container">
+      <div class="event-buy-box">
+        <a href="#"><button class="renbo-btn">Buy now</button></a>
+        <div class="event-info">
+          <i class="fab fa-fort-awesome"></i>
+          <p>Empire Polo Club</p>
+        </div>
+        <div class="event-info">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Indio, California</p>
+        </div>
+        <div class="event-info">
+          <i class="fas fa-calendar-alt"></i>
+          <p>12/07/2022  10:00 - 19/07/2022 16:00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
