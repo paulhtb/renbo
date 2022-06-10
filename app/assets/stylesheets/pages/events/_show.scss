@@ -1,0 +1,97 @@
+.event-banner {
+  height: 460px;
+  width: 1440px;
+  img {
+    object-fit: cover;
+  }
+}
+
+.event-title {
+  color: $white;
+  position: absolute;
+  top: 320px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.event-page-divider {
+
+  display: flex;
+  position: relative;
+  margin-top: -100px;
+
+  .event-left-container {
+    width: 800px;
+    margin-right: 20px;
+  }
+
+  .event-right-divider {
+    width: 340px;
+    margin-left: 20px;
+  }
+}
+
+.event-about {
+  background-color: $white;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 230px;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.event-tickets {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+.event-buy-box {
+  background-color: $white;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 40px;
+
+  width: 300px;
+  height: 295px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: sticky;
+  top: 20px;
+
+  a {
+    margin-bottom: 20px;
+    align-self: center;
+  }
+}
+
+.event-info {
+  display: flex;
+  i {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+
+.event-marketplace {
+  margin-bottom: 40px;
+}
+
+.event-map {
+  border-radius: $border-radius;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
