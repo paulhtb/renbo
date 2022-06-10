@@ -4,14 +4,14 @@
   <% end %>
   <div class="ticket-card-image">
     <a href="#">
-      <img height="95%" width="95%" src="https://indotelko.com/images/media/202204/ori/coachella.jpg" alt="">
+      <img height="95%" width="95%" src="<%= ticket.image_url%>" alt="">
     </a>
   </div>
   <div class="ticket-content">
-    <h5>Beyonce VIP Ticket #1</h5>
-    <p>Description Description Description Description</p>
+    <h5><%= ticket.title.first(18) %></h5>
+    <p><%= ticket.description.first(50) + " ..."  %></p>
   </div>
   <div class="ticket-price-tag">
-    <p><strong>Starts from $125.00</strong></p>
+    <p><strong>Starts from $<%= ticket.original_price %></strong></p>
   </div>
 </div>
