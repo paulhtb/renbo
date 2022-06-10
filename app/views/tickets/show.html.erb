@@ -1,7 +1,7 @@
 <div class="renbo-container">
   <div class="ticket-banner">
-    <h1 class="ticket-banner-heading">Ticket 1 Beyonce VIP</h1>
-    <%= image_tag "tickets/beyonce.png" %>
+    <h1 class="ticket-banner-heading"><%= @ticket.title %></h1>
+    <div class="ticket-banner-image" style="background-image: url(<%= @ticket.image_url %>)"></div>
     <div class="ticket-banner-content">
       <div class="ticket-banner-description">
         <p>Description of the ticket, benefits, etc....
@@ -22,7 +22,7 @@
         <p>For: 1 day only</p>
       </div>
       <div class="ticket-banner-purchase">
-        <h3>X left</h3>
+        <h3><%= @ticket.no_available %> left</h3>
         <p>INSERT DROPDOWN</p>
         <button class="renbo-btn">Add to Cart</button>
       </div>
@@ -31,9 +31,12 @@
   <div class="ticket-info">
     <div class="ticket-show-container">
       <h2 class="tickets-show-heading">Browse all tickets</h2>
-      <%= render "shared/table" %>
+      <%= render "shared/table", tokens: @ticket.tokens %>
       <h2 class="tickets-show-heading">Other tickets for this event</h2>
       <div class="event-card-grid">
+        <% @tickets.each do |ticket| %>
+          <%= render "shared/ticket", ticket: ticket, vip: true %>
+        <% end %>
       </div>
     </div>
     <div class="ticket-checkout-card">
