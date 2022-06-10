@@ -1,12 +1,12 @@
 <div class="event-card">
   <div class="event-location-tag">
-    <p class="event-location-tag-text"><i class="fas fa-location-arrow location-icon"></i> Location</p>
+    <p class="event-location-tag-text"><i class="fas fa-location-arrow location-icon"></i><%= event.city %></p>
   </div>
-  <%= image_tag "card/festival.jpg", class: "event-card-img" %>
+  <%= image_tag event.image_url, class: "event-card-img" %>
   <div class="event-card-content">
-    <h4>Event title</h4>
+    <h4><%= event.name %></h4>
     <div style="color: #7B7B7B">
-      <p>Date range</p>
+      <p><%= event.start_time.strftime('%m/%d/%Y') %></p>
       <div>
         <div class="d-flex justify-content-center">
           <div class="d-flex align-items-center">

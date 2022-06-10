@@ -5,9 +5,9 @@
 <div class="renbo-container text-center">
   <h2 class="home-heading">HOT EVENTS</h2>
   <div class="event-card-grid">
-    <%= render "shared/card" %>
-    <%= render "shared/card" %>
-    <%= render "shared/card" %>
+    <% @events.each do |event| %>
+      <%= render "shared/card", event: event %>
+      <% end %>
   </div>
   <h2 class="home-heading">BROWSE GENRES</h2>
   <div class="genres">
