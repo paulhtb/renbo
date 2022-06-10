@@ -1,5 +1,5 @@
 <div class="event-banner">
-  <img width="100%" height="100%" src="https://gothammag.com/get/files/image/galleries/coachella-billy-farrell-bfa-main.jpg" alt="">
+  <img width="100%" height="100%" src="<%= @event.image_url %>" alt="">
 </div>
 
 <div class="renbo-container">
@@ -30,7 +30,7 @@
       <hr>
 
       <div class="event-marketplace">
-        <%= render "shared/table" %>
+        <%= render "shared/table", tokens: @tokens %>
       </div>
 
 
