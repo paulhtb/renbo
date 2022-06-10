@@ -1,0 +1,53 @@
+<div class="renbo-container">
+  <div class="ticket-banner">
+    <h1 class="ticket-banner-heading">Ticket 1 Beyonce VIP</h1>
+    <%= image_tag "tickets/beyonce.png" %>
+    <div class="ticket-banner-content">
+      <div class="ticket-banner-description">
+        <p>Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        And artpiece  Description of the ticket, benefits, etc....
+        </p>
+      </div>
+      <div class="ticket-banner-details">
+        <div class="ticket-banner-specifics">
+          <p>VIP</p>
+          <p>Free Seating</p>
+        </div>
+        <p>For: 1 day only</p>
+      </div>
+      <div class="ticket-banner-purchase">
+        <h3>X left</h3>
+        <p>INSERT DROPDOWN</p>
+        <button class="renbo-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="ticket-info">
+    <div class="ticket-show-container">
+      <h2 class="tickets-show-heading">Browse all tickets</h2>
+      <%= render "shared/table" %>
+      <h2 class="tickets-show-heading">Other tickets for this event</h2>
+      <div class="event-card-grid">
+        <%= render "shared/ticket", vip: true %>
+        <%= render "shared/ticket", vip: false %>
+        <%= render "shared/ticket", vip: false %>
+      </div>
+    </div>
+    <div class="ticket-checkout-card">
+      <p>INSERT DROPDDOWN</p>
+      <div class="ticket-checkout-summary">
+        <p>1x VIP Ticket Beyoncé - 02/09/2022 - Coachella</p>
+      </div>
+      <div class="ticket-price-summary">
+        <p>$110.94</p>
+        <button class="renbo-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
