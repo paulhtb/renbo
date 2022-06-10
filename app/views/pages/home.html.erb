@@ -6,9 +6,7 @@
   <h2 class="home-heading">HOT EVENTS</h2>
   <div class="event-card-grid">
     <% @events.each do |event| %>
-      <%= link_to "/events/#{event.id}" do %>
-        <%= render "shared/card", event: event %>
-      <% end %>
+      <%= render "shared/card", event: event %>
     <% end %>
   </div>
   <h2 class="home-heading">BROWSE GENRES</h2>

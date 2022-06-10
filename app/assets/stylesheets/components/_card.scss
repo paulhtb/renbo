@@ -12,9 +12,6 @@
   justify-items: center;
 }
 
-
-
-
 .event-card {
   height: 330px;
   width: 350px;
@@ -47,6 +44,8 @@
 .event-location-tag-text {
   height: 20px;
   width: 100px;
+  padding: 10px;
+  width: initial;
   font-weight:bold;
   display: flex;
   border-radius: $border-radius;
@@ -54,8 +53,11 @@
   background-color: $renbo-lilac;
   color: $indigo;
   opacity: 0.9;
-  justify-content: space-around;
   align-items: center;
+
+    i {
+      margin-right: 5px;
+    }
 }
 
 .event-card-content {
@@ -87,8 +89,6 @@
 }
 
 
-
-
 .index-error {
   height: 80%;
   width: 49%;
@@ -105,11 +105,4 @@
   left: 386px;
   right: 0;
   bottom: 242px;
-}
-
-#tag-text-styling {
-  position: absolute;
-  top: 0px;
-  width: initial;
-  right: 0px;
 }
