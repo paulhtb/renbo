@@ -17,4 +17,14 @@ class Event < ApplicationRecord
   validates :description, presence: true
   # validates :event_url, presence: true
   # validates :address, presence: true
+
+  def all_tokens
+    tokens = []
+    tickets.each do |ticket|
+      ticket.tokens.each do |token|
+        tokens << token
+      end
+    end
+    return tokens
+  end
 end
