@@ -3,69 +3,46 @@
 <%# what is returned if there no results %>
 <div class="no-search-results">
     <div class="box-center">
-        <div grid-item>
-         <%= image_tag "search/sorrymsg.png", class: "index-error" %>
-         </div>
+      <div grid-item>
+        <%= image_tag "search/sorrymsg.png", class: "index-error" %>
+      </div>
       
     </div>
 </div>
 
 <% else %>
-
-<div class=".home-heading">
-<div>
-    <h3 id="index-heading"> Find your favorite events </h3>
-    </div>
-</div>
-
 <div class="wrapper">
 <button class="search-filter"> Filters ☰ </button> 
 </div>
 
-<% @events.each do |event| %>
-<div class="event-card-grid">
-<div class="grid-item"> 
-  <div class="event-card">
+<div class="home-heading">
+  <div>
+    <h3 id="index-heading"> Find your favorite events </h3>
+  </div>
+</div>
 
-   <%= image_tag event.image_url, class: "event-card-img"%>
+<div class="renbo-container">
+  <div class="event-card-grid">
+    <% @events.each do |event| %>
+      <div class="event-card">
+        <%= image_tag event.image_url, class: "event-card-img"%>
 
-  <div class="event-card-content">
-    <h4> <%= link_to event.name, event_path(event) %></h4>
-    <div style="color: #7B7B7B">
-      <p><%= event.start_time %> </p>
-      <div>
-        <div class="d-flex justify-content-center">
-          <div class="d-flex align-items-center">
-            <%= image_tag "card/ticket.png", class: "ticket-icon" %>
-            <p>100</p>
+        <div class="event-card-content">
+          <h4> <%= link_to event.name, event_path(event) %></h4>
+          <div style="color: #7B7B7B">
+            <p><%= event.start_time %> </p>
+            <div>
+              <div class="d-flex justify-content-center">
+                <div class="d-flex align-items-center">
+                  <%= image_tag "card/ticket.png", class: "ticket-icon" %>
+                  <p>100</p>
+                </div>
+              </div>
+            </div>  
           </div>
         </div>
-      </div>
-      </div>
-</div>
-      <%# logic for bookmark functionality %>
-       <% if current_user %>
-                <% if event.bookmarks.pluck(:user_id).include?(current_user.id) == true %>
-                  <% bookmark = event.bookmarks.find_by(user_id:current_user.id) %>
-                  <%=link_to bookmark_path(bookmark), method: :delete, remote: true do %>
-                   <%= image_tag "card/heart.png", class: "heart-icon" %>
-                  <% end %>
-
-                <% else %>
-                  <%= link_to event_bookmarks_path(event), method: :post, remote: true do %>
-                   <%= image_tag "card/heart.png", class: "heart-icon" %>
-                  <% end %>
-                <% end %>
-
-              <% else %>
-                <%= link_to new_user_session_path do %>
-                    <%= image_tag "card/heart.png", class: "heart-icon" %>i>
-                <% end %>
-              <% end %>
-    </div>
-    </div>
+        </div>
     <% end %>
   </div>
-  <% end %>
   </div>
-  </div>
+<% end %>

@@ -32,7 +32,6 @@ border-top:solid;
 border-left:solid;
 border-right:solid;
 border-bottom:solid;
-left:888px;
 
   &:hover {
     box-shadow: $button-shadow;
@@ -43,4 +42,6 @@ left:888px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 50px;
 }
