@@ -82,7 +82,7 @@ event4 = Event.create!(
   end_time: DateTime.new(2022, 8, 7, 23, 0, 0),
   description: "A group who creates a place where different cultures and personalities can come together to enjoy the beauty of life, particularly its nature, in a place where majestic trees watch out over a crystal clear lake to form the ultimate playground.",
   event_url: "https://garbiczfestival.com/",
-  image_url: "http://www.chriserlbeck.com/koken/storage/cache/images/001/187/garbicz-festival-2015DSC-4390-foto-chris-erlbeck,medium_large.1449562078.jpg"
+  image_url: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/57471772_2203336073084784_3816086289401249792_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEtxUEN3x4iHM7OIKbXrlB9BhP8IOf9WbUGE_wg5_1Zte6cEjV3FRoTAd0GvE3you0&_nc_ohc=2zbLcWiIm4cAX_yVE4L&_nc_ht=scontent-sea1-1.xx&oh=00_AT94VMBFoY4kWTpt9yRp6Gc8SZCEguNze9k_sQYawBOLSg&oe=62C75DF2"
 )
 
 # EVENT 5 = Fusion Festival Germany
