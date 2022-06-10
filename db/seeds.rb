@@ -31,7 +31,7 @@ event1 = Event.create!(
   category: "Festival",
   music_genre: "Electronic",
   country: "USA",
-  city: "Black Rock City",
+  city: "Black Rock",
   address: "Black Rock City, Nevada, USA",
   start_time: DateTime.new(2022, 8, 28, 13, 0, 0),
   end_time: DateTime.new(2022, 9, 5, 13, 0, 0),
