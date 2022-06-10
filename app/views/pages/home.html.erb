@@ -5,34 +5,36 @@
 <div class="renbo-container text-center">
   <h2 class="home-heading">HOT EVENTS</h2>
   <div class="event-card-grid">
-    <%= render "shared/card" %>
-    <%= render "shared/card" %>
-    <%= render "shared/card" %>
+    <% @events.each do |event| %>
+      <%= link_to "/events/#{event.id}" do %>
+        <%= render "shared/card", event: event %>
+      <% end %>
+    <% end %>
   </div>
   <h2 class="home-heading">BROWSE GENRES</h2>
   <div class="genres">
     <div class="genre">
-      <%= image_tag "genres/electronic", class:" genre-img" %>
+      <%= image_tag "genres/electronic.png", class:" genre-img" %>
       <h4>Electronic</h4>
     </div>
     <div class="genre">
-      <%= image_tag "genres/classical", class:" genre-img" %>
+      <%= image_tag "genres/classical.png", class:" genre-img" %>
       <h4>Classical</h4>
     </div>
     <div class="genre">
-      <%= image_tag "genres/hip-hop", class:" genre-img" %>
+      <%= image_tag "genres/hip-hop.png", class:" genre-img" %>
       <h4>Hip-Hop</h4>
     </div>
     <div class="genre">
-      <%= image_tag "genres/jazz", class:" genre-img" %>
+      <%= image_tag "genres/jazz.png", class:" genre-img" %>
       <h4>Jazz</h4>
     </div>
     <div class="genre">
-      <%= image_tag "genres/pop", class:" genre-img" %>
+      <%= image_tag "genres/pop.png", class:" genre-img" %>
       <h4>Pop</h4>
     </div>
     <div class="genre">
-      <%= image_tag "genres/rock", class:" genre-img" %>
+      <%= image_tag "genres/rock.png", class:" genre-img" %>
       <h4>Rock</h4>
     </div>
   </div>
@@ -44,6 +46,6 @@
   <h2 class="home-heading">CHANGE OF PLANS?</h2>
   <p class="home-body"> Fixed plans are a thing of the past, you now have the ability to sell your ticket and NFT to anyone across the world on our <strong> one of a kind </strong> marketplace.</P>
   <div class="justify-content-center d-flex">
-    <%= render "shared/table" %>
+    <%= render "shared/table", tokens: Token.last(10)%>
   </div>
 </div>

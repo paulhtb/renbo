@@ -15,7 +15,7 @@
 
 .ticket-banner-content {
   height: 420px;
-  width: auto;
+  width: 100%;
   padding: 20px;
   border-radius: 0 5px 5px 0;
   border: $border;
@@ -26,7 +26,6 @@
 }
 
 .ticket-banner-description {
-  width: 550px;
   border-top: 2px solid;
   border-bottom: 2px solid;
   padding: 20px;
