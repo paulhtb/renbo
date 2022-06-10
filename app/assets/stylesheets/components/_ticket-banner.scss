@@ -1,0 +1,55 @@
+.ticket-banner-heading {
+  position: absolute;
+  top: -20px;
+  left: 532px;
+}
+
+.ticket-banner {
+  height: 500px;
+  margin-top: 50px;
+  width: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.ticket-banner-content {
+  height: 420px;
+  width: auto;
+  padding: 20px;
+  border-radius: 0 5px 5px 0;
+  border: $border;
+  border-left: none;
+    p {
+      margin: 0;
+    }
+}
+
+.ticket-banner-description {
+  width: 550px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding: 20px;
+}
+
+.ticket-banner-details {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 2px solid;
+  padding: 20px;
+}
+
+// .ticket-banner-specifics {
+// }
+
+.ticket-banner-purchase {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+
+    h3 {
+      margin: 0;
+    }
+}
