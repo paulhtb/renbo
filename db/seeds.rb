@@ -108,8 +108,8 @@ event6 = Event.create!(
   country: "Portugal",
   city: "Boomland",
   address: "Boomland, Idanha-a-Nova, Portugal",
-  start_time: DateTime.new(2022, 7, 22, 12, 0, 0),
-  end_time: DateTime.new(2022, 7, 29, 23, 0, 0),
+  start_time: DateTime.new(2022, 7, 22, 10, 0, 0),
+  end_time: DateTime.new(2022, 7, 29, 22, 0, 0),
   description: "The Boom Festival is a biennial transformational, multidisciplinary, psychedelic and sustainable festival that happens every two years in Portugal. Editions are in sync with the full moon.",
   event_url: "https://boomfestival.org/boom2022/",
   image_url: "https://cdn.boomfestival.org/assets/files/5903/007.1280x614.webp"
@@ -128,6 +128,96 @@ event7 = Event.create!(
   description: "The Coachella Valley Music and Arts Festival is an annual music and arts festival held at the Empire Polo Club in Indio, California, in the Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Presents",
   event_url: "https://www.coachella.com/",
   image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
+)
+
+#EVENT 8 = Glastonbury Festival 2022
+event8 = Event.create!(
+  name: "Glastonbury Festival",
+  category: "Festival",
+  music_genre: "Pop",
+  country: "England",
+  city: "Pilton",
+  address: "Pilton, Somerset, England",
+  start_time: DateTime.new(2022, 4, 15, 23, 0, 0),
+  end_time: DateTime.new(2022, 5, 5, 23, 0, 0),
+  description: "Glastonbury Festival is a five-day festival of contemporary performing arts that takes place in Pilton, Somerset, in England. In addition to contemporary music, the festival hosts dance, comedy, theatre, circus, cabaret, and other arts.",
+  event_url: "https://www.glastonburyfestivals.co.uk/",
+  image_url: "https://www.attackmagazine.com/wp-content/uploads/2020/05/TELEMMGLPICT000220832930_transaRL1kC4G7DT9ZsZm6Pe3PehAFAI_f6ud569StXyOKH0-856x535.jpeg"
+)
+
+#EVENT 9 = Bass Coast Festival
+event9 = Event.create!(
+  name: "Bass Coast Festival",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "Canada",
+  city: "Logan Lake",
+  address: "Thompson-Nicola N, BC V0K 1W0, Canada",
+  start_time: DateTime.new(2022, 7, 8, 10, 0, 0),
+  end_time: DateTime.new(2022, 7, 12, 15, 0, 0),
+  description: "A DIY endeavour founded and run by women with no sponsors or corporate presence whatsoever, it is a unique fixture in a region already known for its plethora of festivals.",
+  event_url: "https://cdn.shopify.com/s/files/1/1477/7688/files/basscoast_2019_main_album_21_1900x.jpg",
+  image_url: "http://cdn.shopify.com/s/files/1/1477/7688/files/basscoast_home_share_1200x.jpg?v=6739143513087343727"
+)
+
+#EVENT 10 = Afrika Burn 2022
+event10 = Event.create!(
+  name: "Afrika Burn 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "South Africa",
+  city: "Tankwa Karoo",
+  address: "Tankwa Karoo",
+  start_time: DateTime.new(2023, 4, 25, 23, 0, 0),
+  end_time: DateTime.new(2023, 5, 4, 23, 0, 0),
+  description: "The spectacular result of the creative expression of participants who gather once a year in the Tankwa Karoo to create a temporary city of art, theme camps, costume, music and performance!",
+  event_url: "https://www.afrikaburn.com/",
+  image_url: "https://s3.amazonaws.com/fest-production/2016/09/13/01/29/55/559/BRLS_Burning%20Man_Jesse%20Rather_3%20(1).jpg"
+)
+
+#EVENT 11 = Lightning in a Bottle Festival 2023
+event11 = Event.create!(
+  name: "Lightning in a Bottle 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "USA",
+  city: "Bakersfield",
+  address: "13601 Ironbark Rd, Bakersfield, CA 93311",
+  start_time: DateTime.new(2023, 5, 25, 13, 0, 0),
+  end_time: DateTime.new(2023, 5, 30, 22, 0, 0),
+  description: "Lightning in a Bottle is an annual music festival in the Central Valley region of California first held in 2006. It is presented by The Do LaB, which seeks to promote sustainability, social cohesion, and creative expression",
+  event_url: "https://www.libfestival.org/homepage",
+  image_url: "https://media.timeout.com/images/105596607/750/422/image.jpg"
+)
+
+#EVENT 12 = Symbiosis Gathering 2022
+event12 = Event.create!(
+  name: "Symbiosis Gathering 2022",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "USA",
+  city: "Woodward Reservoir",
+  address: "Woodward Reservoir, California 95361, USA",
+  start_time: DateTime.new(2023, 4, 15, 23, 0, 0),
+  end_time: DateTime.new(2023, 4, 15, 23, 0, 0),
+  description: "Symbiosis intends to facilitate peak experiences through a synaesthesia of art, music, transformational learning, and sustainable living integrated into an unparalleled extravaganza of fun beneath the starry skies.",
+  event_url: "http://symbiosisgathering.com/",
+  image_url: "http://oregoneclipse2017.com/wp-content/uploads/2016/07/environments-1024x615.jpeg"
+)
+
+#EVENT 13 = Tribal Gathering 2023
+event13 = Event.create!(
+  name: "Tribal Gathering 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "Panama",
+  city: "Playa Chiquita",
+  address: "HP4R+X9Q, Playa Chiquita, Panama",
+  start_time: DateTime.new(2023, 3, 4, 23, 0, 0),
+  end_time: DateTime.new(2023, 3, 19, 23, 0, 0),
+  description: "Tribal Gathering is so much more than a music festival. Its 18 days on a Caribbean beach, around 200 workshops and presentations, hundreds of musicians from around the world, a learning journey from the ancient to the modern and one of the worlds most important indigenous cultural celebrations.",
+  event_url: "https://www.tribalgathering.com/",
+  image_url: "https://images.squarespace-cdn.com/content/v1/5ad8b225a9e0285e85188ca6/da511a1d-6687-4bb5-a7a1-d075a7598371/tribal-gathering-geoparadise-panama.jpg?format=1000w"
 )
 
 #---------------NFTs for event 1 // BURNING MAN 2022---------------
