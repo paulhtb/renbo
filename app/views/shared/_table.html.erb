@@ -8,7 +8,7 @@
     <p class="table-col"><strong>Status</strong></p>
     <p class="table-col"><strong>Time Left</strong></p>
     <p class="table-col"><strong>Price</strong></p>
-    <p class="table-col"></p>
+    <p class="table-col-price"></p>
   </div>
   <div class="table-tickets">
     <% tokens.each do |token| %>
@@ -19,8 +19,8 @@
         <p class="table-col"><%= token.ticket.title %></p>
         <p class="table-col"><%= token.status.capitalize %></p>
         <p class="table-col">1d:12h:25m:10s</p>
-        <p class="table-col"><strong>$<%= token.price %></strong></p>
-        <div class="table-col">
+        <p class="table-col"><strong>$<%= token.price.truncate %></strong></p>
+        <div class="table-col-price">
           <button class="renbo-btn">Add to cart</button>
         </div>
       </div>

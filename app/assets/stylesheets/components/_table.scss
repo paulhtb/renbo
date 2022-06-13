@@ -25,7 +25,7 @@
   .table-header {
     display: flex;
     align-items: center;
-    background-color: $grey;
+    background-color: $renbo-lilac;
     border-bottom: 1px solid $gray;
   }
 
@@ -42,7 +42,11 @@
   }
 
   .table-col {
-    width: 134px;
+    width: 130px;
+  }
+
+  .table-col-price {
+    width: 150px;
   }
 
   .table-header-empty {
