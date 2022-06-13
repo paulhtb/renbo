@@ -26,7 +26,7 @@
           <div class="d-flex justify-content-between">
             <h3><%= @ticket.no_available %> left</h3>
             <%= f.association :token,
-              collection: Token.where(ticket_id: @ticket.id),
+              collection: Token.where(ticket_id: @ticket.id).where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
               prompt: "Select your unique ticket",
               label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
               input_html: { class: "ticket-dropdown" },
@@ -50,27 +50,43 @@
       </div>
     </div>
     <div class="ticket-checkout-card">
-    <h3>My cart</h3>
-      <div class="ticket-checkout-dropdown">
-        <%= render "shared/ticket_dropdown", class: "pb-5" %>
-      </div>
-      <% unless @cart_items.empty? %>
-        <div class="ticket-checkout-summary">
-        <ul class="mini-cart-list">
-          <% @cart_items.each do |item| %>
-            <li class="mini-cart-item">
-              <%= @ticket.title %>
-              $<%= item.token.price %>
-              <%= link_to "X", cart_item_path(item), method: :delete %>
-            </li>
+      <h3>My cart</h3>
+      <% if @cart_items.empty? %>
+        <div class="ticket-checkout-dropdown">
+          <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
+            <div class="justify-content-between">
+              <%= f.association :token,
+                collection: Token.where(ticket_id: @ticket.id).where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
+                prompt: "Select your unique ticket",
+                label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
+                input_html: { class: "ticket-dropdown" },
+                label: false
+                %>
+                <div class="d-flex justify-content-end">
+                  <button class="renbo-btn">Add to cart</button>
+                </div>
+            </div>
           <% end %>
-        </ul>
         </div>
-      <div class="ticket-price-summary">
-        <%= @cart.total_price %>
-        <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
+        <% else %>
+          <div class="ticket-checkout-summary">
+            <ul class="mini-cart-list">
+              <% @cart_items.each do |item| %>
+                <li class="mini-cart-item">
+                  <div class="w-50 mb-2">
+                    <%= item.token.ticket.title %>
+                  </div>
+                  $<%= item.token.price %>
+                  <%= link_to "X", cart_item_path(item), method: :delete %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="ticket-price-summary">
+            <%= @cart.total_price %>
+            <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
+          </div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>

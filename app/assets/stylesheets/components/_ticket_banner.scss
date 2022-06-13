@@ -13,6 +13,15 @@
   align-items: center;
 }
 
+.ticket-banner-image {
+  height: 500px;
+  width: 500px;
+  border-radius: $border-radius;
+  object-fit: cover;
+  position: center;
+  min-width: 500px;
+}
+
 .ticket-banner-content {
   height: 420px;
   width: 100%;
@@ -26,7 +35,6 @@
 }
 
 .ticket-banner-description {
-  border-top: 2px solid;
   border-bottom: 2px solid;
   padding: 20px;
 }
@@ -38,9 +46,6 @@
   border-bottom: 2px solid;
   padding: 20px;
 }
-
-// .ticket-banner-specifics {
-// }
 
 .ticket-banner-purchase {
   display: flex;
