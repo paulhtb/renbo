@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   resources :events, only: %i[index show] do
     resources :bookmarks, only: %i[create]
-    resources :tickets, only: %i[show]
   end
+
+  resources :tickets, only: %i[show]
 
   resources :tokens, only: %i[index show update] do # index will be the 'marketplace', where the search logic happens
     resources :cart_items, only: %i[create]
