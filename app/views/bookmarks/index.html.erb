@@ -1,0 +1,24 @@
+  <div class="renbo-container">
+      <div class="home-heading">
+        <div>
+          <h3 id="index-heading"> Bookmarks </h3>
+        </div>
+      </div>
+    <% if @bookmarks.empty? %>
+  <%# what is returned if there no results %>
+      <div class="no-search-results">
+          <div class="box-center">
+            <div class="grid-item">
+              <%= image_tag "search/rainbow.gif", class: "index-error" %>
+            </div>
+          </div>
+      </div>
+  <%# If their search has results.... %>
+    <% else %>
+      <div class="event-card-grid">
+        <% @bookmarks.each do |bookmark| %>
+          <%= render "shared/card", bookmark: bookmark, event: bookmark.event %>
+        <% end %>
+      </div>
+    <%end%>
+  </div>

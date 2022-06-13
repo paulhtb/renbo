@@ -20,7 +20,7 @@ class BookmarksController < ApplicationController
     @event = @bookmark.event
     redirect_to "#{request.referer}#event-#{@event.id}"
   end
-  
+
   private
 
   def set_event
