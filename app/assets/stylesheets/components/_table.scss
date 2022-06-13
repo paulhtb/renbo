@@ -4,6 +4,7 @@
   height: 560px;
   width: 800px;
   box-shadow: $shadow;
+  overflow: hidden;
 
   p {
     margin: 0;
@@ -26,7 +27,7 @@
   .table-header {
     display: flex;
     align-items: center;
-    background-color: $grey;
+    background-color: $renbo-lilac;
     border-bottom: 1px solid $gray;
   }
 
@@ -35,6 +36,11 @@
     display: flex;
     align-items: center;
     border-bottom: $border;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
   }
 
   .table-tickets {
@@ -43,7 +49,11 @@
   }
 
   .table-col {
-    width: 134px;
+    width: 130px;
+  }
+
+  .table-col-price {
+    width: 150px;
   }
 
   .table-header-empty {
@@ -61,13 +71,29 @@
       object-fit: cover;
     }
   }
+
+}
+
+.table-bottom {
+  height: 60px;
+  border-top: 1px solid $gray;
+  background-color: $renbo-lilac;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-price-text {
+  text-align: right;
+  padding-right: 20px;
 }
 
 // Large table 1140 px
 
 .table-large {
   width: 1140px;
-  height: 600px;
+  height: 620px;
 }
 
 .table-col-lg {

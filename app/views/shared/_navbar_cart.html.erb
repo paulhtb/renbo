@@ -1,0 +1,30 @@
+<div class="cart-nav ticket-table d-none" data-navbar-cart-target="cart">
+  <div class="table-tickets-sm">
+    <% if current_user %>
+      <% current_user.carts.last.cart_items.each do |cart_item| %>
+        <div class="table-row-sm">
+          <div class="table-image-sm">
+            <img width="95%" height="95%" src="<%= cart_item.token.ticket.image_url %>" alt="">
+          </div>
+          <p class="table-col-sm"><%= cart_item.token.ticket.title %></p>
+          <p class="table-col-sm"><strong>$<%= cart_item.token.price.truncate %></strong></p>
+          <div class="table-col-price-sm">
+            <%= link_to cart_item_path(cart_item), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="table-bottom">
+    <p class="table-header-empty-sm"></p>
+    <p class="total-price-text table-col-lg"><strong>Total price:</strong></p>
+    <p class="table-total-price table-col-lg"><strong>$<%= current_user ? current_user.carts.last.total_price : 0 %></strong></p>
+    <p class="table-col-price-lg">
+      <%= link_to cart_path do %>
+        <button class="cart-nav-btn renbo-btn">Checkout</button>
+      <% end %>
+    </p>
+  </div>
+</div>
