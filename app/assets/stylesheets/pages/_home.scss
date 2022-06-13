@@ -8,6 +8,23 @@
   width: 150px;
   margin-bottom: 20px;
 }
+.grow { 
+  transition: all .2s ease-in-out; 
+  filter: brightness(0);
+  
+  }
+  
+  .grow:hover { 
+  transform: scale(1.1); 
+  outline-width: 1rem;
+  filter: brightness(1)
+  }
+
+  .grow h4 {
+    color: $indigo;
+  }
+
+
 
 .home-heading {
   display: inline-block;
@@ -15,7 +32,7 @@
   padding-bottom: 3px;
   margin-bottom: 40px;
   margin-top: 120px;
-
+  
 }
 
 .home-body {

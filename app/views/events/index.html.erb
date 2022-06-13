@@ -2,22 +2,33 @@
 
 
 <%# what is returned if there no results %>
+<div class="renbo-container">
+<h1> Sorry your search didn't return any results..</h1>
+<h2>but here are a couple up and coming NFTs you may be into: </h2>
 <div class="no-search-results">
     <div class="box-center">
       <div grid-item>
-        <%= image_tag "search/sorrymsg.png", class: "index-error" %>
+        <%= image_tag "search/rainbow.gif", class: "index-error" %>
       </div>
 
     </div>
 </div>
 
+</div>
 
-  <div class="event-card-grid">
-    <% @events.each do |event| %>
-      <%= render "shared/card", event: event %>
-    <% end %>
-  </div>
 
+
+
+
+
+
+
+
+
+
+
+
+<%# If their search has results.... %>
 <% else %>
 <div class="wrapper">
 <div class="dropdown filter">
