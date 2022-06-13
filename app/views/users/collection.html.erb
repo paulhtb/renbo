@@ -1,42 +1,20 @@
-<head>
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-</head>
-<body>
-<!-- Slider main container -->
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <% @tokens.each do |token|%>
-    <!-- Slides -->
-      <%=image_tag token.ticket.image_url%>
-      <div class="swiper-slide"><%=token.ticket.title%></div>
-    <%end%>
+<div class="renbo-container">
+  <div class="carousel2">
+    <div class="container2 margin-collection">
+      <% i = 1 %>
+    <% @tokens.last(3).each do |token|%>
+        <input type="radio" name="slider" id="item-<%= i %>" checked>
+        <% i += 1 %>
+      <% end %>
+      <div class="cards3">
+      <% i = 1 %>
+        <% @tokens.last(3).each do |token|%>
+          <label class="card2" for="item-<%= i %>" id="song-<%= i %>">
+            <%=image_tag token.ticket.image_url, alt: "song", class: "caro-image"%>
+          </label>
+          <% i += 1 %>
+        <%end%>
+      </div>
+    </div>
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 </div>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script>
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-</script>
-</body>
