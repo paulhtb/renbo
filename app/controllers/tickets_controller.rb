@@ -3,6 +3,6 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
     @event = @ticket.event
-    @tickets = @event.tickets
+    @tickets = @event.tickets.where.not(id: params[:id])
   end
 end
