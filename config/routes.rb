@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :cart_items, only: %i[destroy]
 
+  post '/tokens/add', to: 'cart_items#add'
+
   resources :users, only: %i[index] do
     get '/transactions', to: 'transactions#index'
   end
