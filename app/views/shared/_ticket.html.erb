@@ -3,7 +3,7 @@
     <div class="renbo-label vip-label"><strong>VIP</strong></div>
   <% end %>
   <div class="ticket-card-image">
-    <%= link_to event_ticket_path(ticket) do %>
+    <%= link_to ticket_path(ticket) do %>
       <img height="95%" width="95%" src="<%= ticket.image_url%>" alt="">
     <% end %>
   </div>
