@@ -4,4 +4,14 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :tokens, through: :cart_items
   has_many :tickets, through: :tokens
+
+  validates :status, presence: true
+
+  def checked_out
+    @status = "pending"
+  end
+
+  def paid
+    @status = "closed"
+  end
 end

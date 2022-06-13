@@ -3,6 +3,7 @@
   border-radius: $border-radius;
   height: 560px;
   width: 800px;
+  box-shadow: $shadow;
 
   p {
     margin: 0;
@@ -60,4 +61,19 @@
       object-fit: cover;
     }
   }
+}
+
+// Large table 1140 px
+
+.table-large {
+  width: 1140px;
+  height: 600px;
+}
+
+.table-col-lg {
+  width: 174px;
+}
+
+.table-col-price-lg {
+  width: 140px;
 }
