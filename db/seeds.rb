@@ -23,7 +23,7 @@ admin1 = User.create!(
   password: "123456"
 )
 
-#---------------EVENTS---------------
+#---------------FESTIVAL SEEDS---------------#
 
 # EVENT 1 = Burning Man 2022
 event1 = Event.create!(
@@ -40,23 +40,9 @@ event1 = Event.create!(
   image_url: "https://www.wallpaperflare.com/static/66/576/958/burning-man-love-desert-gay-wallpaper-preview.jpg"
 )
 
-# EVENT 2 = Elton John Final Tour
-event2 = Event.create!(
-  name: "Elton John Farewell Tour",
-  category: "Performance",
-  music_genre: "Rock",
-  country: "United Kingdom",
-  city: "London",
-  address: "The O2, Peninsula Square, London, United Kingdom",
-  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
-  event_url: "https://www.eltonjohn.com/",
-  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
-)
 
-# EVENT 3 = Montreux Jazz Festival
-event3 = Event.create!(
+# EVENT 2 = Montreux Jazz Festival
+event2 = Event.create!(
   name: "Montreux Jazz Festival",
   category: "Festival",
   music_genre: "Jazz",
@@ -70,8 +56,8 @@ event3 = Event.create!(
   image_url: "https://www.montreuxjazzfestival.com/wp-content/uploads/2020/01/MITP-1536x1536.jpg"
 )
 
-# EVENT 4 = Garbicz Festival
-event4 = Event.create!(
+# EVENT 3 = Garbicz Festival
+event3 = Event.create!(
   name: "Garbicz Festival 2022",
   category: "Festival",
   music_genre: "Electronic",
@@ -85,8 +71,8 @@ event4 = Event.create!(
   image_url: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/57471772_2203336073084784_3816086289401249792_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEtxUEN3x4iHM7OIKbXrlB9BhP8IOf9WbUGE_wg5_1Zte6cEjV3FRoTAd0GvE3you0&_nc_ohc=2zbLcWiIm4cAX_yVE4L&_nc_ht=scontent-sea1-1.xx&oh=00_AT94VMBFoY4kWTpt9yRp6Gc8SZCEguNze9k_sQYawBOLSg&oe=62C75DF2"
 )
 
-# EVENT 5 = Fusion Festival Germany
-event5 = Event.create!(
+# EVENT 4 = Fusion Festival Germany
+event4 = Event.create!(
   name: "Fusion Festival",
   category: "Festival",
   music_genre: "Electronic",
@@ -100,23 +86,23 @@ event5 = Event.create!(
   image_url: "https://www.maximaltrips.com/wp-content/uploads/2018/05/fusion-fest.jpg"
 )
 
-# EVENT 6 = Boom Festival 2022
-event6 = Event.create!(
+# EVENT 5 = Boom Festival 2022
+event5 = Event.create!(
   name: "Boom Festival 2022",
   category: "Festival",
   music_genre: "Electronic",
   country: "Portugal",
   city: "Boomland",
   address: "Boomland, Idanha-a-Nova, Portugal",
-  start_time: DateTime.new(2022, 7, 22, 12, 0, 0),
-  end_time: DateTime.new(2022, 7, 29, 23, 0, 0),
+  start_time: DateTime.new(2022, 7, 22, 10, 0, 0),
+  end_time: DateTime.new(2022, 7, 29, 22, 0, 0),
   description: "The Boom Festival is a biennial transformational, multidisciplinary, psychedelic and sustainable festival that happens every two years in Portugal. Editions are in sync with the full moon.",
   event_url: "https://boomfestival.org/boom2022/",
   image_url: "https://cdn.boomfestival.org/assets/files/5903/007.1280x614.webp"
 )
 
-# EVENT 7 = Coachella 2023
-event7 = Event.create!(
+# EVENT 6 = Coachella 2023
+event6 = Event.create!(
   name: "Coachella 2023",
   category: "Festival",
   music_genre: "Pop",
@@ -130,7 +116,200 @@ event7 = Event.create!(
   image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
 )
 
-#---------------NFTs for event 1 // BURNING MAN 2022---------------
+#EVENT 7 = Glastonbury Festival 2022
+event7 = Event.create!(
+  name: "Glastonbury Festival",
+  category: "Festival",
+  music_genre: "Pop",
+  country: "England",
+  city: "Pilton",
+  address: "Pilton, Somerset, England",
+  start_time: DateTime.new(2022, 4, 15, 23, 0, 0),
+  end_time: DateTime.new(2022, 5, 5, 23, 0, 0),
+  description: "Glastonbury Festival is a five-day festival of contemporary performing arts that takes place in Pilton, Somerset, in England. In addition to contemporary music, the festival hosts dance, comedy, theatre, circus, cabaret, and other arts.",
+  event_url: "https://www.glastonburyfestivals.co.uk/",
+  image_url: "https://www.attackmagazine.com/wp-content/uploads/2020/05/TELEMMGLPICT000220832930_transaRL1kC4G7DT9ZsZm6Pe3PehAFAI_f6ud569StXyOKH0-856x535.jpeg"
+)
+
+#EVENT 8 = Bass Coast Festival
+event8 = Event.create!(
+  name: "Bass Coast Festival",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "Canada",
+  city: "Logan Lake",
+  address: "Thompson-Nicola N, BC V0K 1W0, Canada",
+  start_time: DateTime.new(2022, 7, 8, 10, 0, 0),
+  end_time: DateTime.new(2022, 7, 12, 15, 0, 0),
+  description: "A DIY endeavour founded and run by women with no sponsors or corporate presence whatsoever, it is a unique fixture in a region already known for its plethora of festivals.",
+  event_url: "https://cdn.shopify.com/s/files/1/1477/7688/files/basscoast_2019_main_album_21_1900x.jpg",
+  image_url: "http://cdn.shopify.com/s/files/1/1477/7688/files/basscoast_home_share_1200x.jpg?v=6739143513087343727"
+)
+
+#EVENT 9 = Afrika Burn 2022
+event9 = Event.create!(
+  name: "Afrika Burn 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "South Africa",
+  city: "Tankwa Karoo",
+  address: "Tankwa Karoo",
+  start_time: DateTime.new(2023, 4, 25, 23, 0, 0),
+  end_time: DateTime.new(2023, 5, 4, 23, 0, 0),
+  description: "The spectacular result of the creative expression of participants who gather once a year in the Tankwa Karoo to create a temporary city of art, theme camps, costume, music and performance!",
+  event_url: "https://www.afrikaburn.com/",
+  image_url: "https://s3.amazonaws.com/fest-production/2016/09/13/01/29/55/559/BRLS_Burning%20Man_Jesse%20Rather_3%20(1).jpg"
+)
+
+#EVENT 10 = Lightning in a Bottle Festival 2023
+event10 = Event.create!(
+  name: "Lightning in a Bottle 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "USA",
+  city: "Bakersfield",
+  address: "13601 Ironbark Rd, Bakersfield, CA 93311",
+  start_time: DateTime.new(2023, 5, 25, 13, 0, 0),
+  end_time: DateTime.new(2023, 5, 30, 22, 0, 0),
+  description: "Lightning in a Bottle is an annual music festival in the Central Valley region of California first held in 2006. It is presented by The Do LaB, which seeks to promote sustainability, social cohesion, and creative expression",
+  event_url: "https://www.libfestival.org/homepage",
+  image_url: "https://media.timeout.com/images/105596607/750/422/image.jpg"
+)
+
+#EVENT 11 = Symbiosis Gathering 2022
+event11 = Event.create!(
+  name: "Symbiosis Gathering 2022",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "USA",
+  city: "Woodward Reservoir",
+  address: "Woodward Reservoir, California 95361, USA",
+  start_time: DateTime.new(2023, 4, 15, 23, 0, 0),
+  end_time: DateTime.new(2023, 4, 15, 23, 0, 0),
+  description: "Symbiosis intends to facilitate peak experiences through a synaesthesia of art, music, transformational learning, and sustainable living integrated into an unparalleled extravaganza of fun beneath the starry skies.",
+  event_url: "http://symbiosisgathering.com/",
+  image_url: "http://oregoneclipse2017.com/wp-content/uploads/2016/07/environments-1024x615.jpeg"
+)
+
+#EVENT 12 = Tribal Gathering 2023
+event12 = Event.create!(
+  name: "Tribal Gathering 2023",
+  category: "Festival",
+  music_genre: "Electronic",
+  country: "Panama",
+  city: "Playa Chiquita",
+  address: "HP4R+X9Q, Playa Chiquita, Panama",
+  start_time: DateTime.new(2023, 3, 4, 23, 0, 0),
+  end_time: DateTime.new(2023, 3, 19, 23, 0, 0),
+  description: "Tribal Gathering is so much more than a music festival. Its 18 days on a Caribbean beach, around 200 workshops and presentations, hundreds of musicians from around the world, a learning journey from the ancient to the modern and one of the worlds most important indigenous cultural celebrations.",
+  event_url: "https://www.tribalgathering.com/",
+  image_url: "https://images.squarespace-cdn.com/content/v1/5ad8b225a9e0285e85188ca6/da511a1d-6687-4bb5-a7a1-d075a7598371/tribal-gathering-geoparadise-panama.jpg?format=1000w"
+)
+
+#---------------PERFORMANCE SEEDS--------------#
+
+# EVENT 13 = Elton John Final Tour
+event13 = Event.create!(
+  name: "Elton John Farewell Tour",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "United Kingdom",
+  city: "London",
+  address: "The O2, Peninsula Square, London, United Kingdom",
+  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
+  event_url: "https://www.eltonjohn.com/",
+  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
+)
+
+# EVENT 14 = Khruangbin Tour
+event14 = Event.create!(
+  name: "Khruangbin",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "USA",
+  city: "Austin",
+  address: "9201 Circuit of the Americas Blvd, Del Valle, TX 78617, United States",
+  start_time: DateTime.new(2022, 9, 24, 20, 0, 0),
+  end_time: DateTime.new(2022, 9, 24, 22, 30, 0),
+  description: "Khruangbin is an American musical trio from Houston, Texas. The band comprises Laura Lee on bass, Mark Speer on guitar, and Donald 'DJ' Johnson Jr. on drums. The band is known for blending global music influences, such as classic soul, dub, rock and psychedelia.",
+  event_url: "https://www.khruangbin.com/",
+  image_url: "https://www.ricedesignalliance.org/sites/default/files/images/main/blog/khruangbin_group1.jpg"
+)
+
+# Event 15 = Fleetwood Mac Performance
+event15 = Event.create!(
+  name: "Fleetwood Mac",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "USA",
+  city: "New York City",
+  address: "125 E 11th St, New York, NY 10003, United States",
+  start_time: DateTime.new(2022, 6, 18, 19, 0, 0),
+  end_time: DateTime.new(2022, 6, 18, 21, 0, 0),
+  description: "Fleetwood Mac are a British-American rock band, formed in London in 1967. Fleetwood Mac were founded by guitarist Peter Green, drummer Mick Fleetwood and guitarist Jeremy Spencer, before bassist John McVie joined the line-up for their self-titled debut album. Danny Kirwan joined as a third guitarist in 1968.",
+  event_url: "https://www.fleetwoodmac.com/",
+  image_url: "https://www.rollingstone.com/wp-content/uploads/2018/06/fleetwood-mac-new-lineup-first-picture-2018-77e1da91-6a10-46d3-8b48-a203c150139c.jpg?resize=1800,1200&w=1200"
+)
+
+# event16 = Event.create!(
+#   name:
+#   category:
+#   music_genre:
+#   country:
+#   city:
+#   address:
+#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+#   description:
+#   event_url:
+#   image_url:
+# )
+
+# event17 = Event.create!(
+#   name:
+#   category:
+#   music_genre:
+#   country:
+#   city:
+#   address:
+#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+#   description:
+#   event_url:
+#   image_url:
+# )
+
+# event18 = Event.create!(
+#   name:
+#   category:
+#   music_genre:
+#   country:
+#   city:
+#   address:
+#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+#   description:
+#   event_url:
+#   image_url:
+# )
+
+# event19 = Event.create!(
+#   name:
+#   category:
+#   music_genre:
+#   country:
+#   city:
+#   address:
+#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+#   description:
+#   event_url:
+#   image_url:
+# )
+
+#----------------NFTs for event 1 // BURNING MAN 2022----------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
