@@ -5,7 +5,7 @@ class TicketsController < ApplicationController
     @event = @ticket.event
     @tickets = @event.tickets.where.not(id: params[:id])
     @cart_item = CartItem.new
-    @cart_items = CartItem.all
     @cart = current_user.carts.last
+    @cart_items = @cart.cart_items
   end
 end
