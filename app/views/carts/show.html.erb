@@ -1,8 +1,5 @@
 <div class="renbo-container">
-
-<h2> Checkout </h2>
-
-<div class="table-large ticket-table">
+<div class="table-large ticket-table cart-margin-top">
   <div class="table-title table-top">
     <h5>My Cart</h5>
   </div>
@@ -33,6 +30,19 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="table-bottom">
+    <p class="table-header-empty"></p>
+    <p class="table-col-lg"><strong></strong></p>
+    <p class="table-col-lg"><strong></strong></p>
+    <p class="table-col-lg"><strong></strong></p>
+    <p class="total-price-text table-col-lg"><strong>Total price:</strong></p>
+    <p class="table-total-price table-col-lg"><strong>$<%= @cart.total_price %></strong></p>
+    <p class="table-col-price-lg">
+      <%= link_to root_path do %>
+        <button class="renbo-btn">Checkout</button>
+      <% end %>
+    </p>
   </div>
 </div>
 
