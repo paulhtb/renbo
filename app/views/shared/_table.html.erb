@@ -21,7 +21,9 @@
         <p class="table-col">1d:12h:25m:10s</p>
         <p class="table-col"><strong>$<%= token.price %></strong></p>
         <div class="table-col">
-          <button class="renbo-btn">Add to cart</button>
+          <%= link_to token_cart_items_path(token), :method => :post do %>
+            <button class="renbo-btn">Add to cart</button>
+          <% end %>
         </div>
       </div>
     <% end %>

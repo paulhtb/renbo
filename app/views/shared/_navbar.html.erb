@@ -13,7 +13,9 @@
     <div class="nav-end">
       <button class="renbo-btn">Marketplace</button>
 
-      <button><i class="fas fa-shopping-cart"></i></button>
+      <%= link_to cart_path do %>
+        <button><i class="fas fa-shopping-cart"></i></button>
+      <% end %>
 
       <div class="dropdown">
         <button class="dropbtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars"></i></button>

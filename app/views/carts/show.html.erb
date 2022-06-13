@@ -1,0 +1,39 @@
+<div class="renbo-container">
+
+<h2> Checkout </h2>
+
+<div class="table-large ticket-table">
+  <div class="table-title table-top">
+    <h5>My Cart</h5>
+  </div>
+  <div class="table-header table-top">
+    <p class="table-header-empty"></p>
+    <p class="table-col-lg"><strong>Ticket Details</strong></p>
+    <p class="table-col-lg"><strong>Status</strong></p>
+    <p class="table-col-lg"><strong>Event</strong></p>
+    <p class="table-col-lg"><strong>Dates</strong></p>
+    <p class="table-col-lg"><strong>Price</strong></p>
+    <p class="table-col-price-lg"></p>
+  </div>
+  <div class="table-tickets">
+    <% @cart.cart_items.each do |cart_item| %>
+      <div class="table-row">
+        <div class="table-image">
+          <img width="95%" height="95%" src="<%= cart_item.token.ticket.image_url %>" alt="">
+        </div>
+        <p class="table-col-lg"><%= cart_item.token.ticket.title %></p>
+        <p class="table-col-lg"><%= cart_item.token.status.capitalize %></p>
+        <p class="table-col-lg"><%= cart_item.token.ticket.event.name %></p>
+        <p class="table-col-lg"><%= cart_item.token.ticket.event.start_time.strftime("%d %B") %> - <%= cart_item.token.ticket.event.end_time .strftime("%d %B") %></p>
+        <p class="table-col-lg"><strong>$<%= cart_item.token.price.truncate %></strong></p>
+        <div class="table-col-price-lg">
+          <%= link_to cart_item_path(cart_item), method: :delete do %>
+               <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</div>

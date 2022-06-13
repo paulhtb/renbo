@@ -48,4 +48,6 @@
   <div class="justify-content-center d-flex">
     <%= render "shared/table", tokens: Token.last(10)%>
   </div>
+
+  <%= link_to "signout", destroy_user_session_path, method: :delete %>
 </div>
