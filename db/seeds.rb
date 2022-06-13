@@ -116,7 +116,7 @@ event6 = Event.create!(
   image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
 )
 
-#EVENT 7 = Glastonbury Festival 2022
+# EVENT 7 = Glastonbury Festival 2022
 event7 = Event.create!(
   name: "Glastonbury Festival",
   category: "Festival",
@@ -131,7 +131,7 @@ event7 = Event.create!(
   image_url: "https://www.attackmagazine.com/wp-content/uploads/2020/05/TELEMMGLPICT000220832930_transaRL1kC4G7DT9ZsZm6Pe3PehAFAI_f6ud569StXyOKH0-856x535.jpeg"
 )
 
-#EVENT 8 = Bass Coast Festival
+# EVENT 8 = Bass Coast Festival
 event8 = Event.create!(
   name: "Bass Coast Festival",
   category: "Festival",
@@ -146,7 +146,7 @@ event8 = Event.create!(
   image_url: "http://cdn.shopify.com/s/files/1/1477/7688/files/basscoast_home_share_1200x.jpg?v=6739143513087343727"
 )
 
-#EVENT 9 = Afrika Burn 2022
+# EVENT 9 = Afrika Burn 2022
 event9 = Event.create!(
   name: "Afrika Burn 2023",
   category: "Festival",
@@ -161,7 +161,7 @@ event9 = Event.create!(
   image_url: "https://s3.amazonaws.com/fest-production/2016/09/13/01/29/55/559/BRLS_Burning%20Man_Jesse%20Rather_3%20(1).jpg"
 )
 
-#EVENT 10 = Lightning in a Bottle Festival 2023
+# EVENT 10 = Lightning in a Bottle Festival 2023
 event10 = Event.create!(
   name: "Lightning in a Bottle 2023",
   category: "Festival",
@@ -176,7 +176,7 @@ event10 = Event.create!(
   image_url: "https://media.timeout.com/images/105596607/750/422/image.jpg"
 )
 
-#EVENT 11 = Symbiosis Gathering 2022
+# EVENT 11 = Symbiosis Gathering 2022
 event11 = Event.create!(
   name: "Symbiosis Gathering 2022",
   category: "Festival",
@@ -191,7 +191,7 @@ event11 = Event.create!(
   image_url: "http://oregoneclipse2017.com/wp-content/uploads/2016/07/environments-1024x615.jpeg"
 )
 
-#EVENT 12 = Tribal Gathering 2023
+# EVENT 12 = Tribal Gathering 2023
 event12 = Event.create!(
   name: "Tribal Gathering 2023",
   category: "Festival",
@@ -208,8 +208,53 @@ event12 = Event.create!(
 
 #---------------PERFORMANCE SEEDS--------------#
 
-# EVENT 13 = Elton John Final Tour
+# EVENT 13 = Kaytranada
 event13 = Event.create!(
+  name: "Kaytranada",
+  category: "Performance",
+  music_genre: "Hip Hop",
+  country: "France",
+  city: "Paris",
+  address: "1 Carr de Longchamp, 75016 Paris, France",
+  start_time: DateTime.new(2022, 6, 24, 22, 0, 0),
+  end_time: DateTime.new(2022, 6, 25, 1, 0, 0),
+  description: "Louis Kevin Celestin, known professionally as Kaytranada, is a Haitian-Canadian record producer and DJ. Celestin rose to prominence after releasing a series of mixtapes, remixes, and original music projects beginning in 2010 under the alias Kaytradamus",
+  event_url: "https://www.kaytranada.com/",
+  image_url: "https://suaramerdekajkt.com/wp-content/uploads/2021/04/kaytranada-2-sonar-bcn-2019-768x450.jpg"
+)
+
+# EVENT 14 = Alt-J
+event14 = Event.create!(
+  name: "alt-J",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "Netherlands",
+  city: "Amsterdam",
+  address: "Johan Cruijff Boulevard 590, 1101 DS Amsterdam, Netherlands",
+  start_time: DateTime.new(2022, 11, 24, 20, 0, 0),
+  end_time: DateTime.new(2022, 11, 24, 23, 0, 0),
+  description: "Alt-J are an English indie rock band formed in 2007 in Leeds, by Joe Newman, Thom Sonny Green, Gus Unger-Hamilton and Gwilym Sainsbury. Their debut album An Awesome Wave was released in May 2012 in Europe, and in September 2012 in the United States, and won the 2012 British Mercury Prize.",
+  event_url: "https://www.altjband.com/",
+  image_url: "https://dynamicmedia.livenationinternational.com/Media/m/j/p/c591bf8e-093b-4577-8c1c-d2b4e69469be.jpg"
+)
+
+# EVENT 15 = Lane 8
+event15 = Event.create!(
+  name: "Lane 8",
+  category: "Performance",
+  music_genre: "Electronic",
+  country: "Canada",
+  city: "Vancouver",
+  address: "610 Pipeline Rd, Vancouver, BC V6G 3E2, Canada",
+  start_time: DateTime.new(2022, 9, 2, 20, 0, 0),
+  end_time: DateTime.new(2022, 9, 2, 23, 0, 0),
+  description: "Daniel Goldstein, better known by his stage name Lane 8, is an American musician, electronic music producer, and DJ. Currently residing in Denver, Colorado, he is signed to English deep house label Anjunadeep.",
+  event_url: "https://lane8music.com/",
+  image_url: "https://weraveyou.com/wp-content/uploads/2021/01/Lane-8.jpg"
+)
+
+# EVENT 16 = Elton John Final Tour
+event16 = Event.create!(
   name: "Elton John Farewell Tour",
   category: "Performance",
   music_genre: "Rock",
@@ -223,8 +268,8 @@ event13 = Event.create!(
   image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
 )
 
-# EVENT 14 = Khruangbin Tour
-event14 = Event.create!(
+# EVENT 17 = Khruangbin Tour
+event17 = Event.create!(
   name: "Khruangbin",
   category: "Performance",
   music_genre: "Rock",
@@ -238,8 +283,8 @@ event14 = Event.create!(
   image_url: "https://www.ricedesignalliance.org/sites/default/files/images/main/blog/khruangbin_group1.jpg"
 )
 
-# Event 15 = Fleetwood Mac Performance
-event15 = Event.create!(
+# Event 18 = Fleetwood Mac Performance
+event18 = Event.create!(
   name: "Fleetwood Mac",
   category: "Performance",
   music_genre: "Rock",
@@ -252,62 +297,6 @@ event15 = Event.create!(
   event_url: "https://www.fleetwoodmac.com/",
   image_url: "https://www.rollingstone.com/wp-content/uploads/2018/06/fleetwood-mac-new-lineup-first-picture-2018-77e1da91-6a10-46d3-8b48-a203c150139c.jpg?resize=1800,1200&w=1200"
 )
-
-# event16 = Event.create!(
-#   name:
-#   category:
-#   music_genre:
-#   country:
-#   city:
-#   address:
-#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-#   description:
-#   event_url:
-#   image_url:
-# )
-
-# event17 = Event.create!(
-#   name:
-#   category:
-#   music_genre:
-#   country:
-#   city:
-#   address:
-#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-#   description:
-#   event_url:
-#   image_url:
-# )
-
-# event18 = Event.create!(
-#   name:
-#   category:
-#   music_genre:
-#   country:
-#   city:
-#   address:
-#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-#   description:
-#   event_url:
-#   image_url:
-# )
-
-# event19 = Event.create!(
-#   name:
-#   category:
-#   music_genre:
-#   country:
-#   city:
-#   address:
-#   start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-#   end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-#   description:
-#   event_url:
-#   image_url:
-# )
 
 #----------------NFTs for event 1 // BURNING MAN 2022----------------
 
