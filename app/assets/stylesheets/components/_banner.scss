@@ -1,5 +1,6 @@
 .banner {
-  height: 800px;
+  max-height: 800px;
+  height: 100vh;
   width: auto;
   background-image: asset-url('banner.jpg'),
   linear-gradient(
