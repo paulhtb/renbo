@@ -23,7 +23,7 @@
       </div>
       <div class="ticket-banner-purchase">
         <h3><%= @ticket.no_available %> left</h3>
-        <p>INSERT DROPDOWN</p>
+        <%= render "shared/ticket_dropdown" %>
         <button class="renbo-btn">Add to Cart</button>
       </div>
     </div>
@@ -40,7 +40,9 @@
       </div>
     </div>
     <div class="ticket-checkout-card">
-      <p>INSERT DROPDDOWN</p>
+      <div class="ticket-checkout-dropdown">
+        <%= render "shared/ticket_dropdown", class: "pb-5" %>
+      </div>
       <div class="ticket-checkout-summary">
         <p>1x VIP Ticket Beyoncé - 02/09/2022 - Coachella</p>
       </div>
