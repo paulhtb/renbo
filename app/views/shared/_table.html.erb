@@ -12,7 +12,7 @@
   </div>
   <div class="table-tickets">
     <% tokens.each do |token| %>
-      <div class="table-row">
+      <div class="table-row" id="token-<%= token.id %>">
         <div class="table-image">
           <img width="95%" height="95%" src="<%= token.ticket.image_url %>" alt="">
         </div>
@@ -22,7 +22,7 @@
         <p class="table-col"><strong>$<%= token.price %></strong></p>
         <div class="table-col">
           <%= link_to token_cart_items_path(token), :method => :post do %>
-            <button class="renbo-btn">Add to cart</button>
+            <button class="renbo-btn">Place a bid</button>
           <% end %>
         </div>
       </div>
