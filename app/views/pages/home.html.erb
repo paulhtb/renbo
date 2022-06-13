@@ -2,14 +2,19 @@
   <%= image_tag "banner-logo.png", class:"banner-img" %>
   <%= render "shared/searchbar", parent: "searchbar-banner" %>
 </div>
+
 <div class="renbo-container text-center">
+
   <h2 class="home-heading">HOT EVENTS</h2>
+
   <div class="event-card-grid">
     <% @events.each do |event| %>
       <%= render "shared/card", event: event %>
     <% end %>
   </div>
+
   <h2 class="home-heading">BROWSE GENRES</h2>
+
   <div class="genres">
     <div class="genre grow">
       <%= image_tag "genres/electronic.png", class:" genre-img" %>
@@ -36,20 +41,20 @@
       <h4 class="grow"><a class="grow" href="https://www.renbo.io/events?q=rock">Rock </a></h4>
     </div>
   </div>
-  <div container="renbo-container">>
+
+  <div>
     <h2 class="home-heading">A TICKET TO REMEMBER</h2>
     <p class="home-body">Free yourself from material posessions and get yourself a lasting memory which can also be a longterm investment. Your memories can now be stored forever in your new Renbo NFT Wallet.</p>
   </div>
-  <div>
-  </div>
 
-<%= render "shared/infinite_carousel" %>
+  <%= render "shared/infinite_carousel" %>
     <%# <%= image_tag "search/tickets.png" %>
-  </div>
-  <h2 class="home-heading">CHANGE OF PLANS?</h2>
-  <p class="home-body"> Fixed plans are a thing of the past, you now have the ability to sell your ticket and NFT to anyone across the world on our <strong> one of a kind </strong> marketplace.</P>
-  <div class="justify-content-center d-flex">
-    <%= render "shared/table", tokens: Token.last(10)%>
+  <div>
+    <h2 class="home-heading">CHANGE OF PLANS?</h2>
+    <p class="home-body"> Fixed plans are a thing of the past, you now have the ability to sell your ticket and NFT to anyone across the world on our <strong> one of a kind </strong> marketplace.</P>
+    <div class="justify-content-center d-flex">
+      <%= render "shared/table", tokens: Token.last(10)%>
+    </div>
   </div>
 
   <%= link_to "signout", destroy_user_session_path, method: :delete %>
