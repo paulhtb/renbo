@@ -4,5 +4,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @event = @ticket.event
     @tickets = @event.tickets.where.not(id: params[:id])
+    @cart_item = CartItem.new
   end
 end
