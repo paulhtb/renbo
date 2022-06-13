@@ -1,19 +1,85 @@
 <% if @events.empty? %>
 
+
 <%# what is returned if there no results %>
+<div class="renbo-container">
+<h1> Sorry your search didn't return any results..</h1>
+<h2>but here are a couple up and coming NFTs you may be into: </h2>
 <div class="no-search-results">
     <div class="box-center">
       <div grid-item>
-        <%= image_tag "search/sorrymsg.png", class: "index-error" %>
+        <%= image_tag "search/rainbow.gif", class: "index-error" %>
       </div>
 
     </div>
 </div>
 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# If their search has results.... %>
 <% else %>
 <div class="wrapper">
-<button class="search-filter"> Filters ☰ </button>
+<div class="dropdown filter">
+  <button class="btn search-filter dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter
+  </button>
+  <ul class="dropdown-menu filter-dropdown" aria-labelledby="dropdownMenuButton1" id="filterdropdownmenu">
+  <li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=electronic"  class="filter_links">
+Electronic
+</a>
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=Classical"  class="filter_links"> Classical </a>
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=Hip-Hop"  class="filter_links">
+Hip-Hop
+</a>
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=Jazz"  class="filter_links"> Jazz </a>
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=pop"  class="filter_links"> Pop </a>
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=rock"  class="filter_links"> Rock </a>
+
+</li>
+
+<li class="filter_line_items">
+<a href="https://www.renbo.io/events?q=festivals" class="filter_links"> Other </a>
+</li>
+    
+</ul>
+
 </div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
 
 
 

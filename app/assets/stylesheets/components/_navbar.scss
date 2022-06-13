@@ -1,7 +1,7 @@
 // NAVBAR GENERAL
 
 .navbar-lewagon {
-  overflow: hidden;
+  // overflow: hidden;
   background: white;
   justify-content: space-between;
   box-shadow: #{$shadow};
@@ -19,6 +19,10 @@
   > * {
     margin: #{$margin-h-small};
   }
+}
+
+.nav-cart {
+  position: relative;
 }
 
 // SEARCHBAR
@@ -47,30 +51,6 @@
   .mglass {
     margin: 0 5px;
   }
-}
-
-
-
-// DROPDOWN
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
 }
 
 // HEHE

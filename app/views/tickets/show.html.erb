@@ -1,4 +1,4 @@
-<div class="renbo-container">
+<div class="renbo-container" data-controller="ticket-dropdown">
   <div class="ticket-banner">
     <h1 class="ticket-banner-heading"><%= @ticket.title %></h1>
     <div class="ticket-banner-image" style="background-image: url(<%= @ticket.image_url %>)"></div>
@@ -23,7 +23,11 @@
       </div>
       <div class="ticket-banner-purchase">
         <h3><%= @ticket.no_available %> left</h3>
-        <p>INSERT DROPDOWN</p>
+        <%= simple_form_for @cart_item, remote: true do |f| %>
+          <%= f.association :tokens, label_method: :token %>
+          <%= f.submit, class: "renbo-btn" %>
+        <% end %>
+        <%= render "shared/ticket_dropdown" %>
         <button class="renbo-btn">Add to Cart</button>
       </div>
     </div>
@@ -40,7 +44,9 @@
       </div>
     </div>
     <div class="ticket-checkout-card">
-      <p>INSERT DROPDDOWN</p>
+      <div class="ticket-checkout-dropdown">
+        <%= render "shared/ticket_dropdown", class: "pb-5" %>
+      </div>
       <div class="ticket-checkout-summary">
         <p>1x VIP Ticket Beyoncé - 02/09/2022 - Coachella</p>
       </div>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # We might want to relocate the marketplace to a subdomain such as "https://marketplace.domain.com/" later
 
-  resources :cart, only: %i[show] do
+  resource :cart, only: %i[show] do
     resources :transactions, only: %i[create]
   end
 

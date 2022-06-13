@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :transactions, through: :carts
   has_many :tokens
   has_many :bookmarks
+
+  def new_cart
+    if carts.empty? || carts.last.status != "active"
+      @cart = Cart.new(status: "active")
+      @cart.user = self
+      @cart.save
+    end
+  end
 end
