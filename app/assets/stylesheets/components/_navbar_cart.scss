@@ -1,0 +1,49 @@
+.cart-nav {
+  width: 320px;
+  height: 210px;
+  position: absolute;
+  bottom: -235px;
+  right: 0px;
+  z-index: 1000;
+  background-color: $white;
+}
+
+.table-tickets-sm {
+  height: 150px;
+  overflow: scroll;
+}
+
+.table-row-sm {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: $border;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+
+  p {
+    font-size: 12px;
+    word-wrap: break-word;
+  }
+}
+
+.table-col-sm {
+  width: 80px;
+}
+
+.table-image-sm {
+  width: 80px;
+  height: 80px;
+}
+
+
+.table-col-price-sm {
+  width: 40px;
+}
+
+
+.cart-nav-btn {
+  margin-right: 20px;
+}

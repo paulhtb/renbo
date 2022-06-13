@@ -36,6 +36,11 @@
     display: flex;
     align-items: center;
     border-bottom: $border;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
   }
 
   .table-tickets {

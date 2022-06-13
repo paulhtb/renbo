@@ -22,13 +22,19 @@
         <p>For: 1 day only</p>
       </div>
       <div class="ticket-banner-purchase">
-        <h3><%= @ticket.no_available %> left</h3>
-        <%= simple_form_for @cart_item, remote: true do |f| %>
-          <%= f.association :tokens, label_method: :token %>
-          <%= f.submit, class: "renbo-btn" %>
+        <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
+          <div class="d-flex justify-content-between">
+            <h3><%= @ticket.no_available %> left</h3>
+            <%= f.association :token,
+              collection: Token.where(ticket_id: @ticket.id),
+              prompt: "Select your unique ticket",
+              label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
+              input_html: { class: "ticket-dropdown" },
+              label: false
+              %>
+              <button class="renbo-btn">Add to cart</button>
+          </div>
         <% end %>
-        <%= render "shared/ticket_dropdown" %>
-        <button class="renbo-btn">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -44,15 +50,26 @@
       </div>
     </div>
     <div class="ticket-checkout-card">
+    <h3>My cart</h3>
       <div class="ticket-checkout-dropdown">
         <%= render "shared/ticket_dropdown", class: "pb-5" %>
       </div>
-      <div class="ticket-checkout-summary">
-        <p>1x VIP Ticket Beyoncé - 02/09/2022 - Coachella</p>
-      </div>
+      <% unless @cart_items.empty? %>
+        <div class="ticket-checkout-summary">
+        <ul class="mini-cart-list">
+          <% @cart_items.each do |item| %>
+            <li class="mini-cart-item">
+              <%= @ticket.title %>
+              $<%= item.token.price %>
+              <%= link_to "X", cart_item_path(item), method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+        </div>
       <div class="ticket-price-summary">
-        <p>$110.94</p>
-        <button class="renbo-btn">Checkout</button>
+        <%= @cart.total_price %>
+        <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
+      <% end %>
       </div>
     </div>
   </div>

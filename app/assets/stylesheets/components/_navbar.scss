@@ -3,6 +3,9 @@
 .navbar-lewagon {
   // overflow: hidden;
   background: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
   justify-content: space-between;
   box-shadow: #{$shadow};
 }
@@ -19,6 +22,10 @@
   > * {
     margin: #{$margin-h-small};
   }
+}
+
+.nav-cart {
+  position: relative;
 }
 
 // SEARCHBAR
@@ -55,3 +62,18 @@
   font-weight: bold;
   margin: 0;
 }
+
+
+// NAVBAR TRANSPARENT
+
+// .navbar-transparent {
+//   background: none;
+
+//   #searchbar-nav {
+//     visibility: hidden;
+//   }
+
+//   i {
+//     color: white;
+//   }
+// }
