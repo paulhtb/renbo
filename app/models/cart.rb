@@ -14,4 +14,14 @@ class Cart < ApplicationRecord
   def paid
     @status = "closed"
   end
+
+  def total_price
+    total = 0.00
+
+    cart_items&.each do |item|
+      total += item.token.price
+    end
+
+    return total
+  end
 end
