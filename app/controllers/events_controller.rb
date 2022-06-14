@@ -2,11 +2,15 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    if params["q"]
-      redirect_to root_path unless params["q"] =~ /(\w|\d)+/
+    if params['q'].present?
       @events = Event.extended_search(params['q'])
+    else
+      @events = Event.all
     end
-    # else redirect_to root_path
+
+    @events = @events.category_search(params['category']) if params['category'].present?
+    @events = @events.genre_search(params['genre']) if params['genre'].present?
+    @events = @events.city_search(params['city']) if params['city'].present?
   end
 
   def show
