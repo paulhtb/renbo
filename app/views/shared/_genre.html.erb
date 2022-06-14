@@ -1,6 +1,6 @@
-  <div class="genre grow">
+  <div class="genre grow home-element">
     <%= link_to events_path(q: "", genre: genre) do %>
       <%= image_tag "genres/#{genre}.png", class:"genre-img" %>
-      <h4><%= genre %></h4>
+      <h4 class="text-center"><%= genre.capitalize %></h4>
     <% end %>
   </div>
