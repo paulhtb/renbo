@@ -303,7 +303,17 @@ event18 = Event.create!(
 ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Yvonne Force Villareal",
-  description: "What is reality?",
+  description: "VIP Burning Man
+  • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees
+  • A private mid-jet from the LA area to Truckee; From there a King Air or similar to Burning Man
+  • Daily water supply & RV purge, maid-service cleaning, linen cleaning, and on-site concierge
+  • Selection of costumes
+  • Segway & burner transportation rentals
+  • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc.
+  • Stocking of food, drinks technical supply, electricity, water, internet, participation in the camp art project
+  • Musical entertainment in the camp
+  • Cooks & fresh buffets every meal (tailored to tastes); Snacks 24/7; Open Bar 24/7
+  • Security & technician guard 24/7
   original_price: 1500,
   no_available: 3,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
