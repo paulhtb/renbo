@@ -25,12 +25,18 @@ border-radius: $border-radius;
 
   &:hover {
     box-shadow: $button-shadow;
+    text-decoration: none;
+    color: $indigo;
   }
 
   a {
     text-decoration: none;
     color: $indigo;
   }
+}
+
+.sign-in-btn {
+  margin: 10px auto;
 }
 
 .wrapper {
