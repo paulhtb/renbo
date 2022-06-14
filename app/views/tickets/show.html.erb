@@ -28,7 +28,7 @@
               <% if current_user %>
                 <button class="renbo-btn">Add to cart</button>
               <% else %>
-                <button class="renbo-btn">Sign in</button>
+                <button class="renbo-btn-sec"><%= link_to "Sign in", new_user_session_path %></button>
               <% end %>
           </div>
         <% end %>
