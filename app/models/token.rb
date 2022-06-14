@@ -2,8 +2,9 @@ class Token < ApplicationRecord
   has_many :cart_item
   belongs_to :ticket
   belongs_to :user
+  before_create :set_sequence
 
-  before_create do
+  def set_sequence
     self.sequence_num = Token.where(ticket_id: self.ticket_id).count + 1
   end
 

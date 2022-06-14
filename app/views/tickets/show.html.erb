@@ -21,7 +21,7 @@
             <%= f.association :token,
               collection: Token.where(ticket_id: @ticket.id),
               prompt: "Select your unique ticket",
-              label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
+              label_method: lambda { |token| "#{token.ticket.title} #{token.sequence_num} / #{token.ticket.tokens.count}"},
               input_html: { class: "ticket-dropdown" },
               label: false
               %>
