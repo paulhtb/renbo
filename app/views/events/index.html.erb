@@ -8,25 +8,24 @@
   <div class="filter-box">
     <form action="/events">
       <input type="hidden" name="q" value="<%= params['q']%>" />
-      <select name="category" id="filter-category">
+      <select name="category" id="filter-category" onchange="this.form.submit()">
         <option value="">Category ...</option>
         <% Event.categories.each do |category| %>
         <option value="<%= category %>" <%= "selected" if params['category'] == category %>><%= category %></option>
         <% end %>
       </select>
-      <select name="genre" id="filter-genre">
+      <select name="genre" id="filter-genre" onchange="this.form.submit()">
         <option value="">Music genre ...</option>
-        <% Event.music_genre.each do |genre| %>
+        <% Event.genres.each do |genre| %>
         <option value="<%= genre %>" <%= "selected" if params['genre'] == genre %>><%= genre %></option>
         <% end %>
       </select>
-      <select name="city" id="filter-city">
+      <select name="city" id="filter-city" onchange="this.form.submit()">
         <option value="">City...</option>
         <% Event.all_cities.each do |city| %>
         <option value="<%= city %>" <%= "selected" if params['city'] == city %>><%= city %></option>
         <% end %>
       </select>
-      <button class="renbo-btn">Apply filters</button>
     </form>
   </div>
 </div>
