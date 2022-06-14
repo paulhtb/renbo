@@ -45,8 +45,15 @@ i {
   }
 }
 
-
 h5 {
   font-size: 20px;
   color: $indigo;
+}
+
+.index-heading {
+  display: inline-block;
+  border-bottom: solid 3px;
+  padding-bottom: 3px;
+  margin-bottom: 40px;
+  margin-top: 50px;
 }

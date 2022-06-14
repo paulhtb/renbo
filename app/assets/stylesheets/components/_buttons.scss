@@ -16,7 +16,7 @@
   border-radius: $border-radius;
 }
 
-.search-filter {
+.renbo-btn-sec {
 width: 130px;
 height: 45px;
 color: $indigo;
@@ -25,6 +25,11 @@ border-radius: $border-radius;
 
   &:hover {
     box-shadow: $button-shadow;
+  }
+
+  a {
+    text-decoration: none;
+    color: $indigo;
   }
 }
 
