@@ -2,10 +2,9 @@
   max-height: 800px;
   height: 100vh;
   width: auto;
-  background-image: asset-url('banner.jpg'),
-  linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.25)), asset-url('banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -16,10 +15,11 @@
 }
 
 #searchbar-banner {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(0,0,0,0.3);
   padding: 10px;
-  width: 25vw;
+  width: 50vw;
+  max-width: 600px;
   display: flex;
   align-items: center;
   border-radius: $border-radius;
@@ -34,6 +34,10 @@
     &:focus {
       outline: none;
     }
+  }
+
+  input {
+    background: transparent;
   }
 
   .mglass {
