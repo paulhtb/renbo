@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  mattr_accessor :categories, :music_genre
+  mattr_accessor :categories, :genres
 
   has_many_attached :images
   has_many :bookmarks
@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   has_many :tokens, through: :tickets
 
   @@categories = ['Festival', 'Performance', 'Concert']
-  @@music_genre = ['Electronic', 'Classical', 'Hip-hop', 'Rock', 'Pop', 'Jazz']
+  @@genres = ['Electronic', 'Classical', 'Hip-hop', 'Rock', 'Pop', 'Jazz']
 
   validates :name, presence: true
   validates :category, presence: true
@@ -32,7 +32,7 @@ class Event < ApplicationRecord
 
   pg_search_scope :genre_search,	# Music Genre
                   against: %i[music_genre],
-                  using: { tsearch: { prefix: true }, trigram: { word_similarity: true } }
+                  using: { tsearch: { prefix: true } }
 
   pg_search_scope :city_search,	# Music Genre
                   against: %i[city],
