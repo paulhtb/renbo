@@ -4,25 +4,24 @@
       <h4 class="renbo">Renbo</h4>
     <% end %>
 
-    <%= render "shared/searchbar", parent: "searchbar-nav" %>
+    <%= render "shared/searchbar", hidden: ("invisible" if action_name =="home"), parent: "searchbar-nav" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="nav-end">
-
-
-      <%= link_to "Collection", "#" %>
-      <%= link_to "Bookmarks", "bookmarks"  %>
-      <%= link_to "Sign in" %>
+      <% if current_user %>
+        <%= link_to "Collection", user_collection_path(current_user) %>
+        <%= link_to "Bookmarks", bookmarks_path  %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
       <%= link_to cart_path do %>
         <button><i class="fas fa-shopping-cart"></i></button>
       <% end %>
       <button class="renbo-btn">Marketplace</button>
-      <%# <div class="dropdown">
-        <button class="dropbtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars"></i></button>
-      </div> %>
     </div>
   </div>
 </div>

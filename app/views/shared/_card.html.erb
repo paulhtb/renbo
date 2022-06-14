@@ -2,7 +2,9 @@
   <div class="event-location-tag">
     <p class="event-location-tag-text"><i class="fas fa-location-arrow location-icon"></i><%= event.city %></p>
   </div>
-  <%= image_tag event.image_url, class: "event-card-img" %>
+  <%= link_to "/events/#{event.id}", class: "event-card-img" do %>
+    <%= image_tag event.image_url, class: "event-card-img" %>
+  <% end %>
   <div class="event-card-content">
     <h4><%= link_to event.name, "/events/#{event.id}" %></h4>
     <div style="color: #7B7B7B">
@@ -11,7 +13,7 @@
         <div class="d-flex justify-content-center">
           <div class="d-flex align-items-center">
             <%= image_tag "card/ticket.png", class: "ticket-icon" %>
-            <p>100</p><%= event.all_tokens.count %>
+            <%= event.tokens.count %>
           </div>
         </div>
       </div>
