@@ -1,11 +1,11 @@
-<div class="renbo-container">
-  <div class="dropdown filter">
-    <button class="btn search-filter dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="renbo-container filter-container" data-controller="filter-dropdown">
+  <div class="filter" data-action="click->filter-dropdown#display">
+    <button class="renbo-btn-sec dropdown-toggle" type="button">
       Filter
     </button>
   </div>
 
-  <div class="filter-box">
+  <div class="filter-box d-none" data-filter-dropdown-target="dropdown">
     <form action="/events">
       <input type="hidden" name="q" value="<%= params['q']%>" />
       <select name="category" id="filter-category" onchange="this.form.submit()">
@@ -49,7 +49,7 @@
 <div class="renbo-container">
   <div class="home-heading">
     <div>
-      <h3 id="index-heading"> Upcoming Events in 2022 </h3>
+      <h3 id="index-heading">Upcoming Events<%= " for #{params['q']}" if params['q'].present? %></h3>
     </div>
   </div>
   <div class="event-card-grid">
@@ -57,6 +57,22 @@
       <%= render "shared/card", event: event %>
     <% end %>
   </div>
+
+  <% if params['genre'].present? || params['city'].present? %>
+    <div class="home-heading">
+      <div>
+        <h3 id="index-heading">Other similar events</h3>
+      </div>
+    </div>
+    <div class="event-card-grid">
+      <% @other_events.genre_search(params['genre']).first(3).each do |event| %>
+        <%= render "shared/card", event: event %>
+      <% end %>
+      <% @other_events.city_search(params['city']).first(3).each do |event| %>
+        <%= render "shared/card", event: event %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <% end %>

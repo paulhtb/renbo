@@ -8,9 +8,12 @@ class EventsController < ApplicationController
       @events = Event.all
     end
 
+
     @events = @events.category_search(params['category']) if params['category'].present?
     @events = @events.genre_search(params['genre']) if params['genre'].present?
     @events = @events.city_search(params['city']) if params['city'].present?
+
+    @other_events = Event.where.not(id: @events.pluck(:id))
   end
 
   def show
