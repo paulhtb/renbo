@@ -1,20 +1,20 @@
 <div class="renbo-container">
-  <div class="carousel2">
-    <div class="container2 margin-collection">
+  <%# <div class="carousel2"> %>
+    <div class="margin-collection">
       <% i = 1 %>
     <% @tokens.last(3).each do |token|%>
         <input type="radio" name="slider" id="item-<%= i %>" checked>
         <% i += 1 %>
       <% end %>
-      <div class="cards3">
+      <div class="cards3 collection-wrapper">
       <% i = 1 %>
         <% @tokens.last(3).each do |token|%>
           <label class="card2" for="item-<%= i %>" id="song-<%= i %>">
-            <%=image_tag token.ticket.image_url, alt: "song", class: "caro-image"%>
+            <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "caro-image  card-collection"%>
           </label>
           <% i += 1 %>
         <%end%>
       </div>
     </div>
-  </div>
+  <%# </div> %>
 </div>

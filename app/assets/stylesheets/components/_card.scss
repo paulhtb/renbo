@@ -90,14 +90,16 @@
 
 
 .index-error {
-  height: 80%;
-  width: 49%;
-  position: relative;
-  left: 318px;
-  right: 0;
-  bottom: -40px;
-  z-index: -1;
-  top:-99px;
+  display: flex;
+  justify-content: center;
+  // height: 80%;
+  // width: 49%;
+  // position: relative;
+  // left: 318px;
+  // right: 0;
+  // bottom: -40px;
+  // z-index: -1;
+  // top:-99px;
 }
 
 .error {

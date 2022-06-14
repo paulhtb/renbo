@@ -1,4 +1,4 @@
-<form action="/events" id="<%= parent %>">
+<form action="/events" id="<%= parent %>" class="<%= hidden %>">
   <input type="search" id="query" name="q" placeholder="Search for an event, a city, an artist ..." value="<%= params['q'] || "" %>">
   <button type="submit"><i class="fas fa-search mglass"></i></button>
 </form>
