@@ -11,17 +11,31 @@
     </button>
 
     <div class="nav-end">
-      <% if current_user %>
-        <%= link_to "Collection", user_collection_path(current_user) %>
-        <%= link_to "Bookmarks", bookmarks_path  %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-      <% end %>
+      <button class="renbo-btn">Marketplace</button>
       <%= link_to cart_path do %>
         <button><i class="fas fa-shopping-cart"></i></button>
       <% end %>
-      <button class="renbo-btn">Marketplace</button>
+      <% if current_user %>
+        <div class="dropdown">
+          <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag current_user.avatar, class: "avatar" %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><%= link_to "Collection", user_collection_path(current_user) %></li>
+            <li><%= link_to "Bookmarks", bookmarks_path  %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="dropdown">
+          <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

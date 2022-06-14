@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :tokens
   has_many :bookmarks
 
+  has_one_attached :avatar
+
   def new_cart
     if carts.empty? || carts.last.status != "active"
       @cart = Cart.new(status: "active")
