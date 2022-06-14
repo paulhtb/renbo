@@ -1,7 +1,12 @@
 <div class="navbar-transparent navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container">
     <%= link_to "/", class: "navbar-brand" do %>
+    <div class="nav-start">
       <%= image_tag "renbologo" %>
+      <h4 class="nav-logo-heading">Renbo</h4>
+      <%# <h4 class="nav-logo-heading-p1">Ren</h4>
+      <h4 class="nav-logo-heading-p2">bo</h4> %>
+    </div>
     <% end %>
 
     <%= render "shared/searchbar", hidden: ("invisible" if action_name =="home"), parent: "searchbar-nav" %>
@@ -20,10 +25,10 @@
           <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <%= image_tag current_user.avatar, class: "avatar" %>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><%= link_to "Collection", user_collection_path(current_user) %></li>
-            <li><%= link_to "Bookmarks", bookmarks_path  %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
+            <li class="nav-drop-item"><%= link_to "Collection", user_collection_path(current_user) %></li>
+            <li class="nav-drop-item"><%= link_to "Bookmarks", bookmarks_path  %></li>
+            <li class="nav-drop-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       <% else %>
