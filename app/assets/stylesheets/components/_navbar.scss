@@ -19,7 +19,8 @@
   align-items: center;
 
   > * {
-    margin: #{$margin-h-small};
+    margin-left: 15px;
+    // margin: #{$margin-h-small};
   }
 }
 
@@ -27,11 +28,18 @@
   position: relative;
 }
 
+// NAV CONTAINER
+.navbar {
+  .container {
+    width: 1140px;
+    padding: 0;
+  }
+}
 // SEARCHBAR
 
 #searchbar-nav {
   padding: 10px;
-  width: 35vw;
+  width: 30vw;
   border-radius: $border-radius;
   border: 1px solid rgba(0,0,0,0.3);
 
