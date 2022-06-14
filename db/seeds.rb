@@ -313,7 +313,7 @@ ticket_tier1 = Ticket.new(
   • Stocking of food, drinks technical supply, electricity, water, internet, participation in the camp art project
   • Musical entertainment in the camp
   • Cooks & fresh buffets every meal (tailored to tastes); Snacks 24/7; Open Bar 24/7
-  • Security & technician guard 24/7
+  • Security & technician guard 24/7",
   original_price: 1500,
   no_available: 3,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
