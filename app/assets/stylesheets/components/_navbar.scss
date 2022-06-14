@@ -19,8 +19,7 @@
   align-items: center;
 
   > * {
-    margin-left: 15px;
-    // margin: #{$margin-h-small};
+    margin: #{$margin-h-small};
   }
 }
 
@@ -39,7 +38,7 @@
 
 #searchbar-nav {
   padding: 10px;
-  width: 30vw;
+  width: 45vw;
   border-radius: $border-radius;
   border: 1px solid rgba(0,0,0,0.3);
 
