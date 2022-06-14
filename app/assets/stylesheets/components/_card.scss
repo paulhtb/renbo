@@ -19,12 +19,14 @@
   border-radius: $border-radius;
   position: relative;
   box-shadow: rgba(236, 230, 255, 1) 0px 2px 5px -1px, rgba(236, 230, 255, 0.9) 0px 1px 3px -1px;
+
   * {
     margin: 0;
   }
-   &:hover {
-    box-shadow: rgba(86, 40, 245, 0.25) 0px 2px 5px -1px, rgba(86, 40, 245, 0.3) 0px 1px 3px -1px;
-   }
+
+  &:hover {
+    box-shadow: $shadow;
+  }
 }
 
 .event-card-img {

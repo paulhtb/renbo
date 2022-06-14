@@ -5,31 +5,46 @@
 
 <div class="renbo-container text-center">
 
-  <h2 class="home-heading">HOT EVENTS</h2>
-  <div class="event-card-grid">
-    <% @events.each do |event| %>
-      <%= render "shared/card", event: event %>
-    <% end %>
+  <div class="hot-border">
+    <h2 class="home-heading">HOT EVENTS</h2>
+    <div class="event-card-grid">
+      <% @events.each do |event| %>
+        <%= render "shared/card", event: event %>
+      <% end %>
+    </div>
   </div>
 
-  <h2 class="home-heading">BROWSE GENRES</h2>
-  <div class="genres">
-    <%= render "shared/genre", genre:"electronic" %>
-    <%= render "shared/genre", genre:"classical" %>
-    <%= render "shared/genre", genre:"jazz" %>
-    <%= render "shared/genre", genre:"hip-hop" %>
-    <%= render "shared/genre", genre:"pop" %>
-    <%= render "shared/genre", genre:"rock" %>
+
+  <div class="home-section">
+    <h2 class="home-heading">BROWSE GENRES</h2>
+    <div class="genres">
+      <%= render "shared/genre", genre:"electronic" %>
+      <%= render "shared/genre", genre:"classical" %>
+      <%= render "shared/genre", genre:"jazz" %>
+      <%= render "shared/genre", genre:"hip-hop" %>
+      <%= render "shared/genre", genre:"pop" %>
+      <%= render "shared/genre", genre:"rock" %>
+    </div>
   </div>
 
-  <h2 class="home-heading">A TICKET TO REMEMBER</h2>
-  <p class="home-body"> Free yourself from material posessions and get yourself a lasting memory which can also be a longterm investment. Your memories can now be stored forever in your new Renbo NFT Wallet.</p>
+  <div class="home-section">
+    <div class="home-element">
+      <h2 class="home-element-heading">A TICKET TO REMEMBER</h2>
+      <h4> Free yourself from material posessions and get yourself a lasting memory which can also be a longterm investment. Your <span class="text-purple bold">memories can now be stored forever</span> in your Renbo Collection.</h4>
+    </div>
+    <div class="home-element home-carousel">
+      <%= render "shared/infinite_carousel" %>
+    </div>
+  </div>
 
-  <%= render "shared/infinite_carousel" %>
 
-  <h2 class="home-heading">CHANGE OF PLANS?</h2>
-  <p class="home-body"> Fixed plans are a thing of the past, you now have the ability to sell your ticket and NFT to anyone across the world on our <strong> one of a kind </strong> marketplace.</P>
-  <div class="justify-content-center d-flex">
-    <%= render "shared/table", tokens: Token.last(10)%>
+  <div class="home-section">
+    <div class="home-element-60">
+      <%= image_tag "home/table_fix.png", width: "70%", height: "100%"  %>
+    </div>
+    <div class="home-element-40">
+      <h2 class="home-element-heading">CHANGE OF PLANS?</h2>
+      <h4> Fixed plans are a thing of the past, you now have the ability to <span class="text-purple bold">sell your ticket and NFT to anyone across the world</span> on our one of a kind marketplace.</h4>
+    </div>
   </div>
 </div>
