@@ -18,6 +18,11 @@ class Event < ApplicationRecord
   # validates :event_url, presence: true
   # validates :address, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :extended_search,	# Name, Category, Music Genre, Artist, Country, City, Description
+                  against: %i[name category music_genre country city description],
+                  using: { tsearch: { prefix: true }, trigram: { word_similarity: true } }
+
   def all_tokens
     tokens = []
     tickets.each do |ticket|
