@@ -3,6 +3,10 @@ class Token < ApplicationRecord
   belongs_to :ticket
   belongs_to :user
 
+  before_create do
+    self.sequence_num = Token.where(ticket_id: self.ticket_id).count + 1
+  end
+
   validates :status, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
   # validates :NFT_id, presence: true
