@@ -6,7 +6,7 @@
     <%# INSERT SEATING LOGIC HERE %>
     <% @ticket.tokens.each do |token| %>
       <% if token.status == "new" %>
-        <li><a class="dropdown-item" href="#"><%= @ticket.title %> #<%= token.id %></a></li>
+        <li><a class="dropdown-item" href="#"><%= @ticket.title %> #<%= token.sequence_num %></a></li>
       <% end %>
     <% end %>
   </ul>

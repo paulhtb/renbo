@@ -199,8 +199,8 @@ event12 = Event.create!(
   country: "Panama",
   city: "Playa Chiquita",
   address: "HP4R+X9Q, Playa Chiquita, Panama",
-  start_time: DateTime.new(2023, 3, 4, 23, 0, 0),
-  end_time: DateTime.new(2023, 3, 19, 23, 0, 0),
+  start_time: DateTime.new(2022, 3, 4, 23, 0, 0),
+  end_time: DateTime.new(2022, 3, 19, 23, 0, 0),
   description: "Tribal Gathering is so much more than a music festival. Its 18 days on a Caribbean beach, around 200 workshops and presentations, hundreds of musicians from around the world, a learning journey from the ancient to the modern and one of the worlds most important indigenous cultural celebrations.",
   event_url: "https://www.tribalgathering.com/",
   image_url: "https://images.squarespace-cdn.com/content/v1/5ad8b225a9e0285e85188ca6/da511a1d-6687-4bb5-a7a1-d075a7598371/tribal-gathering-geoparadise-panama.jpg?format=1000w"
@@ -304,16 +304,8 @@ ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Yvonne Force Villareal",
   description: "VIP Burning Man
-  • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees
-  • A private mid-jet from the LA area to Truckee; From there a King Air or similar to Burning Man
-  • Daily water supply & RV purge, maid-service cleaning, linen cleaning, and on-site concierge
-  • Selection of costumes
-  • Segway & burner transportation rentals
-  • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc.
-  • Stocking of food, drinks technical supply, electricity, water, internet, participation in the camp art project
-  • Musical entertainment in the camp
-  • Cooks & fresh buffets every meal (tailored to tastes); Snacks 24/7; Open Bar 24/7
-  • Security & technician guard 24/7",
+  • A private mid-jet from the LA area to to Burning Man
+  • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees. • Daily water supply ",
   original_price: 1500,
   no_available: 3,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
@@ -325,7 +317,7 @@ ticket_tier1.save!
 ticket_tier2 = Ticket.new(
   tier: 2,
   title: "Man on Fire",
-  description: "From flames to ashes, nothing lasts forever. Time exists only in the present.",
+  description: "• Musical entertainment in the camp • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc. • Daily water supply",
   original_price: 1000,
   no_available: 10,
   image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c01661ac-198f-4af1-91c8-57af093c29e0/d4mwnlj-48be98f1-5a86-47df-901b-f136779feef1.jpg/v1/fill/w_838,h_954,q_70,strp/the_burning_man_by_innerdvisions_d4mwnlj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MwMTY2MWFjLTE5OGYtNGFmMS05MWM4LTU3YWYwOTNjMjllMFwvZDRtd25sai00OGJlOThmMS01YTg2LTQ3ZGYtOTAxYi1mMTM2Nzc5ZmVlZjEuanBnIiwiaGVpZ2h0IjoiPD0xMDI0Iiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC9jMDE2NjFhYy0xOThmLTRhZjEtOTFjOC01N2FmMDkzYzI5ZTBcL2lubmVyZHZpc2lvbnMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.xl9zzEyuvlQUj2crCwED5dsQrSXSgUK2tqGGYiLFpwM"
@@ -337,7 +329,8 @@ ticket_tier2.save!
 ticket_tier3 = Ticket.new(
   tier: 3,
   title: "Network of Dreamers",
-  description: "Find comfort in self-reliance, and equal comfort in solidarity.",
+  description: "• Selection of costumes
+  • Segway & burner transportation rentals. • Daily water supply.",
   original_price: 750,
   no_available: 25,
   image_url: "https://www.artmajeur.com/medias/hd/y/o/youlianarkevitch-iodko/artwork/8951191_burning-man.jpg"
