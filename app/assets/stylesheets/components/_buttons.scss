@@ -17,21 +17,11 @@
 }
 
 .search-filter {
-display:flex;
-justify-content: center;
-align-items: center;
 width: 130px;
-height: 35px;
-left: 654px;
-top: 99px;
+height: 45px;
 color: $indigo;
-border-color: $indigo;
-text-align: center;
+border: solid $indigo;
 border-radius: $border-radius;
-border-top:solid;
-border-left:solid;
-border-right:solid;
-border-bottom:solid;
 
   &:hover {
     box-shadow: $button-shadow;
