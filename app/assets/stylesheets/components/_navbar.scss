@@ -13,6 +13,15 @@
   width: 40px;
 }
 
+.nav-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    margin: #{$margin-h-small};
+  }
+}
 .nav-end {
   display: flex;
   justify-content: center;
@@ -62,12 +71,59 @@
   }
 }
 
-// HEHE
-.renbo {
+.nav-logo-heading {
   color: $indigo;
   font-weight: bold;
   margin: 0;
+  // background: linear-gradient(90deg, rgba(86,40,245,1) 0%, rgba(255,191,49,1) 100%);
+  // background-clip: text;
+  // -webkit-background-clip: text;
+  // -moz-background-clip: text;
+  // -moz-text-fill-color: transparent;
+  // -webkit-text-fill-color: transparent;
 }
+
+
+// DROPDOWN
+.nav-dropdown {
+  text-align: center;
+  border: 1px solid $lilac;
+}
+
+.nav-drop-item {
+  padding: 0 5px;
+  margin-bottom: 7px;
+  display: inline-block;
+  border-bottom: 2px solid white;
+
+  &:hover {
+    border-bottom: 2px solid $indigo;
+    // background-color: $lilac;
+  }
+}
+
+.nav-drop-item-text {
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+// SPLIT HEADING COLOUR
+
+// .nav-logo-heading-p1 {
+//   color: $indigo;
+//   font-weight: bold;
+//   margin: 0;
+//   border-bottom: 4px solid $indigo;
+// }
+
+// .nav-logo-heading-p2 {
+//   color: $yellow;
+//   font-weight: bold;
+//   margin: 0;
+//   border-bottom: 4px solid $yellow;
+// }
 
 
 // NAVBAR TRANSPARENT
