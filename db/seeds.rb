@@ -210,7 +210,7 @@ event12 = Event.create!(
 
 # EVENT 13 = Kaytranada
 event13 = Event.create!(
-  name: "Kaytranada",
+  name: "Kaytranada @ La Clairière",
   category: "Performance",
   music_genre: "Hip Hop",
   country: "France",
@@ -225,7 +225,7 @@ event13 = Event.create!(
 
 # EVENT 14 = Alt-J
 event14 = Event.create!(
-  name: "alt-J",
+  name: "alt-J @ AFAS Live",
   category: "Performance",
   music_genre: "Rock",
   country: "Netherlands",
@@ -240,7 +240,7 @@ event14 = Event.create!(
 
 # EVENT 15 = Lane 8
 event15 = Event.create!(
-  name: "Lane 8",
+  name: "Lane 8 @ Stanley Park Pavilion",
   category: "Performance",
   music_genre: "Electronic",
   country: "Canada",
@@ -255,7 +255,7 @@ event15 = Event.create!(
 
 # EVENT 16 = Elton John Final Tour
 event16 = Event.create!(
-  name: "Elton John Farewell Tour",
+  name: "Elton John Farewell Tour @ O2",
   category: "Performance",
   music_genre: "Rock",
   country: "United Kingdom",
@@ -270,7 +270,7 @@ event16 = Event.create!(
 
 # EVENT 17 = Khruangbin Tour
 event17 = Event.create!(
-  name: "Khruangbin",
+  name: "Khruangbin @ Germania Insurance Amphitheater",
   category: "Performance",
   music_genre: "Rock",
   country: "USA",
@@ -285,7 +285,7 @@ event17 = Event.create!(
 
 # Event 18 = Fleetwood Mac Performance
 event18 = Event.create!(
-  name: "Fleetwood Mac",
+  name: "Fleetwood Mac @ Webster Hall",
   category: "Performance",
   music_genre: "Rock",
   country: "USA",
@@ -308,6 +308,7 @@ ticket_tier1 = Ticket.new(
   • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees. • Daily water supply ",
   original_price: 1500,
   no_available: 3,
+  VIP: true,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
 )
 
@@ -320,6 +321,7 @@ ticket_tier2 = Ticket.new(
   description: "• Musical entertainment in the camp • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc. • Daily water supply",
   original_price: 1000,
   no_available: 10,
+  VIP: false,
   image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c01661ac-198f-4af1-91c8-57af093c29e0/d4mwnlj-48be98f1-5a86-47df-901b-f136779feef1.jpg/v1/fill/w_838,h_954,q_70,strp/the_burning_man_by_innerdvisions_d4mwnlj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MwMTY2MWFjLTE5OGYtNGFmMS05MWM4LTU3YWYwOTNjMjllMFwvZDRtd25sai00OGJlOThmMS01YTg2LTQ3ZGYtOTAxYi1mMTM2Nzc5ZmVlZjEuanBnIiwiaGVpZ2h0IjoiPD0xMDI0Iiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC9jMDE2NjFhYy0xOThmLTRhZjEtOTFjOC01N2FmMDkzYzI5ZTBcL2lubmVyZHZpc2lvbnMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.xl9zzEyuvlQUj2crCwED5dsQrSXSgUK2tqGGYiLFpwM"
 )
 
@@ -333,6 +335,7 @@ ticket_tier3 = Ticket.new(
   • Segway & burner transportation rentals. • Daily water supply.",
   original_price: 750,
   no_available: 25,
+  VIP: false,
   image_url: "https://www.artmajeur.com/medias/hd/y/o/youlianarkevitch-iodko/artwork/8951191_burning-man.jpg"
 )
 
@@ -385,9 +388,10 @@ end
 ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Candle in The Wind",
-  description: "What would the world be without Sir Elton John",
+  description: "VIP status gets you and invitation to join Sir Elton John at a private group dinner, and backstage access to the show.",
   original_price: 300,
   no_available: 5,
+  VIP: true,
   image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
 )
 
@@ -397,9 +401,10 @@ ticket_tier1.save!
 ticket_tier2 = Ticket.new(
   tier: 2,
   title: "Rocket Man",
-  description: "A memory of Elton Johns final tour",
+  description: "This NFT comes complete with access to a private piano show in the hotel of Elton John",
   original_price: 200,
   no_available: 20,
+  VIP: false,
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
@@ -409,10 +414,11 @@ ticket_tier2.save!
 ticket_tier3 = Ticket.new(
   tier: 3,
   title: "Don't Let the Sun Go Down on Me",
-  description: "A collection of all famous magazine covers with Sir Elton John",
+  description: "You will recieve a signed copy of a rare Elton John record.",
   original_price: 100,
   no_available: 50,
-  image_url: "https://images.saatchiart.com/saatchi/1862146/art/8768316/7831798-OGFWMIXX-7.jpg"
+  VIP: false,
+  image_url: "https://i.pinimg.com/originals/8d/95/48/8d9548ae614a5ca476763ee4c90b3df4.jpg"
 )
 
 ticket_tier3.event = event2
