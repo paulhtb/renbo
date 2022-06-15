@@ -12,6 +12,9 @@
         <% @tokens.shuffle.last(3).each do |token|%>
           <label class="card2" for="item-<%= i %>" id="song-<%= i %>">
             <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "caro-image  card-collection nft-collection"%>
+            <div>
+              <%= token.ticket.title %> #<%= token.sequence_num %> - <%= token.ticket.event.name %>
+            </div>
 
             <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "shadow-img2  card-collection"%>
           </label>
