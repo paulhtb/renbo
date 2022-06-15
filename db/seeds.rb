@@ -2,6 +2,9 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 puts "Cleaning up database..."
+Transaction.destroy_all
+CartItem.destroy_all
+Cart.destroy_all
 Token.destroy_all
 User.destroy_all
 Ticket.destroy_all
@@ -15,6 +18,8 @@ user1 = User.create!(
   email: "rick@gmail.com",
   password: "123456"
 )
+file = File.open(Rails.root.join("app/assets/images/rick.png"))
+user1.avatar.attach(io: file, filename: 'rick.png', content_type: 'image/png')
 
 admin1 = User.create!(
   first_name: "Eric",
