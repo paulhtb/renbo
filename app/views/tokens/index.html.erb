@@ -84,10 +84,11 @@
     <div class="market-left-container">
       <div class="market-results">
         <% @tokens.each do |token| %>
-          <%= render "shared/token", token: token, vip: false %>
+          <% if token.status == "available" %>
+            <%= render "shared/token", token: token, vip: false %>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-
 </div>
