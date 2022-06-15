@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_074622) do
+ActiveRecord::Schema.define(version: 2022_06_15_030450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -64,11 +64,11 @@ ActiveRecord::Schema.define(version: 2022_06_14_074622) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "status"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -94,12 +94,12 @@ ActiveRecord::Schema.define(version: 2022_06_14_074622) do
     t.string "title"
     t.string "description"
     t.integer "tier"
-    t.float "original_price"
     t.integer "no_available"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "event_id", null: false
     t.string "image_url"
+    t.integer "original_price_cents", default: 0, null: false
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end
 
@@ -107,23 +107,24 @@ ActiveRecord::Schema.define(version: 2022_06_14_074622) do
     t.string "status"
     t.string "NFT_id"
     t.string "unlockable"
-    t.float "price"
     t.boolean "unlocked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.bigint "ticket_id", null: false
     t.integer "sequence_num"
+    t.integer "price_cents", default: 0, null: false
     t.index ["ticket_id"], name: "index_tokens_on_ticket_id"
     t.index ["user_id"], name: "index_tokens_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.string "status"
-    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "cart_id", null: false
+    t.string "checkout_session_id"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["cart_id"], name: "index_transactions_on_cart_id"
   end
 

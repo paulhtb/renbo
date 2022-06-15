@@ -4,6 +4,8 @@ class Token < ApplicationRecord
   belongs_to :user
   before_create :set_sequence
 
+  monetize :price_cents
+
   def set_sequence
     self.sequence_num = Token.where(ticket_id: self.ticket_id).count + 1
   end
