@@ -12,6 +12,6 @@
     <p><%= token.ticket.description.first(50) + " ..."  %></p>
   </div>
   <div class="ticket-price-tag">
-    <p><strong>$<%= token.price %></strong></p>
+    <p><strong><%= humanized_money_with_symbol(token.price) %></strong></p>
   </div>
 </div>
