@@ -17,7 +17,7 @@
         <a href="<%= @event.event_url %>" target="_blank">Access website</a>
       </div>
 
-      <h2>Choose your ticket</h2>
+      <h2 id="buy-now">Choose your ticket</h2>
       <hr>
 
       <div class="event-tickets">
@@ -47,7 +47,7 @@
 
     <div class="event-right-container">
       <div class="event-buy-box">
-        <a href="#"><button class="renbo-btn">Buy now</button></a>
+        <a href="#buy-now"><button class="renbo-btn">Buy now</button></a>
         <div class="event-info">
           <i class="fab fa-fort-awesome"></i>
           <p><%= @event.address %></p>
