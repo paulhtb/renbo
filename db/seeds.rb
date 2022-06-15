@@ -35,7 +35,7 @@ event1 = Event.create!(
   address: "Black Rock City, Nevada, USA",
   start_time: DateTime.new(2022, 8, 28, 13, 0, 0),
   end_time: DateTime.new(2022, 9, 5, 13, 0, 0),
-  description: "Burning Man is an event focused on community, art, self-expression, and self-reliance held annually in the western United States",
+  description: "Burning Man is an annual event in Nevada's Black Rock Desert, where people gather for around nine days to celebrate artistic self-expression and the building of a community intended to be temporarily self-sufficient. It's popularly thought of as a surreal counterculture party in the desert",
   event_url: "https://burningman.org/",
   image_url: "https://www.wallpaperflare.com/static/66/576/958/burning-man-love-desert-gay-wallpaper-preview.jpg"
 )
@@ -305,7 +305,7 @@ ticket_tier1 = Ticket.new(
   title: "Yvonne Force Villareal",
   description: "VIP Burning Man
   • A private mid-jet from the LA area to to Burning Man
-  • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees. • Daily water supply ",
+  • Daily water supply",
   original_price: 1500,
   no_available: 3,
   VIP: true,
