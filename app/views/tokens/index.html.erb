@@ -4,8 +4,18 @@
       <input type="search" id="query" name="q" placeholder="Search for a ticket ..." value="<%= params['q'] || "" %>">
       <button type="submit"><i class="fas fa-search mglass"></i></button>
     </form>
-    <div id="sort-btn">
-      <button class="renbo-btn-sec" >Sort by</button>
+
+    <div id="sort-btn" data-controller="marketplace-sort">
+      <button class="renbo-btn-sec" data-action="click->marketplace-sort#toggle">Sort by</button>
+      <div class="sort-box d-none" data-marketplace-sort-target="box">
+          <button form="marketplace-form" type="submit" name="rank" value="az">From A to Z</button>
+          <hr>
+          <button form="marketplace-form" type="submit" name="rank" value="za">From Z to A</button>
+          <hr>
+          <button form="marketplace-form" type="submit" name="rank" value="cheap">Price (Low to High)</button>
+          <hr>
+          <button form="marketplace-form" type="submit" name="rank" value="exp">Price (High to Low)</button>
+      </div>
     </div>
   </div>
 
@@ -13,7 +23,7 @@
 
     <div class="market-right-container">
       <div class="market-filters">
-        <form action="/marketplace">
+        <form id="marketplace-form" action="/marketplace">
 
           <div class="cat-filter">
             <h4>Category</h4>
@@ -73,7 +83,7 @@
 
     <div class="market-left-container">
       <div class="market-results">
-        <% @tokens.first(29).each do |token| %>
+        <% @tokens.each do |token| %>
           <%= render "shared/token", token: token, vip: false %>
         <% end %>
       </div>

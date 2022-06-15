@@ -17,6 +17,7 @@
   width: 350px;
   text-align: center;
   border-radius: $border-radius;
+  border: $border;
   position: relative;
   box-shadow: rgba(236, 230, 255, 1) 0px 2px 5px -1px, rgba(236, 230, 255, 0.9) 0px 1px 3px -1px;
 
@@ -25,7 +26,8 @@
   }
 
   &:hover {
-    box-shadow: $shadow;
+    border: 1px solid $indigo;
+    box-shadow: $button-shadow;
   }
 }
 
