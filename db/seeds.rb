@@ -423,7 +423,7 @@ end
     user: admin1
   )
 end
-#---------------NFTs for event 3 // Elton John Final Tour---------------
+#---------------NFTs for event 16 // Elton John Final Tour---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
@@ -435,7 +435,7 @@ ticket_tier1 = Ticket.new(
   image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
 )
 
-ticket_tier1.event = event3
+ticket_tier1.event = event16
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
@@ -448,7 +448,7 @@ ticket_tier2 = Ticket.new(
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
-ticket_tier2.event = event3
+ticket_tier2.event = event16
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -461,7 +461,7 @@ ticket_tier3 = Ticket.new(
   image_url: "https://i.pinimg.com/originals/8d/95/48/8d9548ae614a5ca476763ee4c90b3df4.jpg"
 )
 
-ticket_tier3.event = event3
+ticket_tier3.event = event16
 ticket_tier3.save!
 
 #---------------ELTON JOHN TOKENS---------------
