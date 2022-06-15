@@ -11,7 +11,7 @@ class CartsController < ApplicationController
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
-          images: [helpers.image_path("renbologo.png")],
+          images: [helpers.asset_url("renbologo.png")],
           name: "Total price:",
           amount: @cart.amount_cents,
           currency: 'usd',

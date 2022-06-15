@@ -16,7 +16,7 @@
         <div class="table-image">
           <img width="95%" height="95%" src="<%= token.ticket.image_url %>" alt="">
         </div>
-        <p class="table-col"><%= token.ticket.title %></p>
+        <p class="table-col"><%= token.ticket.title %> #<%= token.sequence_num %></p>
         <p class="table-col"><%= token.status.capitalize %></p>
         <p class="table-col">1d:12h:25m:10s</p>
         <p class="table-col"><strong>$<%= token.price %></strong></p>

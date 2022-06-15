@@ -73,7 +73,7 @@
                   <% @cart_items.each do |item| %>
                     <li class="mini-cart-item">
                       <div class="w-50 mb-2">
-                        <%= item.token.ticket.title %>
+                        <%= item.token.ticket.title %> #<%= item.token.sequence_num %>
                       </div>
                       $<%= item.token.price %>
                       <%= link_to "X", cart_item_path(item), method: :delete %>
