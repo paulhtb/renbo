@@ -11,7 +11,7 @@
     <p><%= ticket.description.first(50) + " ..."  %></p>
   </div>
   <div class="ticket-price-tag">
-    <p><strong>Starts from $<%= ticket.original_price %></strong></p>
+    <p><strong>Starts from <%= humanized_money_with_symbol(ticket.original_price) %></strong></p>
   </div>
 </div>
 <% end %>

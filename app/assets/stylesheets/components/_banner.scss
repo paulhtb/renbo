@@ -2,9 +2,12 @@
   max-height: 800px;
   height: 100vh;
   width: auto;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.25)), asset-url('banner.jpg');
+  background-image:
+    // linear-gradient(
+    //   rgba(0, 0, 0, 0.15),
+    //   rgba(0, 0, 0, 0.25)),
+    asset-url('banner.jpg'),
+    radial-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -12,6 +15,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.banner-title {
+  font-size: 48px;
+  color: white;
 }
 
 #searchbar-banner {

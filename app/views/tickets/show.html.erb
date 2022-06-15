@@ -75,14 +75,14 @@
                       <div class="w-50 mb-2">
                         <%= item.token.ticket.title %> #<%= item.token.sequence_num %>
                       </div>
-                      $<%= item.token.price %>
+                      <%= humanized_money_with_symbol(item.token.price) %>
                       <%= link_to "X", cart_item_path(item), method: :delete %>
                     </li>
                   <% end %>
                 </ul>
               </div>
               <div class="ticket-price-summary">
-                $<%= @cart.total_price %>
+                <%= humanized_money_with_symbol(@cart.total_price) %>
                 <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
               </div>
           <% end %>

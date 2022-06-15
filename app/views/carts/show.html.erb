@@ -22,7 +22,7 @@
           <p class="table-col-lg"><%= cart_item.token.status.capitalize %></p>
           <p class="table-col-lg"><%= cart_item.token.ticket.event.name %></p>
           <p class="table-col-lg"><%= cart_item.token.ticket.event.start_time.strftime("%d %B") %> - <%= cart_item.token.ticket.event.end_time .strftime("%d %B") %></p>
-          <p class="table-col-lg"><strong>$<%= cart_item.token.price %></strong></p>
+          <p class="table-col-lg"><strong><%= humanized_money_with_symbol(cart_item.token.price) %></strong></p>
           <div class="table-col-price-lg">
             <%= link_to cart_item_path(cart_item), method: :delete do %>
                 <i class="fas fa-trash-alt"></i>
@@ -37,7 +37,7 @@
       <p class="table-col-lg"><strong></strong></p>
       <p class="table-col-lg"><strong></strong></p>
       <p class="total-price-text table-col-lg"><strong>Total price:</strong></p>
-      <p class="table-total-price table-col-lg"><strong>$<%= @cart.amount %></strong></p>
+      <p class="table-total-price table-col-lg"><strong><%= humanized_money_with_symbol(@cart.amount) %></strong></p>
       <p class="table-col-price-lg">
       <% unless @cart.cart_items.empty? %>
         <button id="pay" class="renbo-btn">Checkout</button>
