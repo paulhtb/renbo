@@ -14,7 +14,11 @@
         <div class="d-flex justify-content-center">
           <div class="d-flex align-items-center">
             <%= image_tag "card/ticket.png", class: "ticket-icon" %>
+            <%if event.tokens.count == 0 %>
+            <p>SOLD OUT</p>
+            <%else%>
             <%= event.tokens.count %>
+            <%end%>
           </div>
         </div>
       </div>
