@@ -19,3 +19,9 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || root_path
   end
 end
+
+# app/controllers/application_controller.rb
+
+def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+end
