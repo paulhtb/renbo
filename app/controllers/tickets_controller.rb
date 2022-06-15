@@ -7,5 +7,6 @@ class TicketsController < ApplicationController
     @cart_item = CartItem.new
     @cart = current_user&.carts&.last
     @cart_items = @cart&.cart_items
+    @tokens_available = Token.where(ticket_id: @ticket.id, status: "new").where.not(id: current_user.carts.last.cart_items.pluck(:token_id))
   end
 end
