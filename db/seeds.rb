@@ -548,7 +548,7 @@ ticket_tier3.save!
     description: "• Firewood for you and your friends • Access to 3000 performances • On-site free mobile charging",
     original_price: 300,
     no_available: 10,
-    image_url: "seeds/glastonbury-1.jpg"
+    image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f4bcd3e7-0099-4bde-a963-75baea348d9f/d2sqa1e-33582fb7-7e46-432f-a87c-6cba21823e84.jpg/v1/fill/w_1032,h_774,q_75,strp/glastonbury_2010_muse_by_rozrr.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9mNGJjZDNlNy0wMDk5LTRiZGUtYTk2My03NWJhZWEzNDhkOWYvZDJzcWExZS0zMzU4MmZiNy03ZTQ2LTQzMmYtYTg3Yy02Y2JhMjE4MjNlODQuanBnIiwid2lkdGgiOiI8PTEwMzIiLCJoZWlnaHQiOiI8PTc3NCJ9XV19.d0GCZR-JWqPIpxvvJpFJOm0LPxr-dKRVoU4Z_u_6wJw"
   )
 
   ticket_tier1.event = event7
@@ -560,7 +560,7 @@ ticket_tier3.save!
     description: "Dream the night away in style",
     original_price: 250,
     no_available: 50,
-    image_url: "seeds/glastonbury-1.jpg"
+    image_url: "https://i.pinimg.com/originals/b6/1c/b6/b61cb60182cd106b3bdae95d81690a42.jpg"
   )
 
   ticket_tier2.event = event7
@@ -568,11 +568,11 @@ ticket_tier3.save!
 
   ticket_tier3 = Ticket.new(
     tier: 3,
-    title: "Neon Jazz",
-    description: "A piece of time presented in an illustration",
+    title: "Town of Salem",
+    description: "Praise the sun, it's time to party.",
     original_price: 200,
     no_available: 100,
-    image_url: "seeds/glastonbury-1.jpg"
+    image_url: "https://i.pinimg.com/originals/15/16/3d/15163da16f0f78e3eaf80da017239991.jpg"
   )
 
   ticket_tier3.event = event7
