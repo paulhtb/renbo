@@ -467,7 +467,7 @@ ticket_tier3.save!
 #---------------ELTON JOHN TOKENS---------------
 
 # TICKET_TIER1 ELTON JOHN
-5.times do
+4.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
@@ -480,7 +480,7 @@ ticket_tier3.save!
 end
 
 # TICKET_TIER2 ELTON JOHN
-20.times do
+19.times do
   Token.create!(
     status: "new",
     NFT_id: "4d5e6f",
@@ -493,7 +493,7 @@ end
 end
 
 # TICKET_TIER3 ELTON JOHN
-50.times do
+49.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
