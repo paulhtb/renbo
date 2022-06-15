@@ -99,7 +99,9 @@ ActiveRecord::Schema.define(version: 2022_06_15_030450) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "event_id", null: false
     t.string "image_url"
+
     t.integer "original_price_cents", default: 0, null: false
+    t.boolean "VIP"
     t.index ["event_id"], name: "index_tickets_on_event_id"
   end
 

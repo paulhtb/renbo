@@ -1,0 +1,17 @@
+<div class="ticket-card">
+  <% if vip %>
+    <div class="renbo-label vip-label"><strong>VIP</strong></div>
+  <% end %>
+  <div class="ticket-card-image">
+    <%= link_to ticket_path(token) do %>
+      <img height="95%" width="95%" src="<%= token.ticket.image_url%>" alt="">
+    <% end %>
+  </div>
+  <div class="ticket-content">
+    <h5><%= token.ticket.title.first(18) %></h5>
+    <p><%= token.ticket.description.first(50) + " ..."  %></p>
+  </div>
+  <div class="ticket-price-tag">
+    <p><strong>$<%= token.price %></strong></p>
+  </div>
+</div>

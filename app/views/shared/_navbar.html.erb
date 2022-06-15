@@ -16,7 +16,9 @@
     </button>
 
     <div class="nav-end">
-      <button class="renbo-btn">Marketplace</button>
+      <%= link_to marketplace_path do %>
+        <button class="renbo-btn">Marketplace</button>
+      <% end %>
       <%= link_to cart_path do %>
         <button><i class="fas fa-shopping-cart"></i></button>
       <% end %>

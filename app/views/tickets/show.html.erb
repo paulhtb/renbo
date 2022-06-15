@@ -9,7 +9,9 @@
       </div>
       <div class="ticket-banner-details">
         <div class="ticket-banner-specifics">
-          <p>VIP</p>
+        <%if @ticket.VIP%>
+        <div class="renbo-label vip-label text-center"><strong>VIP</strong></div>
+        <%end%>
           <p>Free Seating</p>
         </div>
         <p>For: <%= (2..3).to_a.sample %> days only</p>
@@ -17,11 +19,11 @@
       <div class="ticket-banner-purchase">
         <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
           <div class="d-flex justify-content-between">
-            <h3><%= @ticket.no_available %> left</h3>
+            <h3><%= @ticket.tokens.count %> / <%= @ticket.no_available %> left</h3>
             <%= f.association :token,
               collection: Token.where(ticket_id: @ticket.id, status: "new"),
               prompt: "Select your unique ticket",
-              label_method: lambda { |token| "#{token.ticket.title} #{token.sequence_num} / #{token.ticket.tokens.count}"},
+              label_method: lambda { |token| "#{token.ticket.title} # #{token.sequence_num}"},
               input_html: { class: "ticket-dropdown" },
               label: false
               %>

@@ -1,11 +1,10 @@
+<%= link_to ticket_path(ticket) do %>
 <div class="ticket-card">
-  <% if vip %>
+  <% if ticket.VIP %>
     <div class="renbo-label vip-label"><strong>VIP</strong></div>
   <% end %>
   <div class="ticket-card-image">
-    <%= link_to ticket_path(ticket) do %>
       <img height="95%" width="95%" src="<%= ticket.image_url%>" alt="">
-    <% end %>
   </div>
   <div class="ticket-content">
     <h5><%= ticket.title.first(18) %></h5>
@@ -15,3 +14,4 @@
     <p><strong>Starts from $<%= ticket.original_price %></strong></p>
   </div>
 </div>
+<% end %>
