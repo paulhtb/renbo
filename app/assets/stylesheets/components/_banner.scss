@@ -6,8 +6,8 @@
     // linear-gradient(
     //   rgba(0, 0, 0, 0.15),
     //   rgba(0, 0, 0, 0.25)),
-    asset-url('banner.jpg'),
-    radial-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+    radial-gradient(rgba(0, 0, 0, 0.7), transparent),
+    asset-url('banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -18,8 +18,17 @@
 }
 
 .banner-title {
+  color: white;
+  font-size: 33px;
+}
+
+.banner-title-sec {
   font-size: 48px;
   color: white;
+
+  span {
+    border-bottom: solid 6px $yellow;
+  }
 }
 
 #searchbar-banner {
