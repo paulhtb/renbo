@@ -14,14 +14,14 @@
         <%end%>
           <p>Free Seating</p>
         </div>
-        <p>For: 1 day only</p>
+        <p>For: <%= (2..3).to_a.sample %> days only</p>
       </div>
       <div class="ticket-banner-purchase">
         <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
           <div class="d-flex justify-content-between">
             <h3><%= @ticket.tokens.count %> / <%= @ticket.no_available %> left</h3>
             <%= f.association :token,
-              collection: Token.where(ticket_id: @ticket.id),
+              collection: Token.where(ticket_id: @ticket.id, status: "new"),
               prompt: "Select your unique ticket",
               label_method: lambda { |token| "#{token.ticket.title} # #{token.sequence_num}"},
               input_html: { class: "ticket-dropdown" },
@@ -56,12 +56,12 @@
             <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
               <div class="justify-content-between">
                 <%= f.association :token,
-                  collection: Token.where(ticket_id: @ticket.id).where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
+                  collection: Token.where(ticket_id: @ticket.id, status: "new").where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
                   prompt: "Select your unique ticket",
-                  label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
+                  label_method: lambda { |token| "#{token.ticket.title} #{token.sequence_num} / #{token.ticket.tokens.count}"},
                   input_html: { class: "ticket-dropdown" },
                   label: false
-                  %>
+                %>
                 <div class="d-flex justify-content-end">
                   <button class="renbo-btn">Add to cart</button>
                 </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   # We might want to relocate the marketplace to a subdomain such as "https://marketplace.domain.com/" later
 
   resource :cart, only: %i[show] do
-    resources :transactions, only: %i[create]
+    resources :transactions, only: %i[show create]
   end
 
   resources :cart_items, only: %i[destroy]

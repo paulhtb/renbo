@@ -4,6 +4,8 @@ class Ticket < ApplicationRecord
   belongs_to :event
   has_many :tokens
 
+  monetize :original_price_cents
+
   validates :title, presence: true
   validates :description, presence: true
   validates :tier, presence: true
