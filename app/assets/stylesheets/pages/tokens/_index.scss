@@ -41,6 +41,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+  }
+
+  .sort-box {
+    width: 200px;
+    padding: 10px;
+    background: white;
+
+    bottom: -155px;
+    right: 20px;
+    position: absolute;
+    z-index: 1001;
+
+    border: $border;
+    border-radius: $border-radius;
+
+    button {
+      margin: 0;
+      width: 100%;
+
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+
+    hr {
+      margin: 5px 0;
+    }
   }
 
 
