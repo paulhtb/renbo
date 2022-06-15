@@ -61,6 +61,21 @@ event2 = Event.create!(
   image_url: "https://www.montreuxjazzfestival.com/wp-content/uploads/2020/01/MITP-1536x1536.jpg"
 )
 
+# EVENT 16 = Elton John Final Tour
+event16 = Event.create!(
+  name: "Elton John Farewell Tour @ O2",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "United Kingdom",
+  city: "London",
+  address: "The O2, Peninsula Square, London, United Kingdom",
+  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
+  event_url: "https://www.eltonjohn.com/",
+  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
+)
+
 # EVENT 3 = Garbicz Festival
 event3 = Event.create!(
   name: "Garbicz Festival 2022",
@@ -258,20 +273,6 @@ event15 = Event.create!(
   image_url: "https://weraveyou.com/wp-content/uploads/2021/01/Lane-8.jpg"
 )
 
-# EVENT 16 = Elton John Final Tour
-event16 = Event.create!(
-  name: "Elton John Farewell Tour @ O2",
-  category: "Performance",
-  music_genre: "Rock",
-  country: "United Kingdom",
-  city: "London",
-  address: "The O2, Peninsula Square, London, United Kingdom",
-  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
-  event_url: "https://www.eltonjohn.com/",
-  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
-)
 
 # EVENT 17 = Khruangbin Tour
 event17 = Event.create!(
@@ -422,7 +423,7 @@ end
     user: admin1
   )
 end
-#---------------NFTs for event 16 // Elton John Final Tour---------------
+#---------------NFTs for event 3 // Elton John Final Tour---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
@@ -434,7 +435,7 @@ ticket_tier1 = Ticket.new(
   image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
 )
 
-ticket_tier1.event = event16
+ticket_tier1.event = event3
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
@@ -447,7 +448,7 @@ ticket_tier2 = Ticket.new(
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
-ticket_tier2.event = event16
+ticket_tier2.event = event3
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -460,7 +461,7 @@ ticket_tier3 = Ticket.new(
   image_url: "https://i.pinimg.com/originals/8d/95/48/8d9548ae614a5ca476763ee4c90b3df4.jpg"
 )
 
-ticket_tier3.event = event16
+ticket_tier3.event = event3
 ticket_tier3.save!
 
 #---------------ELTON JOHN TOKENS---------------
