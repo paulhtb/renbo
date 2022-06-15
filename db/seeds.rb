@@ -388,7 +388,39 @@ end
   )
 end
 
-#---------------NFTs for event 2 // Elton John Final Tour---------------
+# TOKENS FOR MARKETPLACE
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 1750,
+  unlocked: false,
+  ticket: ticket_tier1,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 4400,
+  unlocked: false,
+  ticket: ticket_tier2,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 9000,
+  unlocked: false,
+  ticket: ticket_tier3,
+  user: admin1
+)
+
+#---------------NFTs for event 16 // Elton John Final Tour---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
@@ -400,7 +432,7 @@ ticket_tier1 = Ticket.new(
   image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
 )
 
-ticket_tier1.event = event2
+ticket_tier1.event = event16
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
@@ -413,7 +445,7 @@ ticket_tier2 = Ticket.new(
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
-ticket_tier2.event = event2
+ticket_tier2.event = event16
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -426,7 +458,7 @@ ticket_tier3 = Ticket.new(
   image_url: "https://i.pinimg.com/originals/8d/95/48/8d9548ae614a5ca476763ee4c90b3df4.jpg"
 )
 
-ticket_tier3.event = event2
+ticket_tier3.event = event16
 ticket_tier3.save!
 
 #---------------ELTON JOHN TOKENS---------------
@@ -470,7 +502,39 @@ end
   )
 end
 
-#---------------NFTs for event 3 // Montreux Jazz Festival---------------
+# TOKENS FOR MARKETPLACE
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 2250,
+  unlocked: false,
+  ticket: ticket_tier1,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 5500,
+  unlocked: false,
+  ticket: ticket_tier2,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 11_000,
+  unlocked: false,
+  ticket: ticket_tier3,
+  user: admin1
+)
+
+#---------------NFTs for event 2 // Montreux Jazz Festival---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
@@ -481,7 +545,7 @@ ticket_tier1 = Ticket.new(
   image_url: "https://media.artsper.com/artwork/1458213_1_m.jpg"
 )
 
-ticket_tier1.event = event3
+ticket_tier1.event = event2
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
@@ -493,7 +557,7 @@ ticket_tier2 = Ticket.new(
   image_url: "https://images.theabsolutesound.com/wp-content/uploads/2021/06/nina-simon-montreux.jpeg"
 )
 
-ticket_tier2.event = event3
+ticket_tier2.event = event2
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -505,7 +569,7 @@ ticket_tier3 = Ticket.new(
   image_url: "https://creativereview.imgix.net/content/uploads/2020/06/MJF20-Silent-Shores-Affiches-FrancBord-Giovanni-Riva.jpg?auto=compress,format&q=60&w=768&h=1075"
 )
 
-ticket_tier3.event = event3
+ticket_tier3.event = event2
 ticket_tier3.save!
 
 #---------------Montreux Jazz Festival TOKENS---------------
