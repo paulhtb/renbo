@@ -1,0 +1,83 @@
+<div class="renbo-container">
+  <div class="market-top">
+    <form action="/marketplace" id="searchbar-market" class="">
+      <input type="search" id="query" name="q" placeholder="Search for a ticket ..." value="<%= params['q'] || "" %>">
+      <button type="submit"><i class="fas fa-search mglass"></i></button>
+    </form>
+    <div id="sort-btn">
+      <button class="renbo-btn-sec" >Sort by</button>
+    </div>
+  </div>
+
+  <div class="market-main">
+
+    <div class="market-right-container">
+      <div class="market-filters">
+        <form action="/marketplace">
+
+          <div class="cat-filter">
+            <h4>Category</h4>
+            <select name="category" class="mkt-input-lg" onchange="this.form.submit()">
+              <option value="">Category ...</option>
+              <% Event.categories.each do |category| %>
+              <option value="<%= category %>" <%= "selected" if params['category'] == category %>><%= category %></option>
+              <% end %>
+            </select>
+          </div>
+
+          <div class="price-filter">
+            <h4>Price</h4>
+            <div id="price-inputs">
+              <input type="number" name="price-min" class="mkt-input-sm" placeholder="From $ ..." onchange="this.form.submit()" value="<%= params['price-min'] || "" %>">
+              <input type="number" name="price-max" class="mkt-input-sm" placeholder="... To $" onchange="this.form.submit()" value="<%= params['price-max'] || "" %>">
+            </div>
+          </div>
+
+          <div class="status-filter">
+            <h4>Status</h4>
+            <div id="status-check">
+              <input type="checkbox" name="stlocked" id="check-locked" value="locked" onchange="this.form.submit()" <%= "checked" if params['stlocked'].present? %>/>
+              <label for="check-locked">Locked</label>
+              <br>
+              <input type="checkbox" name="stunlocked" id="check-unlocked" value="unlocked" onchange="this.form.submit()" <%= "checked" if params['stunlocked'].present? %>/>
+              <label for="check-unlocked">Unlocked</label>
+            </div>
+          </div>
+
+          <div class="price-filter">
+            <h4>Location</h4>
+            <div id="price-inputs">
+              <input name="country" class="mkt-input-sm" placeholder="Country ..." onchange="this.form.submit()" value="<%= params['country'] || "" %>">
+              <input name="city" class="mkt-input-sm" placeholder="City ..." onchange="this.form.submit()" value="<%= params['city'] || "" %>">
+            </div>
+          </div>
+
+          <div class="date-filter">
+            <h4>Event Date</h4>
+            <div id="date-choice">
+              <input id="date-past" type="radio" name="evt-date" value="" onchange="this.form.submit()" <%= "checked" if params['evt-date'] == "" || !params['event'].present? %>>
+              <label for="date-past">All</label><br>
+              <input id="date-past" type="radio" name="evt-date" value="past" onchange="this.form.submit()" <%= "checked" if params['evt-date'] == "past" %>>
+              <label for="date-past">Past</label><br>
+              <input id="date-this-month" type="radio" name="evt-date" value="month" onchange="this.form.submit()" <%= "checked" if params['evt-date'] == "month" %>>
+              <label for="date-this-month">This month</label><br>
+              <input id="date-this-year" type="radio" name="evt-date" value="year" onchange="this.form.submit()" <%= "checked" if params['evt-date'] == "year" %>>
+              <label for="date-this-year">This year</label><br>
+              <input id="date-later" type="radio" name="evt-date" value="later" onchange="this.form.submit()" <%= "checked" if params['evt-date'] == "later" %>>
+              <label for="date-later">Later</label><br>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="market-left-container">
+      <div class="market-results">
+        <% @tokens.first(29).each do |token| %>
+          <%= render "shared/token", token: token, vip: false %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

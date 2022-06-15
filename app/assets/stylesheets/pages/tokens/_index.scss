@@ -1,0 +1,132 @@
+
+.market-top {
+
+  margin-top: 50px;
+  margin-bottom: 40px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #searchbar-market {
+    padding: 10px;
+    width: 85%;
+    border-radius: $border-radius;
+    border: 1px solid rgba(0,0,0,0.3);
+
+    display: flex;
+    align-items: center;
+
+    #query {
+      flex-grow: 1;
+    }
+
+    #genre, #query {
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .mglass {
+      margin: 0 5px;
+    }
+
+  }
+
+  #sort-btn {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+
+.market-main {
+  width: 100%;
+  display: flex;
+
+  .market-right-container {
+    width: 340px;
+  }
+
+  .market-left-container {
+    width: 800px;
+  }
+
+  .market-filters {
+    position: sticky;
+    top: 40px;
+
+    width: 300px;
+    height: 620px;
+
+    padding: 20px;
+
+    border: $border;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    h4 {
+      font-family: $body-font;
+    }
+  }
+
+
+  .cat-filter {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  .price-filter {
+    margin: 20px 0;
+
+    #price-inputs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  }
+
+  .date-filter {
+    margin: 20px 0;
+  }
+
+  .mkt-input-lg {
+    width: 100%;
+    margin: 10px 0;
+
+    padding: 5px;
+    border: $border;
+    border-radius: $border-radius;
+
+    color: gray;
+  }
+
+  .mkt-input-sm {
+    width: 45%;
+    margin: 10px 0;
+
+    padding: 5px;
+    border: $border;
+    border-radius: $border-radius;
+
+    color: gray;
+  }
+
+
+  .market-results {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    margin-bottom: 40px;
+  }
+}
