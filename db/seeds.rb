@@ -312,7 +312,7 @@ ticket_tier1 = Ticket.new(
   • A private mid-jet from the LA area to to Burning Man
   • Daily water supply",
   original_price: 1500,
-  no_available: 3,
+  no_available: 5,
   VIP: true,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
 )
@@ -350,7 +350,7 @@ ticket_tier3.save!
 #---------------BURNING MAN TOKENS---------------
 
 # TICKET_TIER1 BURNING MAN
-3.times do
+4.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
@@ -363,7 +363,7 @@ ticket_tier3.save!
 end
 
 # TICKET_TIER2 BURNING MAN
-10.times do
+8.times do
   Token.create!(
     status: "new",
     NFT_id: "4d5e6f",
@@ -376,7 +376,7 @@ end
 end
 
 # TICKET_TIER3 BURNING MAN
-25.times do
+22.times do
   Token.create!(
     status: "new",
     NFT_id: "7g8h9i",
@@ -399,27 +399,29 @@ Token.create!(
   ticket: ticket_tier1,
   user: admin1
 )
+2.times do
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: [4400, 4450, 4500, 4550, 4600, 4800].sample,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+end
 
-Token.create!(
-  status: "available",
-  NFT_id: "1a2b3c",
-  unlockable: "QRcode",
-  price: 4400,
-  unlocked: false,
-  ticket: ticket_tier2,
-  user: admin1
-)
-
-Token.create!(
-  status: "available",
-  NFT_id: "1a2b3c",
-  unlockable: "QRcode",
-  price: 9000,
-  unlocked: false,
-  ticket: ticket_tier3,
-  user: admin1
-)
-
+3.times do
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: [9000, 9050, 9100, 9150, 9250, 9300, 9350, 9500].sample,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+end
 #---------------NFTs for event 16 // Elton John Final Tour---------------
 
 ticket_tier1 = Ticket.new(

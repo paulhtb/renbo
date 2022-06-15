@@ -12,20 +12,22 @@
   </div>
   <div class="table-tickets">
     <% tokens.each do |token| %>
-      <div class="table-row" id="token-<%= token.id %>">
-        <div class="table-image">
-          <img width="95%" height="95%" src="<%= token.ticket.image_url %>" alt="">
+      <% if token.status == "available" %>
+        <div class="table-row" id="token-<%= token.id %>">
+          <div class="table-image">
+            <img width="95%" height="95%" src="<%= token.ticket.image_url %>" alt="">
+          </div>
+          <p class="table-col"><%= token.ticket.title %> #<%= token.sequence_num %></p>
+          <p class="table-col"><%= token.status.capitalize %></p>
+          <p class="table-col">1d:12h:25m:10s</p>
+          <p class="table-col"><strong><%= humanized_money_with_symbol(token.price) %></strong></p>
+          <div class="table-col">
+            <%= link_to token_cart_items_path(token), :method => :post do %>
+              <button class="renbo-btn-sec">Place a bid</button>
+            <% end %>
+          </div>
         </div>
-        <p class="table-col"><%= token.ticket.title %> #<%= token.sequence_num %></p>
-        <p class="table-col"><%= token.status.capitalize %></p>
-        <p class="table-col">1d:12h:25m:10s</p>
-        <p class="table-col"><strong><%= humanized_money_with_symbol(token.price) %></strong></p>
-        <div class="table-col">
-          <%= link_to token_cart_items_path(token), :method => :post do %>
-            <button class="renbo-btn">Place a bid</button>
-          <% end %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
