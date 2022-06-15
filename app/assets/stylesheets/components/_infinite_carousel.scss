@@ -102,7 +102,7 @@
 }
 
 #item-1:checked ~ .cards3 #song-2, #item-2:checked ~ .cards3 #song-3, #item-3:checked ~ .cards3 #song-1 {
-  transform: translatex(40%) scale(.8);
+  transform: translatex(50%) scale(.8);
   opacity: .4;
   z-index: 0;
 }
@@ -244,4 +244,14 @@
   top: 657px;
   left: 892px;
   z-index: 2;
+}
+
+.annoyingdots {
+position: fixed;
+opacity: 0;
+pointer-events: none;
+}
+
+.collection-wrapper:hover {
+ filter:unset; 
 }

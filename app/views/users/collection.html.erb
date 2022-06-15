@@ -1,10 +1,10 @@
 <div class="renbo-container">
-    <h1> Your one of a kind NFT collection </h1>
   <%# <div class="carousel2"> %>
     <div class="margin-collection margin-fix">
+    <h1> Your one of a kind NFT collection </h1>
       <% i = 1 %>
     <% @tokens.last(3).each do |token|%>
-        <input type="radio" name="slider" id="item-<%= i %>" checked>
+        <input class="annoyingdots" type="radio" name="slider" id="item-<%= i %>" checked>
         <% i += 1 %>
       <% end %>
       <div class="cards3 collection-wrapper">
@@ -23,8 +23,8 @@
     </div>
   <%# </div> %>
   <div class="renbo-container center-btns">
-  <button class="renbo-btn sell-btn">Ready to sell?</button>
-  <button class="renbo-btn sell-btn2">Event Details</button>
+  <%# <button class="renbo-btn sell-btn">Ready to sell?</button>
+  <button class="renbo-btn sell-btn2">Event Details</button> %>
   
   </div>
 </div>
