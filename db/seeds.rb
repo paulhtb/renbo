@@ -404,7 +404,7 @@ Token.create!(
     status: "available",
     NFT_id: "1a2b3c",
     unlockable: "QRcode",
-    price: [4400, 4450, 4500, 4550, 4600, 4800].sample,
+    price: [1400, 1450, 1500, 1550, 1600, 1800].sample,
     unlocked: false,
     ticket: ticket_tier2,
     user: admin1
@@ -416,7 +416,7 @@ end
     status: "available",
     NFT_id: "1a2b3c",
     unlockable: "QRcode",
-    price: [9000, 9050, 9100, 9150, 9250, 9300, 9350, 9500].sample,
+    price: [900, 905, 910, 915, 925, 930, 935, 950].sample,
     unlocked: false,
     ticket: ticket_tier3,
     user: admin1

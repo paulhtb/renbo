@@ -15,6 +15,7 @@
           <p>Free Seating</p>
         </div>
         <p>For: <%= (2..3).to_a.sample %> days only</p>
+        <%= humanized_money_with_symbol(@ticket.original_price) %>
       </div>
       <div class="ticket-banner-purchase">
         <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
