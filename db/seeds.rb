@@ -113,7 +113,7 @@ event6 = Event.create!(
   end_time: DateTime.new(2023, 4, 15, 23, 0, 0),
   description: "The Coachella Valley Music and Arts Festival is an annual music and arts festival held at the Empire Polo Club in Indio, California, in the Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Presents",
   event_url: "https://www.coachella.com/",
-  image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
+  image_url: "https://media.resources.festicket.com/www/magazine/Coachella22Lineup_L.jpg"
 )
 
 # EVENT 7 = Glastonbury Festival 2022
