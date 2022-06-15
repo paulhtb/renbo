@@ -17,15 +17,31 @@
   justify-content: center;
 }
 
+// .banner-content {
+//   padding: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent);
+// }
+
 .banner-title {
   color: white;
   font-size: 33px;
+
+  // ---Daniel's Styling---
+  font-family: nunito;
+  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .banner-title-sec {
   font-size: 48px;
   color: white;
 
+
+  // ---WITH YELLOW UNDERLINE---
+  margin-bottom: 30px;
   span {
     border-bottom: solid 6px $yellow;
   }
