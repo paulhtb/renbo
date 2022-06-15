@@ -21,7 +21,7 @@
           <div class="d-flex justify-content-between">
             <h3><%= @ticket.tokens.count %> / <%= @ticket.no_available %> left</h3>
             <%= f.association :token,
-              collection: Token.where(ticket_id: @ticket.id, status: "new"),
+              collection: @tokens_available,
               prompt: "Select your unique ticket",
               label_method: lambda { |token| "#{token.ticket.title} # #{token.sequence_num}"},
               input_html: { class: "ticket-dropdown" },
@@ -56,9 +56,9 @@
             <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
               <div class="justify-content-between">
                 <%= f.association :token,
-                  collection: Token.where(ticket_id: @ticket.id, status: "new").where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
+                  collection: @tokens_available,
                   prompt: "Select your unique ticket",
-                  label_method: lambda { |token| "#{token.ticket.title} #{token.sequence_num} / #{token.ticket.tokens.count}"},
+                  label_method: lambda { |token| "#{token.ticket.title} ##{token.sequence_num}"},
                   input_html: { class: "ticket-dropdown" },
                   label: false
                 %>

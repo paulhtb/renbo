@@ -9,7 +9,9 @@ class CartItemsController < ApplicationController
   end
 
   def add
-    @cart_item = CartItem.new(cart_item_params)
+    @cart_item = CartItem.new
+    @token = Token.find(params[:cart_item][:token_id])
+    @cart_item.token = @token
     @cart_item.cart = current_user.carts.last
     @cart_item.save
 
