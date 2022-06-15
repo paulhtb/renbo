@@ -507,3 +507,105 @@ ticket_tier3 = Ticket.new(
 
 ticket_tier3.event = event3
 ticket_tier3.save!
+
+#---------------Montreux Jazz Festival TOKENS---------------
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 3000,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 5000,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 7000,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+
+#---------------NFTs for event 7 // Glastonbury---------------
+
+  ticket_tier1 = Ticket.new(
+    tier: 1,
+    title: "Whimsical",
+    description: "• Firewood for you and your friends • Access to 3000 performances • On-site free mobile charging",
+    original_price: 300,
+    no_available: 10,
+    image_url: "seeds/glastonbury-1.jpg"
+  )
+
+  ticket_tier1.event = event7
+  ticket_tier1.save!
+
+  ticket_tier2 = Ticket.new(
+    tier: 2,
+    title: "Bunny by the Moon",
+    description: "Dream the night away in style",
+    original_price: 250,
+    no_available: 50,
+    image_url: "seeds/glastonbury-1.jpg"
+  )
+
+  ticket_tier2.event = event7
+  ticket_tier2.save!
+
+  ticket_tier3 = Ticket.new(
+    tier: 3,
+    title: "Neon Jazz",
+    description: "A piece of time presented in an illustration",
+    original_price: 200,
+    no_available: 100,
+    image_url: "seeds/glastonbury-1.jpg"
+  )
+
+  ticket_tier3.event = event7
+  ticket_tier3.save!
+
+#---------------Glastonbury TOKENS---------------
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 4000,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 6000,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 8000,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
