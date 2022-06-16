@@ -629,7 +629,7 @@ ticket_tier3.save!
     title: "Bunny by the Moon",
     description: "Dream the night away in style",
     original_price: 250,
-    no_available: 50,
+    no_available: 15,
     image_url: "https://i.pinimg.com/originals/b6/1c/b6/b61cb60182cd106b3bdae95d81690a42.jpg"
   )
 
@@ -641,7 +641,7 @@ ticket_tier3.save!
     title: "Town of Salem",
     description: "Praise the sun, it's time to party.",
     original_price: 200,
-    no_available: 100,
+    no_available: 30,
     image_url: "https://i.pinimg.com/originals/15/16/3d/15163da16f0f78e3eaf80da017239991.jpg"
   )
 
@@ -650,11 +650,47 @@ ticket_tier3.save!
 
 #---------------Glastonbury TOKENS---------------
 
+  9.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 1200,
+      unlocked: false,
+      ticket: ticket_tier1,
+      user: admin1
+    )
+  end
+
+  14.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 800,
+      unlocked: false,
+      ticket: ticket_tier2,
+      user: admin1
+    )
+  end
+
+  29.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 500,
+      unlocked: false,
+      ticket: ticket_tier3,
+      user: admin1
+    )
+  end
+
   Token.create!(
     status: "available",
     NFT_id: "1a2b3c",
     unlockable: "QRcode",
-    price: 4000,
+    price: 8000,
     unlocked: false,
     ticket: ticket_tier1,
     user: admin1
@@ -674,7 +710,7 @@ ticket_tier3.save!
     status: "available",
     NFT_id: "1a2b3c",
     unlockable: "QRcode",
-    price: 8000,
+    price: 4000,
     unlocked: false,
     ticket: ticket_tier3,
     user: admin1
