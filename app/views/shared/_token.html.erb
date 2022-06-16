@@ -11,7 +11,12 @@
     <h5><%= token.ticket.title.first(18) %></h5>
     <p><%= token.ticket.description.first(50) + " ..."  %></p>
   </div>
+  <div class="ticket-token-num">
+    <strong>
+      #<%= token.sequence_num %>/<span style="font-size: 12px;"><%= token.ticket.tokens.count %></span>
+    </strong>
+  </div>
   <div class="ticket-price-tag">
-    <p><strong><%= humanized_money_with_symbol(token.price) %></strong></p>
+    <strong><%= humanized_money_with_symbol(token.price) %></strong>
   </div>
 </div>
