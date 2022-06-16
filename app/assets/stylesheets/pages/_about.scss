@@ -1,11 +1,12 @@
+
 .NFT-infographic {
     width: 50%;
     margin: 50px;
 }
 .spacey-p {
-    margin: 40px;
+    margin-bottom: 53px;
+    margin-top: 12px;
 }
-
 .nftlink {
     display: flex;
     align-items: center;
@@ -13,4 +14,22 @@
     font-size: 31px;
     color: $indigo;
 }
+.about-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    margin-top: 41px;
+}
+.about-logo {
+width:8%;
+}
+.aboutimgs {
+    width: 50%;
+}
 
+.div-line {
+    background-color: currentColor;
+    height: 4px;
+    margin: 32px;
+}
