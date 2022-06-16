@@ -49,10 +49,10 @@
   <div class="home-heading">
     <div>
       <h3 id="index-heading" style="display: inline-block;"> Upcoming Events
-      <% if params[:q].empty? %>
-        <span class="query-heading"><%= params[:genre] %>
-      <% elsif params[:q] != nil %>
-        <span class="query-heading"><%= params[:q] %></span>
+      <% if params[:q] != "" %>
+        for <span class="query-heading"><%= params[:q] %>
+      <% elsif params[:genre] != nil %>
+        for <span class="query-heading"><%= params[:genre] %></span>
       <% end %>
       </h3>
     </div>
