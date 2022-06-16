@@ -48,7 +48,7 @@
   <div class="ticket-info">
     <div class="ticket-show-container">
       <h2 class="tickets-show-heading" id="browse">Browse all tickets</h2>
-      <%= render "shared/table", tokens: @ticket.tokens %>
+      <%= render "shared/table", tokens: @ticket.tokens, event: @ticket.event %>
       <h2 class="tickets-show-heading">Other tickets for this event</h2>
       <div class="event-card-grid">
         <% @tickets.each do |ticket| %>
