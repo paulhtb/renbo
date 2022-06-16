@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     get '/transactions', to: 'transactions#index'
     get '/collection', to: 'users#collection'
   end
-
+  
+  get '/about', to: 'pages#about', as: "about"
   resources :bookmarks, only: %i[index destroy]
 end
+
+# about us page
+
