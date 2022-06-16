@@ -38,11 +38,17 @@
       <p class="table-col-lg"><strong></strong></p>
       <p class="total-price-text table-col-lg"><strong>Total price:</strong></p>
       <p class="table-total-price table-col-lg"><strong><%= humanized_money_with_symbol(@cart.amount) %></strong></p>
-      <p class="table-col-price-lg">
       <% unless @cart.cart_items.empty? %>
-        <button id="pay" class="renbo-btn">Checkout</button>
+        <div class="dropdown mx-2">
+          <button class="renbo-btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Checkout
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" id="pay" href="#">Credit Card</a></li>
+            <li><a class="dropdown-item" href="#">Crypto</a></li>
+          </ul>
+        </div>
       <% end %>
-      </p>
     </div>
   </div>
 </div>
