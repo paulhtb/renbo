@@ -1,5 +1,5 @@
 class TokensController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @tokens = Token.all.joins(:event)
@@ -16,8 +16,8 @@ class TokensController < ApplicationController
     @tokens = @tokens.extended_search(params['q']) if params['q'].present?
     @tokens = @tokens.category_search(params['category']) if params['category'].present?
 
-    @tokens = @tokens.where("price > #{params['price-min'].to_i}") if params['price-min'].present?
-    @tokens = @tokens.where("price < #{params['price-max'].to_i}") if params['price-max'].present?
+    @tokens = @tokens.where("price_cents > #{params['price-min'].to_i * 100}") if params['price-min'].present?
+    @tokens = @tokens.where("price_cents < #{params['price-max'].to_i * 100}") if params['price-max'].present?
 
     @tokens = @tokens.country_search(params['country']) if params['country'].present?
     @tokens = @tokens.city_search(params['city']) if params['city'].present?
@@ -25,11 +25,19 @@ class TokensController < ApplicationController
     if params['rank'].present?
       @tokens = @tokens.order(:title) if params['rank'] == "az"
       @tokens = @tokens.order(title: :desc) if params['rank'] == "za"
-      @tokens = @tokens.order(:price) if params['rank'] == "cheap"
-      @tokens = @tokens.order(price: :desc) if params['rank'] == "expensive"
+      @tokens = @tokens.order(:price_cents) if params['rank'] == "cheap"
+      @tokens = @tokens.order(price_cents: :desc) if params['rank'] == "expensive"
+
+    else
+      @tokens = @tokens.shuffle
     end
 
   end
 
+  def show
+    @token = Token.find(params[:id])
+
+    redirect_to request.referer.to_s unless @token.status == "available"
+  end
 
 end

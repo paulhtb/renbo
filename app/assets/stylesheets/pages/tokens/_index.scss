@@ -1,3 +1,4 @@
+@import "show";
 
 .market-top {
 
@@ -72,6 +73,14 @@
     }
   }
 
+  // .renbo-btn-sec {
+  //   color: $yellow;
+  //   border: 1px solid $yellow;
+
+  //   &:hover {
+  //     box-shadow: $yellow-shadow;
+  //   }
+  // }
 
 }
 
@@ -79,6 +88,17 @@
 .market-main {
   width: 100%;
   display: flex;
+
+  h5 {
+    color: $yellow;
+  }
+
+  .ticket-card {
+    &:hover {
+      border: 1px solid $yellow;
+      box-shadow: $yellow-shadow;
+    }
+  }
 
   .market-right-container {
     width: 340px;
@@ -89,6 +109,8 @@
   }
 
   .market-filters {
+    background: floralwhite;
+
     position: sticky;
     top: 40px;
 
@@ -97,9 +119,9 @@
 
     padding: 20px;
 
-    border: $border;
+    border: 1px solid $yellow;
     border-radius: $border-radius;
-    box-shadow: $shadow;
+    box-shadow: $yellow-shadow;
 
     h4 {
       font-family: $body-font;
@@ -152,7 +174,7 @@
 
   .market-results {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
