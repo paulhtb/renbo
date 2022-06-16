@@ -50,6 +50,7 @@
 
   .table-col {
     width: 130px;
+    text-align: center;
   }
 
   .table-col-price {
@@ -66,6 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 3px;
 
     img {
       object-fit: cover;
@@ -97,9 +99,11 @@
 }
 
 .table-col-lg {
+  text-align: center;
   width: 174px;
 }
 
 .table-col-price-lg {
+  text-align: center;
   width: 140px;
 }
