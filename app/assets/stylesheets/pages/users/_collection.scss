@@ -1,8 +1,50 @@
 .collection-item-details {
-  background-color: floralwhite;
-    border: 1px solid $yellow;
-    padding: 5px;
-    margin: 15px;
-    font-family: 'Nunito';
-    border-radius: 5px;
+  width: 500px;
+  text-align:center;
+  // background-color: floralwhite;
+  // border: 1px solid $yellow;
+  padding: 5px;
+  margin-top: 25px;
+  margin-left: 0;
+  font-family: 'Nunito';
+  border-radius: 5px;
+
+  position: absolute;
+  width: 100%;
+  left: 100px;
+}
+
+.collection-heading {
+  display: inline-block;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.collection-heading-colour {
+  display: inline-block;
+  border-bottom: solid 4px;
+  padding-bottom: 3px;
+  color: $yellow;
+}
+
+.collection-sequence-number {
+  font-size: 30px;
+}
+
+.arrow {
+  font-size: 42px;
+
+  &:hover{
+    color: $indigo;
+  }
+}
+
+.up-arrow {
+  transform: rotate(180deg);
+  transition: 0.25s ease;
+}
+
+.down-arrow {
+  transition: 0.25s ease;
 }

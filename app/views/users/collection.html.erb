@@ -1,6 +1,9 @@
 <div class="renbo-container">
+<div class="d-flex justify-content-center">
+  <button data-hide-nav-target="arrow" data-action="click->hide-nav#toggleHide" class="arrow down-arrow"><i class="fas fa-caret-down arrow"></i></button>
+</div>
 <div class="text-center">
-  <h1 class="index-heading"><span class="collection-heading-colour">Your</span> Collection</h1>
+  <h1 class="collection-heading"><span class="text-purple">Your</span> Collection</h1>
 </div>
   <%# <div class="carousel2"> %>
     <div class="margin-collection margin-fix">
@@ -12,11 +15,13 @@
       <div class="cards3 collection-wrapper">
       <% i = 1 %>
 
-        <% @tokens.shuffle.last(3).each do |token|%>
+        <% @tokens.order(updated_at: :desc).limit(3).reverse.each do |token|%>
           <label class="card2" for="item-<%= i %>" id="song-<%= i %>">
             <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "caro-image  card-collection nft-collection"%>
             <div class="collection-item-details">
-              <%= token.ticket.title %> #<%= token.sequence_num %> - <%= token.ticket.event.name %>
+              <h5><%= token.ticket.title %></h5>
+              <div class="collection-sequence-number"><i class="fas fa-ticket-alt ticket-icon" style="font-size: 30px;"></i>#<%= token.sequence_num %></div>
+              - <em><%= token.ticket.event.name %></em> -
             </div>
 
             <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "shadow-img2  card-collection"%>

@@ -48,10 +48,10 @@
 <div class="renbo-container">
   <div class="home-heading">
     <div>
-      <h3 id="index-heading" style="display: inline-block;"> Upcoming Events in 2022 for
+      <h3 id="index-heading" style="display: inline-block;"> Upcoming Events
       <% if params[:q].empty? %>
         <span class="query-heading"><%= params[:genre] %>
-      <% else %>
+      <% elsif params[:q] != nil %>
         <span class="query-heading"><%= params[:q] %></span>
       <% end %>
       </h3>
