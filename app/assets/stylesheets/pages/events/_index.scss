@@ -1,5 +1,15 @@
 @import "show";
 
+.filter-container {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .filter-box {
  margin: $margin-v-small;
  border: $border;
