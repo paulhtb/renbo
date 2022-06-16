@@ -83,7 +83,7 @@
 
     <div class="market-left-container">
       <div class="market-results">
-        <% @tokens.shuffle.each do |token| %>
+        <% @tokens.each do |token| %>
           <% if token.status == "available" %>
             <%= render "shared/token", token: token, tokens: @tokens, vip: false %>
           <% end %>
