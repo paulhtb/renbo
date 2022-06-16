@@ -18,7 +18,7 @@
           <div class="table-image">
             <img width="95%" height="95%" src="<%= cart_item.token.ticket.image_url %>" alt="">
           </div>
-          <p class="table-col-lg"><%= cart_item.token.ticket.title %></p>
+          <p class="table-col-lg"><%= cart_item.token.ticket.title %> #<%= cart_item.token.sequence_num %></p>
           <p class="table-col-lg"><%= cart_item.token.status.capitalize %></p>
           <p class="table-col-lg"><%= cart_item.token.ticket.event.name %></p>
           <p class="table-col-lg"><%= cart_item.token.ticket.event.start_time.strftime("%d %B") %> - <%= cart_item.token.ticket.event.end_time .strftime("%d %B") %></p>
