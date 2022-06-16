@@ -24,16 +24,54 @@
     color: $indigo;
   }
 
-
 .home-heading {
   display: inline-block;
-  border-bottom: solid 3px;
   padding-bottom: 3px;
   margin-bottom: 40px;
   margin-top: 40px;
+  align-self: center;
 }
 
-.home-body {
-  text-align: center;
+.home-section {
+  margin-top: 40px;
+  display: flex;
+  height: 400px;
   width: 100%;
+
+  .home-element {
+    text-align: right;
+    align-self: center;
+    margin: 10px 0;
+    width: 50%;
+  }
+
+  .home-element-60 {
+    margin-right: 20px;
+    width: 60%;
+  }
+
+  .home-element-40 {
+    width: 40%;
+    text-align: left;
+    align-self: center;
+    margin: 10px 0;
+  }
+
+  .home-element-heading {
+    margin-bottom: 0px;
+  }
+
+  h4 {
+    line-height: 30px;
+    align-self: center;
+    font-family: $body-font;
+    text-transform: none;
+  }
 }
+
+.home-carousel {
+  position: relative;
+}
+
+
+// <%= render "shared/searchbar", parent: "searchbar-banner", hidden: "" %>

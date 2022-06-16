@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-3">INSERT IMAGE</div>
+    <div class="col">
+      <h1>transaction #<%= @transaction.id %></h1>
+      <h2><small><span class="renbo-btn-sec"><%= @transaction.status %></span></small></h2>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @transaction.created_at.to_date %></li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
+        </li>
+      </ul>
+      <p>Estimated delivery in <strong>2 business days</strong></p>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,12 @@
 <div class="navbar-transparent navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "renbologo" %>
+    <div class="nav-start">
+      <%= image_tag "renbologo.png" %>
+      <h4 class="nav-logo-heading">Renbo</h4>
+      <%# <h4 class="nav-logo-heading-p1">Ren</h4>
+      <h4 class="nav-logo-heading-p2">bo</h4> %>
+    </div>
     <% end %>
 
     <%= render "shared/searchbar", hidden: ("invisible" if action_name =="home"), parent: "searchbar-nav" %>
@@ -11,17 +16,37 @@
     </button>
 
     <div class="nav-end">
-      <% if current_user %>
-        <%= link_to "Collection", user_collection_path(current_user) %>
-        <%= link_to "Bookmarks", bookmarks_path  %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to marketplace_path do %>
+        <button class="renbo-btn">Marketplace</button>
       <% end %>
       <%= link_to cart_path do %>
         <button><i class="fas fa-shopping-cart"></i></button>
       <% end %>
-      <button class="renbo-btn">Marketplace</button>
+      <% if current_user %>
+        <div class="dropdown">
+          <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <% if current_user.avatar.attached? %>
+              <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+            <% else %>
+              <i class="fas fa-user"></i>
+            <% end %>
+          </button>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
+            <li class="nav-drop-item"><%= link_to "Collection", user_collection_path(current_user) %></li>
+            <li class="nav-drop-item"><%= link_to "Bookmarks", bookmarks_path  %></li>
+            <li class="nav-drop-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="dropdown">
+            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i>
+            </button>
+          <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
+            <li class="nav-drop-item"><%= link_to "Sign in", new_user_session_path %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

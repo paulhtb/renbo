@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :country])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :country, :avatar])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :avatar])
   end
 
   def after_sign_in_path_for(resource)
@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     stored_location_for(resource) || root_path
   end
+end
+
+# app/controllers/application_controller.rb
+
+def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
 end

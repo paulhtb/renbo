@@ -7,5 +7,7 @@ class TicketsController < ApplicationController
     @cart_item = CartItem.new
     @cart = current_user&.carts&.last
     @cart_items = @cart&.cart_items
+    @tokens_available = Token.where(ticket_id: @ticket.id, status: "new")
+    @tokens_available = @tokens_available.where.not(id: current_user.carts.last.cart_items.pluck(:token_id)) if user_signed_in?
   end
 end

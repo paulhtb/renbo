@@ -5,9 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :carts
-  has_many :transactions, through: :carts
+  has_many :payments, through: :carts
   has_many :tokens
   has_many :bookmarks
+
+  has_one_attached :avatar
 
   def new_cart
     if carts.empty? || carts.last.status != "active"

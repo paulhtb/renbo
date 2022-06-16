@@ -12,7 +12,6 @@ button {
   align-items: center;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cooper";
   text-transform: uppercase;
@@ -52,8 +51,37 @@ h5 {
 
 .index-heading {
   display: inline-block;
-  border-bottom: solid 3px;
   padding-bottom: 3px;
   margin-bottom: 40px;
   margin-top: 50px;
+}
+
+.collection-heading {
+  display: inline-block;
+  padding-bottom: 3px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.collection-heading-colour {
+  display: inline-block;
+  border-bottom: solid 4px;
+  padding-bottom: 3px;
+  color: $yellow;
+}
+
+.text-purple {
+  color: $indigo;
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.text-lilac {
+  color: $lilac;
+}
+
+.bold {
+  font-weight: bold;
 }

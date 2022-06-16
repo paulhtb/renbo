@@ -1,17 +1,20 @@
+<%= link_to ticket_path(ticket) do %>
 <div class="ticket-card">
-  <% if vip %>
+  <% if ticket.VIP %>
     <div class="renbo-label vip-label"><strong>VIP</strong></div>
   <% end %>
   <div class="ticket-card-image">
-    <%= link_to ticket_path(ticket) do %>
       <img height="95%" width="95%" src="<%= ticket.image_url%>" alt="">
-    <% end %>
   </div>
   <div class="ticket-content">
     <h5><%= ticket.title.first(18) %></h5>
     <p><%= ticket.description.first(50) + " ..."  %></p>
   </div>
+  <div class="ticket-token-num">
+    <strong><i class="fas fa-ticket-alt ticket-icon"></i><%= ticket.tokens.count %></strong>
+  </div>
   <div class="ticket-price-tag">
-    <p><strong>Starts from $<%= ticket.original_price %></strong></p>
+    <strong><%= humanized_money_with_symbol(ticket.original_price) %></strong>
   </div>
 </div>
+<% end %>

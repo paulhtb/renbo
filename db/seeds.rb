@@ -2,6 +2,9 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 puts "Cleaning up database..."
+Transaction.destroy_all
+CartItem.destroy_all
+Cart.destroy_all
 Token.destroy_all
 User.destroy_all
 Ticket.destroy_all
@@ -15,6 +18,8 @@ user1 = User.create!(
   email: "rick@gmail.com",
   password: "123456"
 )
+file = File.open(Rails.root.join("app/assets/images/rick.png"))
+user1.avatar.attach(io: file, filename: 'rick.png', content_type: 'image/png')
 
 admin1 = User.create!(
   first_name: "Eric",
@@ -35,7 +40,7 @@ event1 = Event.create!(
   address: "Black Rock City, Nevada, USA",
   start_time: DateTime.new(2022, 8, 28, 13, 0, 0),
   end_time: DateTime.new(2022, 9, 5, 13, 0, 0),
-  description: "Burning Man is an event focused on community, art, self-expression, and self-reliance held annually in the western United States",
+  description: "Burning Man is an annual event in Nevada's Black Rock Desert, where people gather for around nine days to celebrate artistic self-expression and the building of a community intended to be temporarily self-sufficient. It's popularly thought of as a surreal counterculture party in the desert",
   event_url: "https://burningman.org/",
   image_url: "https://www.wallpaperflare.com/static/66/576/958/burning-man-love-desert-gay-wallpaper-preview.jpg"
 )
@@ -54,6 +59,21 @@ event2 = Event.create!(
   description: "Founded in 1967 by Claude Nobs, the Montreux Jazz Festival has become over the years an unmissable event, generating legendary stories and performances.",
   event_url: "https://www.montreuxjazzfestival.com/en/",
   image_url: "https://www.montreuxjazzfestival.com/wp-content/uploads/2020/01/MITP-1536x1536.jpg"
+)
+
+# EVENT 16 = Elton John Final Tour
+event16 = Event.create!(
+  name: "Elton John Farewell Tour @ O2",
+  category: "Performance",
+  music_genre: "Rock",
+  country: "United Kingdom",
+  city: "London",
+  address: "The O2, Peninsula Square, London, United Kingdom",
+  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
+  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
+  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
+  event_url: "https://www.eltonjohn.com/",
+  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
 )
 
 # EVENT 3 = Garbicz Festival
@@ -113,7 +133,7 @@ event6 = Event.create!(
   end_time: DateTime.new(2023, 4, 15, 23, 0, 0),
   description: "The Coachella Valley Music and Arts Festival is an annual music and arts festival held at the Empire Polo Club in Indio, California, in the Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Presents",
   event_url: "https://www.coachella.com/",
-  image_url: "https://fokusjabar.id/wp-content/uploads/2020/06/coachella-768x433.jpg"
+  image_url: "https://media.resources.festicket.com/www/magazine/Coachella22Lineup_L.jpg"
 )
 
 # EVENT 7 = Glastonbury Festival 2022
@@ -199,8 +219,8 @@ event12 = Event.create!(
   country: "Panama",
   city: "Playa Chiquita",
   address: "HP4R+X9Q, Playa Chiquita, Panama",
-  start_time: DateTime.new(2023, 3, 4, 23, 0, 0),
-  end_time: DateTime.new(2023, 3, 19, 23, 0, 0),
+  start_time: DateTime.new(2022, 3, 4, 23, 0, 0),
+  end_time: DateTime.new(2022, 3, 19, 23, 0, 0),
   description: "Tribal Gathering is so much more than a music festival. Its 18 days on a Caribbean beach, around 200 workshops and presentations, hundreds of musicians from around the world, a learning journey from the ancient to the modern and one of the worlds most important indigenous cultural celebrations.",
   event_url: "https://www.tribalgathering.com/",
   image_url: "https://images.squarespace-cdn.com/content/v1/5ad8b225a9e0285e85188ca6/da511a1d-6687-4bb5-a7a1-d075a7598371/tribal-gathering-geoparadise-panama.jpg?format=1000w"
@@ -210,7 +230,7 @@ event12 = Event.create!(
 
 # EVENT 13 = Kaytranada
 event13 = Event.create!(
-  name: "Kaytranada",
+  name: "Kaytranada @ La Clairière",
   category: "Performance",
   music_genre: "Hip Hop",
   country: "France",
@@ -225,7 +245,7 @@ event13 = Event.create!(
 
 # EVENT 14 = Alt-J
 event14 = Event.create!(
-  name: "alt-J",
+  name: "alt-J @ AFAS Live",
   category: "Performance",
   music_genre: "Rock",
   country: "Netherlands",
@@ -240,7 +260,7 @@ event14 = Event.create!(
 
 # EVENT 15 = Lane 8
 event15 = Event.create!(
-  name: "Lane 8",
+  name: "Lane 8 @ Stanley Park Pavilion",
   category: "Performance",
   music_genre: "Electronic",
   country: "Canada",
@@ -253,24 +273,10 @@ event15 = Event.create!(
   image_url: "https://weraveyou.com/wp-content/uploads/2021/01/Lane-8.jpg"
 )
 
-# EVENT 16 = Elton John Final Tour
-event16 = Event.create!(
-  name: "Elton John Farewell Tour",
-  category: "Performance",
-  music_genre: "Rock",
-  country: "United Kingdom",
-  city: "London",
-  address: "The O2, Peninsula Square, London, United Kingdom",
-  start_time: DateTime.new(2022, 4, 2, 19, 0, 0),
-  end_time: DateTime.new(2022, 4, 2, 21, 0, 0),
-  description: "Farewell Yellow Brick Road is an ongoing tour by English musician Elton John that began in Allentown, Pennsylvania on 8 September 2018. It is intended to be John's final tour and will consist of more than 300 concerts worldwide",
-  event_url: "https://www.eltonjohn.com/",
-  image_url: "https://townsquare.media/site/838/files/2021/06/attachment-eltonjohn-finaltour.jpg?w=1080&h=1080&q=75"
-)
 
 # EVENT 17 = Khruangbin Tour
 event17 = Event.create!(
-  name: "Khruangbin",
+  name: "Khruangbin @ Germania Insurance Amphitheater",
   category: "Performance",
   music_genre: "Rock",
   country: "USA",
@@ -285,7 +291,7 @@ event17 = Event.create!(
 
 # Event 18 = Fleetwood Mac Performance
 event18 = Event.create!(
-  name: "Fleetwood Mac",
+  name: "Fleetwood Mac @ Webster Hall",
   category: "Performance",
   music_genre: "Rock",
   country: "USA",
@@ -304,18 +310,11 @@ ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Yvonne Force Villareal",
   description: "VIP Burning Man
-  • Class A 42” luxury RV with full kitchen, 2 beds, electricity, air conditioner, shower, toilet & camp/entrance fees
-  • A private mid-jet from the LA area to Truckee; From there a King Air or similar to Burning Man
-  • Daily water supply & RV purge, maid-service cleaning, linen cleaning, and on-site concierge
-  • Selection of costumes
-  • Segway & burner transportation rentals
-  • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc.
-  • Stocking of food, drinks technical supply, electricity, water, internet, participation in the camp art project
-  • Musical entertainment in the camp
-  • Cooks & fresh buffets every meal (tailored to tastes); Snacks 24/7; Open Bar 24/7
-  • Security & technician guard 24/7",
+  • A private mid-jet from the LA area to to Burning Man
+  • Daily water supply",
   original_price: 1500,
-  no_available: 3,
+  no_available: 5,
+  VIP: true,
   image_url: "https://djwp.s3.amazonaws.com/wp-content/uploads/2021/10/07151108/Document-Burning-Man-Sothebys-4.jpg"
 )
 
@@ -325,9 +324,10 @@ ticket_tier1.save!
 ticket_tier2 = Ticket.new(
   tier: 2,
   title: "Man on Fire",
-  description: "From flames to ashes, nothing lasts forever. Time exists only in the present.",
+  description: "• Musical entertainment in the camp • Burner Survival Kit with bikes, decorations, lights, camel bag, cup, etc. • Daily water supply",
   original_price: 1000,
   no_available: 10,
+  VIP: false,
   image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c01661ac-198f-4af1-91c8-57af093c29e0/d4mwnlj-48be98f1-5a86-47df-901b-f136779feef1.jpg/v1/fill/w_838,h_954,q_70,strp/the_burning_man_by_innerdvisions_d4mwnlj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MwMTY2MWFjLTE5OGYtNGFmMS05MWM4LTU3YWYwOTNjMjllMFwvZDRtd25sai00OGJlOThmMS01YTg2LTQ3ZGYtOTAxYi1mMTM2Nzc5ZmVlZjEuanBnIiwiaGVpZ2h0IjoiPD0xMDI0Iiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC9jMDE2NjFhYy0xOThmLTRhZjEtOTFjOC01N2FmMDkzYzI5ZTBcL2lubmVyZHZpc2lvbnMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.xl9zzEyuvlQUj2crCwED5dsQrSXSgUK2tqGGYiLFpwM"
 )
 
@@ -337,9 +337,11 @@ ticket_tier2.save!
 ticket_tier3 = Ticket.new(
   tier: 3,
   title: "Network of Dreamers",
-  description: "Find comfort in self-reliance, and equal comfort in solidarity.",
+  description: "• Selection of costumes
+  • Segway & burner transportation rentals. • Daily water supply.",
   original_price: 750,
   no_available: 25,
+  VIP: false,
   image_url: "https://www.artmajeur.com/medias/hd/y/o/youlianarkevitch-iodko/artwork/8951191_burning-man.jpg"
 )
 
@@ -349,7 +351,7 @@ ticket_tier3.save!
 #---------------BURNING MAN TOKENS---------------
 
 # TICKET_TIER1 BURNING MAN
-3.times do
+4.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
@@ -362,7 +364,7 @@ ticket_tier3.save!
 end
 
 # TICKET_TIER2 BURNING MAN
-10.times do
+8.times do
   Token.create!(
     status: "new",
     NFT_id: "4d5e6f",
@@ -375,7 +377,7 @@ end
 end
 
 # TICKET_TIER3 BURNING MAN
-25.times do
+22.times do
   Token.create!(
     status: "new",
     NFT_id: "7g8h9i",
@@ -387,48 +389,85 @@ end
   )
 end
 
-#---------------NFTs for event 2 // Elton John Final Tour---------------
+# TOKENS FOR MARKETPLACE
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 1750,
+  unlocked: false,
+  ticket: ticket_tier1,
+  user: admin1
+)
+2.times do
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: [1400, 1450, 1500, 1550, 1600, 1800].sample,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+end
+
+3.times do
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: [900, 905, 910, 915, 925, 930, 935, 950].sample,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+end
+#---------------NFTs for event 16 // Elton John Final Tour---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
   title: "Candle in The Wind",
-  description: "What would the world be without Sir Elton John",
+  description: "VIP status gets you and invitation to join Sir Elton John at a private group dinner, and backstage access to the show.",
   original_price: 300,
   no_available: 5,
+  VIP: true,
   image_url: "http://i39.photobucket.com/albums/e158/mcnail/OMG9/screenprint-elton_john-goodbye_yellow_brick_road-roy_rogers-26_zpsa95ee38b.jpg~original"
 )
 
-ticket_tier1.event = event2
+ticket_tier1.event = event16
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
   tier: 2,
   title: "Rocket Man",
-  description: "A memory of Elton Johns final tour",
+  description: "This NFT comes complete with access to a private piano show in the hotel of Elton John",
   original_price: 200,
   no_available: 20,
+  VIP: false,
   image_url: "https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/3/elton-john-greatom-london.jpg"
 )
 
-ticket_tier2.event = event2
+ticket_tier2.event = event16
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
   tier: 3,
   title: "Don't Let the Sun Go Down on Me",
-  description: "A collection of all famous magazine covers with Sir Elton John",
+  description: "You will recieve a signed copy of a rare Elton John record.",
   original_price: 100,
   no_available: 50,
-  image_url: "https://images.saatchiart.com/saatchi/1862146/art/8768316/7831798-OGFWMIXX-7.jpg"
+  VIP: false,
+  image_url: "https://i.pinimg.com/originals/8d/95/48/8d9548ae614a5ca476763ee4c90b3df4.jpg"
 )
 
-ticket_tier3.event = event2
+ticket_tier3.event = event16
 ticket_tier3.save!
 
 #---------------ELTON JOHN TOKENS---------------
 
 # TICKET_TIER1 ELTON JOHN
-5.times do
+4.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
@@ -441,7 +480,7 @@ ticket_tier3.save!
 end
 
 # TICKET_TIER2 ELTON JOHN
-20.times do
+19.times do
   Token.create!(
     status: "new",
     NFT_id: "4d5e6f",
@@ -454,7 +493,7 @@ end
 end
 
 # TICKET_TIER3 ELTON JOHN
-50.times do
+49.times do
   Token.create!(
     status: "new",
     NFT_id: "1a2b3c",
@@ -466,7 +505,39 @@ end
   )
 end
 
-#---------------NFTs for event 3 // Montreux Jazz Festival---------------
+# TOKENS FOR MARKETPLACE
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 2250,
+  unlocked: false,
+  ticket: ticket_tier1,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 5500,
+  unlocked: false,
+  ticket: ticket_tier2,
+  user: admin1
+)
+
+Token.create!(
+  status: "available",
+  NFT_id: "1a2b3c",
+  unlockable: "QRcode",
+  price: 11_000,
+  unlocked: false,
+  ticket: ticket_tier3,
+  user: admin1
+)
+
+#---------------NFTs for event 2 // Montreux Jazz Festival---------------
 
 ticket_tier1 = Ticket.new(
   tier: 1,
@@ -474,10 +545,11 @@ ticket_tier1 = Ticket.new(
   description: "A priceless moment from the the Montreux Jazz Festival",
   original_price: 500,
   no_available: 10,
+  VIP: true,
   image_url: "https://media.artsper.com/artwork/1458213_1_m.jpg"
 )
 
-ticket_tier1.event = event3
+ticket_tier1.event = event2
 ticket_tier1.save!
 
 ticket_tier2 = Ticket.new(
@@ -486,10 +558,11 @@ ticket_tier2 = Ticket.new(
   description: "In memory of a legend",
   original_price: 250,
   no_available: 50,
+  VIP: false,
   image_url: "https://images.theabsolutesound.com/wp-content/uploads/2021/06/nina-simon-montreux.jpeg"
 )
 
-ticket_tier2.event = event3
+ticket_tier2.event = event2
 ticket_tier2.save!
 
 ticket_tier3 = Ticket.new(
@@ -498,8 +571,147 @@ ticket_tier3 = Ticket.new(
   description: "A piece of time presented in an illustration",
   original_price: 200,
   no_available: 100,
+  VIP: false,
   image_url: "https://creativereview.imgix.net/content/uploads/2020/06/MJF20-Silent-Shores-Affiches-FrancBord-Giovanni-Riva.jpg?auto=compress,format&q=60&w=768&h=1075"
 )
 
-ticket_tier3.event = event3
+ticket_tier3.event = event2
 ticket_tier3.save!
+
+#---------------Montreux Jazz Festival TOKENS---------------
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 3000,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 5000,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 7000,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )
+
+#---------------NFTs for event 7 // Glastonbury---------------
+
+  ticket_tier1 = Ticket.new(
+    tier: 1,
+    title: "Whimsical",
+    description: "• Firewood for you and your friends • Access to 3000 performances • On-site free mobile charging",
+    original_price: 300,
+    no_available: 10,
+    image_url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f4bcd3e7-0099-4bde-a963-75baea348d9f/d2sqa1e-33582fb7-7e46-432f-a87c-6cba21823e84.jpg/v1/fill/w_1032,h_774,q_75,strp/glastonbury_2010_muse_by_rozrr.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9mNGJjZDNlNy0wMDk5LTRiZGUtYTk2My03NWJhZWEzNDhkOWYvZDJzcWExZS0zMzU4MmZiNy03ZTQ2LTQzMmYtYTg3Yy02Y2JhMjE4MjNlODQuanBnIiwid2lkdGgiOiI8PTEwMzIiLCJoZWlnaHQiOiI8PTc3NCJ9XV19.d0GCZR-JWqPIpxvvJpFJOm0LPxr-dKRVoU4Z_u_6wJw"
+  )
+
+  ticket_tier1.event = event7
+  ticket_tier1.save!
+
+  ticket_tier2 = Ticket.new(
+    tier: 2,
+    title: "Bunny by the Moon",
+    description: "Dream the night away in style",
+    original_price: 250,
+    no_available: 15,
+    image_url: "https://i.pinimg.com/originals/b6/1c/b6/b61cb60182cd106b3bdae95d81690a42.jpg"
+  )
+
+  ticket_tier2.event = event7
+  ticket_tier2.save!
+
+  ticket_tier3 = Ticket.new(
+    tier: 3,
+    title: "Town of Salem",
+    description: "Praise the sun, it's time to party.",
+    original_price: 200,
+    no_available: 30,
+    image_url: "https://i.pinimg.com/originals/15/16/3d/15163da16f0f78e3eaf80da017239991.jpg"
+  )
+
+  ticket_tier3.event = event7
+  ticket_tier3.save!
+
+#---------------Glastonbury TOKENS---------------
+
+  9.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 1200,
+      unlocked: false,
+      ticket: ticket_tier1,
+      user: admin1
+    )
+  end
+
+  14.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 800,
+      unlocked: false,
+      ticket: ticket_tier2,
+      user: admin1
+    )
+  end
+
+  29.times do
+    Token.create!(
+      status: "owned",
+      NFT_id: "1a2b3c",
+      unlockable: "QRcode",
+      price: 500,
+      unlocked: false,
+      ticket: ticket_tier3,
+      user: admin1
+    )
+  end
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 8000,
+    unlocked: false,
+    ticket: ticket_tier1,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 6000,
+    unlocked: false,
+    ticket: ticket_tier2,
+    user: admin1
+  )
+
+  Token.create!(
+    status: "available",
+    NFT_id: "1a2b3c",
+    unlockable: "QRcode",
+    price: 4000,
+    unlocked: false,
+    ticket: ticket_tier3,
+    user: admin1
+  )

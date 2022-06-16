@@ -17,14 +17,18 @@
   width: 350px;
   text-align: center;
   border-radius: $border-radius;
+  border: $border;
   position: relative;
   box-shadow: rgba(236, 230, 255, 1) 0px 2px 5px -1px, rgba(236, 230, 255, 0.9) 0px 1px 3px -1px;
+
   * {
     margin: 0;
   }
-   &:hover {
-    box-shadow: rgba(86, 40, 245, 0.25) 0px 2px 5px -1px, rgba(86, 40, 245, 0.3) 0px 1px 3px -1px;
-   }
+
+  &:hover {
+    border: 1px solid $indigo;
+    box-shadow: $button-shadow;
+  }
 }
 
 .event-card-img {
@@ -80,8 +84,9 @@
 
 // Ticket Icon for Cards
 .ticket-icon {
-  height: 10px;
-  width: 10px;
+  margin-right: 5px;;
+  font-size: 16px;
+  color: $indigo;
 }
 
 .location-icon {

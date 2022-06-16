@@ -3,7 +3,7 @@
     <button class="renbo-btn-sec dropdown-toggle" type="button">
       Filter
     </button>
-  </div>
+  </div> %>
 
   <div class="filter-box d-none" data-filter-dropdown-target="dropdown">
     <form action="/events">
@@ -34,7 +34,6 @@
   <%# what is returned if there no results %>
   <div class="renbo-container">
     <h1> Sorry your search didn't return any results..</h1>
-    <h2>but here are a couple up and coming NFTs you may be into: </h2>
     <div class="no-search-results">
       <div class="box-center">
         <div grid-item>
@@ -49,7 +48,13 @@
 <div class="renbo-container">
   <div class="home-heading">
     <div>
-      <h3 id="index-heading">Upcoming Events<%= " for #{params['q']}" if params['q'].present? %></h3>
+      <h3 id="index-heading" style="display: inline-block;"> Upcoming Events in 2022 for
+      <% if params[:q].empty? %>
+        <span class="query-heading"><%= params[:genre] %>
+      <% else %>
+        <span class="query-heading"><%= params[:q] %></span>
+      <% end %>
+      </h3>
     </div>
   </div>
   <div class="event-card-grid">
@@ -74,5 +79,4 @@
     </div>
   <% end %>
 </div>
-
 <% end %>

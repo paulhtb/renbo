@@ -9,11 +9,13 @@ class CartItemsController < ApplicationController
   end
 
   def add
-    @cart_item = CartItem.new(cart_item_params)
+    @cart_item = CartItem.new
+    @token = Token.find(params[:cart_item][:token_id])
+    @cart_item.token = @token
     @cart_item.cart = current_user.carts.last
     @cart_item.save
 
-    redirect_to ticket_path(@cart_item.token.ticket)
+    redirect_to request.referer
   end
 
   def destroy
@@ -22,7 +24,7 @@ class CartItemsController < ApplicationController
     if request.referer.include? "/cart"
       redirect_to "/cart"
     else
-      redirect_to ticket_path(@cart_item.token.ticket)
+      redirect_to request.referer
     end
   end
 

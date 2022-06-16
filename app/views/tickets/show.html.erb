@@ -9,27 +9,37 @@
       </div>
       <div class="ticket-banner-details">
         <div class="ticket-banner-specifics">
-          <p>VIP</p>
+        <%if @ticket.VIP%>
+        <div class="renbo-label vip-label text-center"><strong>VIP</strong></div>
+        <%end%>
           <p>Free Seating</p>
         </div>
-        <p>For: 1 day only</p>
+        <p>For: <%= (2..3).to_a.sample %> days only</p>
+        <%= humanized_money_with_symbol(@ticket.original_price) %>
       </div>
       <div class="ticket-banner-purchase">
         <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
           <div class="d-flex justify-content-between">
-            <h3><%= @ticket.no_available %> left</h3>
-            <%= f.association :token,
-              collection: Token.where(ticket_id: @ticket.id),
-              prompt: "Select your unique ticket",
-              label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
-              input_html: { class: "ticket-dropdown" },
-              label: false
+            <h3><%= @tokens_available.count %> / <%= @ticket.no_available %> left</h3>
+            <% if  @tokens_available.count != 0 %>
+              <%= f.association :token,
+                collection: @tokens_available,
+                prompt: "Select your unique ticket",
+                label_method: lambda { |token| "#{token.ticket.title} # #{token.sequence_num}"},
+                input_html: { class: "ticket-dropdown" },
+                label: false
               %>
               <% if current_user %>
                 <button class="renbo-btn">Add to cart</button>
               <% else %>
                 <button class="renbo-btn-sec"><%= link_to "Sign in", new_user_session_path %></button>
               <% end %>
+            <% else %>
+              <div class="text-center">
+                <h3>Sold out ?</h3>
+                <p>Try the <%= link_to "marketplace", marketplace_path, class:"mini-cart-sign-in" %> or <%= link_to "browse", "#browse", class:"mini-cart-sign-in" %> below.</p>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -37,8 +47,8 @@
   </div>
   <div class="ticket-info">
     <div class="ticket-show-container">
-      <h2 class="tickets-show-heading">Browse all tickets</h2>
-      <%= render "shared/table", tokens: @ticket.tokens %>
+      <h2 class="tickets-show-heading" id="browse">Browse all tickets</h2>
+      <%= render "shared/table", tokens: @ticket.tokens, event: @ticket.event %>
       <h2 class="tickets-show-heading">Other tickets for this event</h2>
       <div class="event-card-grid">
         <% @tickets.each do |ticket| %>
@@ -54,12 +64,12 @@
             <%= simple_form_for @cart_item, url: tokens_add_path, remote: true, html: { class: "w-100" } do |f| %>
               <div class="justify-content-between">
                 <%= f.association :token,
-                  collection: Token.where(ticket_id: @ticket.id).where.not(id: current_user.carts.last.cart_items.pluck(:token_id)),
+                  collection: @tokens_available,
                   prompt: "Select your unique ticket",
-                  label_method: lambda { |token| "#{token.ticket.title} #{token.id}"},
+                  label_method: lambda { |token| "#{token.ticket.title} ##{token.sequence_num}"},
                   input_html: { class: "ticket-dropdown" },
                   label: false
-                  %>
+                %>
                 <div class="d-flex justify-content-end">
                   <button class="renbo-btn">Add to cart</button>
                 </div>
@@ -71,16 +81,19 @@
                   <% @cart_items.each do |item| %>
                     <li class="mini-cart-item">
                       <div class="w-50 mb-2">
-                        <%= item.token.ticket.title %>
+                        <%= item.token.ticket.title %> #<%= item.token.sequence_num %>
                       </div>
-                      $<%= item.token.price %>
+                      <%= humanized_money_with_symbol(item.token.price) %>
                       <%= link_to "X", cart_item_path(item), method: :delete %>
                     </li>
                   <% end %>
                 </ul>
               </div>
               <div class="ticket-price-summary">
-                $<%= @cart.total_price %>
+                <div>
+                  <p>Total:</p>
+                  <%= humanized_money_with_symbol(@cart.total_price) %>
+                </div>
                 <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
               </div>
           <% end %>

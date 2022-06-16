@@ -1,20 +1,34 @@
 <div class="renbo-container">
+<div class="text-center">
+  <h1 class="index-heading"><span class="collection-heading-colour">Your</span> Collection</h1>
+</div>
   <%# <div class="carousel2"> %>
-    <div class="margin-collection">
+    <div class="margin-collection margin-fix">
       <% i = 1 %>
     <% @tokens.last(3).each do |token|%>
-        <input type="radio" name="slider" id="item-<%= i %>" checked>
+        <input class="annoyingdots" type="radio" name="slider" id="item-<%= i %>" checked>
         <% i += 1 %>
       <% end %>
       <div class="cards3 collection-wrapper">
       <% i = 1 %>
-        <% @tokens.last(3).each do |token|%>
+
+        <% @tokens.shuffle.last(3).each do |token|%>
           <label class="card2" for="item-<%= i %>" id="song-<%= i %>">
-            <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "caro-image  card-collection"%>
+            <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "caro-image  card-collection nft-collection"%>
+            <div class="collection-item-details">
+              <%= token.ticket.title %> #<%= token.sequence_num %> - <%= token.ticket.event.name %>
+            </div>
+
+            <%=image_tag token.ticket.image_url, alt: "song", width: "100%", height: "100%", class: "shadow-img2  card-collection"%>
           </label>
           <% i += 1 %>
         <%end%>
+
       </div>
     </div>
   <%# </div> %>
+  <div class="renbo-container center-btns">
+  <%# <button class="renbo-btn sell-btn">Ready to sell?</button>
+  <button class="renbo-btn sell-btn2">Event Details</button> %>
+  </div>
 </div>

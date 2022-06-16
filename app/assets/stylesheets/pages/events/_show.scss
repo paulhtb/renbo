@@ -3,6 +3,9 @@
   width: 100vw;
   max-width: 2560px;
   margin: 0 auto;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.25));
   img {
     object-fit: cover;
   }

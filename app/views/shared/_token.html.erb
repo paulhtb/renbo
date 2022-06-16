@@ -1,0 +1,22 @@
+<div class="ticket-card">
+  <% if vip %>
+    <div class="renbo-label vip-label"><strong>VIP</strong></div>
+  <% end %>
+  <div class="ticket-card-image">
+    <%= link_to token_path(token) do %>
+      <img height="95%" width="95%" src="<%= token.ticket.image_url%>" alt="">
+    <% end %>
+  </div>
+  <div class="ticket-content">
+    <h5><%= token.ticket.title.first(18) %></h5>
+    <p><%= token.ticket.description.first(50) + " ..."  %></p>
+  </div>
+  <div class="ticket-token-num">
+    <strong>
+     <i class="fas fa-ticket-alt ticket-icon"></i> #<%= token.sequence_num %>/<span style="font-size: 12px;"><%= token.ticket.tokens.count %></span>
+    </strong>
+  </div>
+  <div class="ticket-price-tag">
+    <strong><%= humanized_money_with_symbol(token.price) %></strong>
+  </div>
+</div>

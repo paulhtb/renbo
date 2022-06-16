@@ -1,0 +1,57 @@
+
+.token-top {
+
+  padding: 40px 0;
+  display: flex;
+
+  .token-img {
+    width: 500px;
+    height: 500px;
+    background-repeat: round;
+  }
+
+  .token-info {
+    width: 640px;
+    margin: 0 20px;
+    flex-grow: 1;
+  }
+
+  #token-accordion {
+    margin-top: 20px;
+  }
+
+  .token-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .token-header {
+    width: 100%;
+  }
+
+  .token-buy {
+    margin-top: 10px;
+    border: $border;
+    border-radius: $border-radius;
+
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  .token-event-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}

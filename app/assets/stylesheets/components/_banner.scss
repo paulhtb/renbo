@@ -2,10 +2,12 @@
   max-height: 800px;
   height: 100vh;
   width: auto;
-  background-image: asset-url('banner.jpg'),
-  linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5));
+  background-image:
+    // linear-gradient(
+    //   rgba(0, 0, 0, 0.15),
+    //   rgba(0, 0, 0, 0.25)),
+    radial-gradient(rgba(0, 0, 0, 0.7), transparent),
+    asset-url('banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -15,11 +17,43 @@
   justify-content: center;
 }
 
+// .banner-content {
+//   padding: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent);
+// }
+
+.banner-title {
+  color: white;
+  font-size: 33px;
+
+  // ---Daniel's Styling---
+  font-family: nunito;
+  text-transform: lowercase;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.banner-title-sec {
+  font-size: 48px;
+  color: white;
+
+
+  // ---WITH YELLOW UNDERLINE---
+  // margin-bottom: 30px;
+  // span {
+  //   border-bottom: solid 6px $yellow;
+  // }
+}
+
 #searchbar-banner {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(0,0,0,0.3);
   padding: 10px;
-  width: 25vw;
+  width: 50vw;
+  max-width: 600px;
   display: flex;
   align-items: center;
   border-radius: $border-radius;
@@ -34,6 +68,10 @@
     &:focus {
       outline: none;
     }
+  }
+
+  input {
+    background: transparent;
   }
 
   .mglass {

@@ -29,8 +29,10 @@
   }
 }
 
-input[type=radio] {
-  display: none;
+.container2 {
+  input[type=radio] {
+    display: none;
+  }
 }
 
 .card2 {
@@ -77,6 +79,8 @@ input[type=radio] {
   border-radius: 10px;
   object-fit: cover;
 }
+
+
 .shadow-image {
   width: 300px;
   height: 300px;
@@ -98,7 +102,7 @@ input[type=radio] {
 }
 
 #item-1:checked ~ .cards3 #song-2, #item-2:checked ~ .cards3 #song-3, #item-3:checked ~ .cards3 #song-1 {
-  transform: translatex(40%) scale(.8);
+  transform: translatex(50%) scale(.8);
   opacity: .4;
   z-index: 0;
 }
@@ -201,4 +205,53 @@ input[type=radio] {
 
 #item-3:checked ~ .player #test  {
   transform: translateY(-80px);
+}
+
+.margin-fix {
+  margin-top: 25px;
+}
+
+.shadow-img2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  left: 8px;
+  position: absolute;
+  transform: scale(0.95);
+  z-index: -1;
+  bottom: -243px;
+  filter: blur(27px);
+}
+
+.center-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sell-btn {
+
+  width: 200px;
+  position: absolute;
+  top: 657px;
+  left: 543px;
+  z-index: 2;
+}
+.sell-btn2 {
+  width: 200px;
+  position: absolute;
+  top: 657px;
+  left: 892px;
+  z-index: 2;
+}
+
+.annoyingdots {
+position: fixed;
+opacity: 0;
+pointer-events: none;
+}
+
+.collection-wrapper:hover {
+ filter:unset; 
 }
