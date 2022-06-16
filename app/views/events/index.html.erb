@@ -48,7 +48,13 @@
 <div class="renbo-container">
   <div class="home-heading">
     <div>
-      <h3 id="index-heading" style="display: inline-block;"> Upcoming Events in 2022 for <span class="query-heading"><%= params[:q] %></span></h3>
+      <h3 id="index-heading" style="display: inline-block;"> Upcoming Events in 2022 for
+      <% if params[:q].empty? %>
+        <span class="query-heading"><%= params[:genre] %>
+      <% else %>
+        <span class="query-heading"><%= params[:q] %></span>
+      <% end %>
+      </h3>
     </div>
   </div>
   <div class="event-card-grid">
@@ -57,5 +63,4 @@
     <% end %>
   </div>
 </div>
-
 <% end %>
