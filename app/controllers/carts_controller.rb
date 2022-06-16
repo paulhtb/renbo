@@ -1,9 +1,9 @@
 class CartsController < ApplicationController
+  after_action :destroy_cart
   def show
     @cart = current_user.carts.last
-    if @cart.payment
-      @cart.payment.destroy
-    end
+
+    # HANDLE THIS SOMEHOW
 
     unless @cart.cart_items.empty?
       @transaction = Transaction.create!(cart_id: @cart.id, amount: @cart.total_price, status: 'pending')
@@ -24,4 +24,14 @@ class CartsController < ApplicationController
       @transaction.update(checkout_session_id: session.id)
     end
   end
+
+  private
+
+  def destroy_cart
+       # if @cart.payment
+    #   @cart.payment.destroy
+    # end
+
+  end
+
 end
