@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
     @cart_item.cart = current_user.carts.last
     @cart_item.save
 
-    redirect_to ticket_path(@cart_item.token.ticket)
+    redirect_to request.referer
   end
 
   def destroy
