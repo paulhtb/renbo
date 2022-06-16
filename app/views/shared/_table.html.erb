@@ -22,9 +22,7 @@
           <p class="table-col">1d:12h:25m:10s</p>
           <p class="table-col"><strong><%= humanized_money_with_symbol(token.price) %></strong></p>
           <div class="table-col">
-            <%= link_to token_cart_items_path(token), :method => :post do %>
-              <button class="renbo-btn-sec">Place a bid</button>
-            <% end %>
+            <button class="renbo-btn-sec">See ticket</button>
           </div>
         </div>
       <% end %>
