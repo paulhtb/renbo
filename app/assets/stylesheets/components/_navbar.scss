@@ -7,6 +7,14 @@
   top: 0;
   justify-content: space-between;
   box-shadow: #{$shadow};
+  height: 66px;
+  transition: 0.25s ease;
+
+  &.zero {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
 }
 
 .navbar-lewagon .navbar-brand img {
