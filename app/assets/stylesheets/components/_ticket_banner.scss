@@ -29,13 +29,17 @@
   border-radius: 0 5px 5px 0;
   border: $border;
   border-left: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
     p {
       margin: 0;
     }
 }
 
 .ticket-banner-description {
-  border-bottom: 2px solid;
+  // border-bottom: 2px solid;
   padding: 20px;
 }
 
@@ -43,8 +47,9 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+  border-top: 2px solid;
   border-bottom: 2px solid;
-  padding: 20px;
+  padding: 30px;
 }
 
 .ticket-banner-purchase {

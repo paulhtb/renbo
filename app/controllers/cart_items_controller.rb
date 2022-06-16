@@ -24,7 +24,7 @@ class CartItemsController < ApplicationController
     if request.referer.include? "/cart"
       redirect_to "/cart"
     else
-      redirect_to ticket_path(@cart_item.token.ticket)
+      redirect_to request.referer
     end
   end
 
