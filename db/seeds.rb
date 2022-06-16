@@ -545,6 +545,7 @@ ticket_tier1 = Ticket.new(
   description: "A priceless moment from the the Montreux Jazz Festival",
   original_price: 500,
   no_available: 10,
+  vip: true,
   image_url: "https://media.artsper.com/artwork/1458213_1_m.jpg"
 )
 
@@ -557,6 +558,7 @@ ticket_tier2 = Ticket.new(
   description: "In memory of a legend",
   original_price: 250,
   no_available: 50,
+  vip: false,
   image_url: "https://images.theabsolutesound.com/wp-content/uploads/2021/06/nina-simon-montreux.jpeg"
 )
 
@@ -569,6 +571,7 @@ ticket_tier3 = Ticket.new(
   description: "A piece of time presented in an illustration",
   original_price: 200,
   no_available: 100,
+  vip: false,
   image_url: "https://creativereview.imgix.net/content/uploads/2020/06/MJF20-Silent-Shores-Affiches-FrancBord-Giovanni-Riva.jpg?auto=compress,format&q=60&w=768&h=1075"
 )
 
