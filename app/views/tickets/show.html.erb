@@ -90,7 +90,10 @@
                 </ul>
               </div>
               <div class="ticket-price-summary">
-                <%= humanized_money_with_symbol(@cart.total_price) %>
+                <div>
+                  <p>Total:</p>
+                  <%= humanized_money_with_symbol(@cart.total_price) %>
+                </div>
                 <button class="renbo-btn"><%= link_to "Go to cart", cart_path %></button>
               </div>
           <% end %>

@@ -33,6 +33,7 @@
   font-family: nunito;
   text-transform: lowercase;
   text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
 .banner-title-sec {
@@ -41,10 +42,10 @@
 
 
   // ---WITH YELLOW UNDERLINE---
-  margin-bottom: 30px;
-  span {
-    border-bottom: solid 6px $yellow;
-  }
+  // margin-bottom: 30px;
+  // span {
+  //   border-bottom: solid 6px $yellow;
+  // }
 }
 
 #searchbar-banner {
